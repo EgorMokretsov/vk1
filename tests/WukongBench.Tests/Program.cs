@@ -43,6 +43,38 @@ Check(ResultParser.Parse(Page(true)) == new Metrics(60.5, 40, 90), "FPS above la
 Check(ResultParser.Parse(Page(true, "60,5")) == new Metrics(60.5, 40, 90), "decimal comma");
 Reject(() => ResultParser.Parse(Page(false, "30", "40", "90")), "reject invalid FPS ordering");
 Reject(() => ResultParser.Parse(Page(false) with { Text = "Current FPS 60" }), "reject running screen");
+OcrPage Fixture(string name) => JsonSerializer.Deserialize<OcrPage>(File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "Fixtures", name)), WukongBench.Program.Json)!;
+var runningMerged = Fixture("running-current-merged.json");
+var runningNoSuffix = Fixture("running-current-no-fps-suffix.json");
+Check(BenchmarkStateParser.IsRunning(runningMerged, 1280, 720), "actual CurratFPS merged header identifies running scene");
+Check(BenchmarkStateParser.IsRunning(runningNoSuffix, 1280, 720), "actual HUD number remains valid without separate FPS suffix");
+Check(!BenchmarkStateParser.IsRunning(Fixture("running-transition-no-number.json"), 1280, 720), "loading transition without numeric FPS cannot prove running scene");
+var exactCurrent = runningMerged with { Lines = runningMerged.Lines.Select(l => l.Text == "CurratFPS"
+    ? l with { Text = "Current FPS", Words = [W("Current", 40, 43, 40, 8.5), W("FPS", 84, 43, 18, 8.5)] } : l).ToArray() };
+Check(BenchmarkStateParser.IsRunning(exactCurrent, 1280, 720), "accept exact two-word Current FPS HUD label");
+var otherCounter = runningMerged with { Lines = runningMerged.Lines.Select(l => l.Text == "CurratFPS" ? l with { Text = "GPU Temperature" } : l).ToArray() };
+Check(!BenchmarkStateParser.IsRunning(otherCounter, 1280, 720), "unrelated counter cannot establish benchmark start");
+var menuExit = runningMerged with { Lines = runningMerged.Lines.Select(l => l.Text == "Exit"
+    ? l with { Words = l.Words.Select(w => w with { X = 50, Y = 430 }).ToArray() } : l).ToArray() };
+Check(!BenchmarkStateParser.IsRunning(menuExit, 1280, 720), "main-menu Exit location cannot prove running scene");
+var distantNumber = runningMerged with { Lines = runningMerged.Lines.Select(l => l.Text == "17 FPS"
+    ? l with { Words = l.Words.Select(w => w with { X = 900 }).ToArray() } : l).ToArray() };
+Check(!BenchmarkStateParser.IsRunning(distantNumber, 1280, 720), "HUD value must be near Current FPS header");
+Check(!BenchmarkStateParser.IsRunning(runningMerged with { Text = "Benchmark Results " + runningMerged.Text }, 1280, 720), "old results cannot establish running state");
+Check(!BenchmarkStateParser.IsRunning(runningMerged with { Text = "Settings " + runningMerged.Text }, 1280, 720), "settings with overlay FPS cannot establish running state");
+var badNumber = runningMerged with { Lines = runningMerged.Lines.Select(l => l.Text == "17 FPS"
+    ? l with { Words = l.Words.Select(w => w.Text == "17" ? w with { Text = "?7" } : w).ToArray() } : l).ToArray() };
+Check(!BenchmarkStateParser.IsRunning(badNumber, 1280, 720), "do not guess unreadable HUD numbers");
+var largerHud = runningMerged with { Lines = runningMerged.Lines.Select(l => l with { Words = l.Words.Select(w => w with { X = w.X * 1.5, Y = w.Y * 1.5, Width = w.Width * 1.5, Height = w.Height * 1.5 }).ToArray() }).ToArray() };
+Check(BenchmarkStateParser.IsRunning(largerHud, 1920, 1080), "HUD layout detection scales to GPU window");
+Reject(() => ResultParser.Parse(runningMerged), "actual running FPS cannot be reported as completed benchmark metrics");
+var benchmarkSettings = Fixture("benchmark-settings.json");
+var displayFps = MenuParser.FindRow(benchmarkSettings, "display frame rate information", 1280)!;
+Check(displayFps is not null && MenuParser.Value(benchmarkSettings, displayFps, 1280) == "On", "actual benchmark settings expose own FPS HUD switch");
+bool hudInput = false;
+await MenuSelector.Select("display frame rate information", "On", 1280, benchmarkSettings,
+    _ => { hudInput = true; return Task.FromResult(benchmarkSettings); }, _ => throw new Exception("Unexpected HUD key"));
+Check(!hudInput, "already enabled benchmark HUD needs no input");
 var loopRow = new OcrLine("Loop Benchmark", [W("Loop", 361, 185, 30, 13), W("Benchmark", 396, 184, 70, 11)]);
 var menu = new OcrPage("Loop Benchmark On Off", [loopRow,
     new OcrLine("On", [W("On", 718, 142, 18, 11)]), new OcrLine("Off", [W("Off", 717, 184, 21, 11)])]);

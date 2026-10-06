@@ -53,6 +53,10 @@ internal sealed class UiAutomation(Desktop desktop, string output, CancellationT
         if (!Click(page, @"^settings$", true)) throw new InvalidDataException("Settings menu was not found.");
         await Task.Delay(1500, ct);
         page = await Read("settings");
+        // Running-state verification requires the tool's own HUD, even if a previous
+        // manual session disabled it. Select the observed option by its visible name.
+        await Select("display frame rate information", "On");
+        page = await Read("fps-display-enabled");
         var loop = page.Lines.FirstOrDefault(l => Regex.IsMatch(l.Text, @"loop.*benchmark|benchmark.*loop", RegexOptions.IgnoreCase));
         if (loop is not null && !Regex.IsMatch(Value(page, loop), @"\boff\b", RegexOptions.IgnoreCase))
         {
@@ -200,13 +204,13 @@ internal sealed class UiAutomation(Desktop desktop, string output, CancellationT
         // Require an in-flight benchmark screen so an old result cannot be accepted.
         var start = Stopwatch.StartNew();
         bool running = false;
-        while (start.Elapsed < TimeSpan.FromSeconds(60))
+        while (start.Elapsed < TimeSpan.FromSeconds(Math.Min(180, timeout.TotalSeconds)))
         {
             var page = await Read("starting");
-            if (Regex.IsMatch(page.Text, @"\bcurrent\b", RegexOptions.IgnoreCase) && !Regex.IsMatch(page.Text, @"\bresults?\b", RegexOptions.IgnoreCase)) { running = true; break; }
+            if (BenchmarkStateParser.IsRunning(page, width, height)) { running = true; break; }
             await Task.Delay(2000, ct);
         }
-        if (!running) throw new TimeoutException("The benchmark did not enter its running state.");
+        if (!running) throw new TimeoutException("Cannot verify running benchmark HUD (Current FPS, numeric counter, bottom-right Exit) before startup timeout.");
         // Keep OCR and PowerShell out of the measured portion (~142s in the reference workflow).
         await Task.Delay(TimeSpan.FromSeconds(145), ct);
         while (start.Elapsed < timeout)

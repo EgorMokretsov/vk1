@@ -7,6 +7,10 @@
     <None Include="Fixtures/slider-value.json" CopyToOutputDirectory="PreserveNewest" />
     <None Include="Fixtures/graphics-scroll-before.json" CopyToOutputDirectory="PreserveNewest" />
     <None Include="Fixtures/graphics-scroll-stuck.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="Fixtures/running-current-merged.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="Fixtures/running-current-no-fps-suffix.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="Fixtures/running-transition-no-number.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="Fixtures/benchmark-settings.json" CopyToOutputDirectory="PreserveNewest" />
     <ProjectReference Include="../../src/WukongBench.Core/WukongBench.Core.csproj" />
     <ProjectReference Include="../../src/WukongBench/WukongBench.csproj" />
   </ItemGroup>

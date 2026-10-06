@@ -1,0 +1,76 @@
+{
+  "Text": "CurratFPS 16 Exit",
+  "Lines": [
+    {
+      "Text": "CurratFPS",
+      "Words": [
+        {
+          "Text": "CurratFPS",
+          "X": 40,
+          "Y": 43,
+          "Width": 56.5,
+          "Height": 8.5,
+          "CenterX": 68.25,
+          "CenterY": 47.25
+        }
+      ]
+    },
+    {
+      "Text": "16",
+      "Words": [
+        {
+          "Text": "16",
+          "X": 40.5,
+          "Y": 58,
+          "Width": 15.5,
+          "Height": 12.5,
+          "CenterX": 48.25,
+          "CenterY": 64.25
+        }
+      ]
+    },
+    {
+      "Text": "Exit",
+      "Words": [
+        {
+          "Text": "Exit",
+          "X": 1176,
+          "Y": 680.5,
+          "Width": 24.5,
+          "Height": 10.5,
+          "CenterX": 1188.25,
+          "CenterY": 685.75
+        }
+      ]
+    }
+  ],
+  "Words": [
+    {
+      "Text": "CurratFPS",
+      "X": 40,
+      "Y": 43,
+      "Width": 56.5,
+      "Height": 8.5,
+      "CenterX": 68.25,
+      "CenterY": 47.25
+    },
+    {
+      "Text": "16",
+      "X": 40.5,
+      "Y": 58,
+      "Width": 15.5,
+      "Height": 12.5,
+      "CenterX": 48.25,
+      "CenterY": 64.25
+    },
+    {
+      "Text": "Exit",
+      "X": 1176,
+      "Y": 680.5,
+      "Width": 24.5,
+      "Height": 10.5,
+      "CenterX": 1188.25,
+      "CenterY": 685.75
+    }
+  ]
+}
