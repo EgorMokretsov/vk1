@@ -17,10 +17,12 @@ public sealed record Metrics(double AverageFps, double MinimumFps, double Maximu
 
 public static class ResultParser
 {
+    public static bool IsResultScreen(OcrPage page) =>
+        Regex.IsMatch(page.Text, @"\b(results?|benchmark\s+results?)\b", RegexOptions.IgnoreCase);
     // Numbers may be above their labels, so association is geometric instead of relying on OCR line order.
     public static Metrics Parse(OcrPage page)
     {
-        if (!Regex.IsMatch(page.Text, @"\b(results?|benchmark\s+results?)\b", RegexOptions.IgnoreCase))
+        if (!IsResultScreen(page))
             throw new InvalidDataException("This is not a benchmark result screen.");
         double Get(string pattern)
         {
@@ -46,3 +48,4 @@ public static class ResultParser
         return match.Success ? double.Parse(match.Groups[1].Value.Replace(',', '.'), CultureInfo.InvariantCulture) : null;
     }
 }
+

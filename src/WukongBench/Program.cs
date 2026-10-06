@@ -35,7 +35,7 @@ internal static class Program
             }
             finally
             {
-                foreach (string suffix in new[] { "-ocr.png", "-values-ocr.png", "-values.json", "-rt-values-ocr.png", "-rt-values.json", "-results-ocr.png", "-results.json" })
+                foreach (string suffix in new[] { "-ocr.png", "-values-ocr.png", "-values.json", "-rt-values-ocr.png", "-rt-values.json", "-results-ocr.png", "-results.json", "-results-column-ocr.png", "-results-column.json", "-results-digits-ocr.png", "-results-digits.json" })
                     if (File.Exists(temporary + suffix)) File.Delete(temporary + suffix);
             }
             return 0;
@@ -232,3 +232,4 @@ internal sealed class Options
           --help                   Эта справка
         """;
 }
+

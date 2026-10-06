@@ -1,0 +1,144 @@
+{
+  "Text": "Benchmark Results\nAv«age\nMaximum\n25 FPS\nMinimum\nOperating System\nSuper Resolution\nFull Ray Tracing",
+  "Lines": [
+    {
+      "Text": "Benchmark Results",
+      "Words": [
+        {
+          "Y": 164.5,
+          "Height": 14,
+          "Width": 90.5,
+          "Text": "Benchmark",
+          "X": 48
+        },
+        {
+          "Y": 164.5,
+          "Height": 14,
+          "Width": 56,
+          "Text": "Results",
+          "X": 142
+        }
+      ]
+    },
+    {
+      "Text": "Av«age",
+      "Words": [
+        {
+          "Y": 218.5,
+          "Height": 9.5,
+          "Width": 39.5,
+          "Text": "Av«age",
+          "X": 47.5
+        }
+      ]
+    },
+    {
+      "Text": "Maximum",
+      "Words": [
+        {
+          "Y": 290.5,
+          "Height": 7.5,
+          "Width": 47.5,
+          "Text": "Maximum",
+          "X": 47.5
+        }
+      ]
+    },
+    {
+      "Text": "25 FPS",
+      "Words": [
+        {
+          "Y": 311,
+          "Height": 12.5,
+          "Width": 17,
+          "Text": "25",
+          "X": 56
+        },
+        {
+          "Y": 315,
+          "Height": 8,
+          "Width": 16.5,
+          "Text": "FPS",
+          "X": 76.5
+        }
+      ]
+    },
+    {
+      "Text": "Minimum",
+      "Words": [
+        {
+          "Y": 290.5,
+          "Height": 7.5,
+          "Width": 45,
+          "Text": "Minimum",
+          "X": 210.5
+        }
+      ]
+    },
+    {
+      "Text": "Operating System",
+      "Words": [
+        {
+          "Y": 166,
+          "Height": 16.5,
+          "Width": 80.5,
+          "Text": "Operating",
+          "X": 400
+        },
+        {
+          "Y": 166,
+          "Height": 17,
+          "Width": 55.5,
+          "Text": "System",
+          "X": 485.5
+        }
+      ]
+    },
+    {
+      "Text": "Super Resolution",
+      "Words": [
+        {
+          "Y": 311.5,
+          "Height": 9.5,
+          "Width": 27.5,
+          "Text": "Super",
+          "X": 753.5
+        },
+        {
+          "Y": 310.5,
+          "Height": 8.5,
+          "Width": 51.5,
+          "Text": "Resolution",
+          "X": 783.5
+        }
+      ]
+    },
+    {
+      "Text": "Full Ray Tracing",
+      "Words": [
+        {
+          "Y": 349.5,
+          "Height": 8.5,
+          "Width": 18,
+          "Text": "Full",
+          "X": 955.5
+        },
+        {
+          "Y": 350.5,
+          "Height": 10,
+          "Width": 18,
+          "Text": "Ray",
+          "X": 976.5
+        },
+        {
+          "Y": 350.5,
+          "Height": 9.5,
+          "Width": 38.5,
+          "Text": "Tracing",
+          "X": 996.5
+        }
+      ]
+    }
+  ]
+}
+

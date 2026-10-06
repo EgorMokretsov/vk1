@@ -34,6 +34,9 @@ internal static class MenuImageReader
                 catch (InvalidDataException) { /* Preserve the failed reading for diagnostics. */ }
             }
         }
+        // The final report also lists graphics settings, but has no menu controls.
+        // Never run slider/RT enhancement against its read-only settings table.
+        if (ResultParser.IsResultScreen(page)) return await ResultImageReader.Read(source, stem, page, Recognize);
         using var bitmap = new Bitmap(source);
         async Task Enhance(string label, string pattern, string suffix, double gamma)
         {
@@ -58,3 +61,4 @@ internal static class MenuImageReader
         return page;
     }
 }
+

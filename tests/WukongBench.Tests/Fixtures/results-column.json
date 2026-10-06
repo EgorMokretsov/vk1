@@ -1,0 +1,137 @@
+{
+  "Text": "Benchmark Results Oct 6, 2026 Average 19 Rlaximum 25 FPS Minimum I FPS",
+  "Lines": [
+    {
+      "Text": "Benchmark Results",
+      "Words": [
+        {
+          "Y": 164.5,
+          "Height": 13.5,
+          "Width": 90,
+          "Text": "Benchmark",
+          "X": 48.25
+        },
+        {
+          "Y": 164.5,
+          "Height": 13.5,
+          "Width": 55.5,
+          "Text": "Results",
+          "X": 142.25
+        }
+      ]
+    },
+    {
+      "Text": "Oct 6, 2026",
+      "Words": [
+        {
+          "Y": 188.5,
+          "Height": 7.25,
+          "Width": 17.75,
+          "Text": "Oct",
+          "X": 48.25
+        },
+        {
+          "Y": 188.5,
+          "Height": 8.75,
+          "Width": 7.5,
+          "Text": "6,",
+          "X": 69.25
+        },
+        {
+          "Y": 188.5,
+          "Height": 7.25,
+          "Width": 23.75,
+          "Text": "2026",
+          "X": 80
+        }
+      ]
+    },
+    {
+      "Text": "Average",
+      "Words": [
+        {
+          "Y": 218.5,
+          "Height": 9,
+          "Width": 39.25,
+          "Text": "Average",
+          "X": 47.5
+        }
+      ]
+    },
+    {
+      "Text": "19",
+      "Words": [
+        {
+          "Y": 241.5,
+          "Height": 24.5,
+          "Width": 29.75,
+          "Text": "19",
+          "X": 57.25
+        }
+      ]
+    },
+    {
+      "Text": "Rlaximum",
+      "Words": [
+        {
+          "Y": 290.5,
+          "Height": 7.25,
+          "Width": 46.5,
+          "Text": "Rlaximum",
+          "X": 47.75
+        }
+      ]
+    },
+    {
+      "Text": "25 FPS",
+      "Words": [
+        {
+          "Y": 311.25,
+          "Height": 11.75,
+          "Width": 16.5,
+          "Text": "25",
+          "X": 56.25
+        },
+        {
+          "Y": 315.25,
+          "Height": 7.75,
+          "Width": 16.25,
+          "Text": "FPS",
+          "X": 76.75
+        }
+      ]
+    },
+    {
+      "Text": "Minimum",
+      "Words": [
+        {
+          "Y": 290.5,
+          "Height": 7.25,
+          "Width": 44.5,
+          "Text": "Minimum",
+          "X": 210.75
+        }
+      ]
+    },
+    {
+      "Text": "I FPS",
+      "Words": [
+        {
+          "Y": 311.25,
+          "Height": 11.75,
+          "Width": 4.75,
+          "Text": "I",
+          "X": 219
+        },
+        {
+          "Y": 315.25,
+          "Height": 7.75,
+          "Width": 16.25,
+          "Text": "FPS",
+          "X": 227.75
+        }
+      ]
+    }
+  ]
+}
+

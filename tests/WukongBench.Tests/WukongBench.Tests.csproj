@@ -11,7 +11,11 @@
     <None Include="Fixtures/running-current-no-fps-suffix.json" CopyToOutputDirectory="PreserveNewest" />
     <None Include="Fixtures/running-transition-no-number.json" CopyToOutputDirectory="PreserveNewest" />
     <None Include="Fixtures/benchmark-settings.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="Fixtures/results-full.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="Fixtures/results-column.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="Fixtures/results-numbers.json" CopyToOutputDirectory="PreserveNewest" />
     <ProjectReference Include="../../src/WukongBench.Core/WukongBench.Core.csproj" />
     <ProjectReference Include="../../src/WukongBench/WukongBench.csproj" />
   </ItemGroup>
 </Project>
+

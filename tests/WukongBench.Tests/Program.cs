@@ -44,6 +44,30 @@ Check(ResultParser.Parse(Page(true, "60,5")) == new Metrics(60.5, 40, 90), "deci
 Reject(() => ResultParser.Parse(Page(false, "30", "40", "90")), "reject invalid FPS ordering");
 Reject(() => ResultParser.Parse(Page(false) with { Text = "Current FPS 60" }), "reject running screen");
 OcrPage Fixture(string name) => JsonSerializer.Deserialize<OcrPage>(File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "Fixtures", name)), WukongBench.Program.Json)!;
+var fullResult = Fixture("results-full.json");
+var columnResult = Fixture("results-column.json");
+Check(ResultParser.IsResultScreen(fullResult), "actual result settings table is a report, not interactive controls");
+Reject(() => ResultParser.Parse(fullResult), "incomplete full-screen OCR cannot silently become valid FPS");
+Reject(() => ResultParser.Parse(columnResult), "letter I in numeric position cannot be guessed as one");
+var resultBounds = ResultImageReader.Column(fullResult, 1280, 720);
+Check(resultBounds.Right < 400 && resultBounds.Contains(218, 317), "anchored FPS crop excludes system and graphics settings columns");
+var numberAreas = ResultImageReader.NumberAreas(fullResult, columnResult, resultBounds);
+Check(numberAreas[0].Label.Text == "Average" && numberAreas[1].Label.Text == "Minimum" && numberAreas[2].Label.Text == "Maximum"
+    && numberAreas[1].Area.Contains(220, 317), "actual labels locate numeric pixels even when initial OCR reads I");
+var numeralReading = Fixture("results-numbers.json");
+// Actual experimental strip: average, maximum, minimum, with source pixel regions.
+ResultImageReader.NumberCrop[] actualCrops = [new(numberAreas[0].Label, new(50, 239, 42, 30)),
+    new(numberAreas[2].Label, new(53, 306, 22, 24)), new(numberAreas[1].Label, new(214, 306, 12, 24))];
+System.Drawing.Rectangle[] actualTiles = [new(20, 30, 252, 180), new(307, 30, 132, 144), new(474, 30, 72, 144)];
+Check(ResultParser.Parse(ResultImageReader.MapNumbers(numeralReading, actualCrops, actualTiles, 6)) == new Metrics(19, 1, 25),
+    "real numeric-strip OCR maps CPU 19/1/25 to original metric labels");
+Reject(() => ResultImageReader.MapNumbers(numeralReading with { Lines = [] }, actualCrops, actualTiles, 6), "missing strip numbers cannot produce completed metrics");
+var letterStrip = numeralReading with { Lines = numeralReading.Lines.Select(l => l with { Words = l.Words.Select(w => w.Text == "1" ? w with { Text = "I" } : w).ToArray() }).ToArray() };
+Reject(() => ResultImageReader.MapNumbers(letterStrip, actualCrops, actualTiles, 6), "numeric-strip letter remains an error rather than a replacement digit");
+var crossedTile = numeralReading with { Lines = numeralReading.Lines.Select(l => l with { Words = l.Words.Select(w => w.Text == "1" ? w with { X = 280 } : w).ToArray() }).ToArray() };
+Reject(() => ResultImageReader.MapNumbers(crossedTile, actualCrops, actualTiles, 6), "strip value outside its source tile is rejected");
+var duplicateAverage = columnResult with { Lines = columnResult.Lines.Append(columnResult.Lines.Single(l => l.Text == "Average")).ToArray() };
+Reject(() => ResultImageReader.NumberAreas(fullResult, duplicateAverage, resultBounds), "ambiguous result captions cannot select numeric regions");
 var runningMerged = Fixture("running-current-merged.json");
 var runningNoSuffix = Fixture("running-current-no-fps-suffix.json");
 Check(BenchmarkStateParser.IsRunning(runningMerged, 1280, 720), "actual CurratFPS merged header identifies running scene");
@@ -247,6 +271,11 @@ try
         Check(evidence.Disabled, "real saved screenshot confirms dimmed RT row");
         Console.WriteLine(JsonSerializer.Serialize(evidence));
     }
+    if (args.Length == 2 && args[0] == "--result-evidence")
+    {
+        var actualResult = await MenuImageReader.Read(Path.GetFullPath(args[1]), Path.Combine(testRoot, "captured-result"), CancellationToken.None);
+        Check(ResultParser.Parse(actualResult) == new Metrics(19, 1, 25), "Windows OCR and full reader recover actual saved CPU result 19/1/25");
+    }
     string config = Path.Combine(testRoot, "config"); Directory.CreateDirectory(config);
     string iniPath = Path.Combine(config, "GameUserSettings.ini");
     byte[] bytes = [0xff, 0xfe, 0x41, 0x00, 0x0d, 0x00, 0x0a, 0x00];
@@ -281,3 +310,4 @@ finally
     Directory.Delete(testRoot, true);
 }
 Console.WriteLine($"{count} checks passed.");
+
