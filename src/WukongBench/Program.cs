@@ -27,9 +27,15 @@ internal static class Program
         if (options.Help) { Console.WriteLine(Options.HelpText); return 0; }
         if (options.OcrImage is not null)
         {
-            var text = await Shell.PowerShell(Path.Combine(AppContext.BaseDirectory, "scripts", "Ocr.ps1"), ct, "-ImagePath", Path.GetFullPath(options.OcrImage));
-            var page = JsonSerializer.Deserialize<OcrPage>(text, Json)!;
-            Console.WriteLine(options.ParseImage ? JsonSerializer.Serialize(ResultParser.Parse(page), Json) : text);
+            string temporary = Path.Combine(Path.GetTempPath(), "WukongBench-ocr-" + Guid.NewGuid().ToString("N") + ".png");
+            try
+            {
+                double scale = OcrImage.Prepare(Path.GetFullPath(options.OcrImage), temporary);
+                var text = await Shell.PowerShell(Path.Combine(AppContext.BaseDirectory, "scripts", "Ocr.ps1"), ct, "-ImagePath", temporary);
+                var page = OcrImage.OriginalCoordinates(JsonSerializer.Deserialize<OcrPage>(text, Json)!, scale);
+                Console.WriteLine(options.ParseImage ? JsonSerializer.Serialize(ResultParser.Parse(page), Json) : JsonSerializer.Serialize(page, Json));
+            }
+            finally { if (File.Exists(temporary)) File.Delete(temporary); }
             return 0;
         }
         using var gate = new Semaphore(1, 1, @"Local\WukongBench-3132990");

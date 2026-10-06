@@ -14,9 +14,12 @@ internal sealed class UiAutomation(Desktop desktop, string output, CancellationT
         ct.ThrowIfCancellationRequested();
         var stem = Path.Combine(output, $"{++sequence:D3}-{stage}");
         (width, height) = desktop.Capture(stem + ".png");
-        var json = await Shell.PowerShell(Path.Combine(AppContext.BaseDirectory, "scripts", "Ocr.ps1"), ct, "-ImagePath", stem + ".png");
-        File.WriteAllText(stem + ".json", json);
-        return JsonSerializer.Deserialize<OcrPage>(json, Program.Json) ?? throw new InvalidDataException("Empty OCR response.");
+        double scale = OcrImage.Prepare(stem + ".png", stem + "-ocr.png");
+        var json = await Shell.PowerShell(Path.Combine(AppContext.BaseDirectory, "scripts", "Ocr.ps1"), ct, "-ImagePath", stem + "-ocr.png");
+        var page = JsonSerializer.Deserialize<OcrPage>(json, Program.Json) ?? throw new InvalidDataException("Empty OCR response.");
+        page = OcrImage.OriginalCoordinates(page, scale);
+        File.WriteAllText(stem + ".json", JsonSerializer.Serialize(page, Program.Json));
+        return page;
     }
     private bool Click(OcrPage page, string pattern, bool exact = false)
     {
@@ -31,16 +34,20 @@ internal sealed class UiAutomation(Desktop desktop, string output, CancellationT
     public async Task MainMenu()
     {
         var clock = Stopwatch.StartNew();
+        WindowFocusException? focusError = null;
         while (clock.Elapsed < TimeSpan.FromMinutes(3))
         {
             if (!desktop.Ready) { await Task.Delay(1000, ct); continue; }
-            var page = await Read("startup");
+            OcrPage page;
+            try { page = await Read("startup"); focusError = null; }
+            catch (WindowFocusException e) { focusError = e; await Task.Delay(1000, ct); continue; }
             if (Regex.IsMatch(page.Text, @"\bsettings\b", RegexOptions.IgnoreCase) && Regex.IsMatch(page.Text, @"\bbenchmark\b", RegexOptions.IgnoreCase)) return;
             if (Regex.IsMatch(page.Text, @"privacy|agreement", RegexOptions.IgnoreCase))
                 throw new InvalidOperationException("First-launch agreement: initialize the installed tool once yourself, then rerun. No agreement was accepted automatically.");
             if (Regex.IsMatch(page.Text, @"press|continue|black\s+myth", RegexOptions.IgnoreCase)) desktop.Key(0x0D);
             await Task.Delay(2000, ct);
         }
+        if (focusError is not null) throw focusError;
         throw new TimeoutException("Main menu did not appear within 3 minutes (Steam login, update, or shader compilation).");
     }
     public async Task ConfigureAndInspect(Profile profile)
@@ -52,7 +59,8 @@ internal sealed class UiAutomation(Desktop desktop, string output, CancellationT
         var loop = page.Lines.FirstOrDefault(l => Regex.IsMatch(l.Text, @"loop.*benchmark|benchmark.*loop", RegexOptions.IgnoreCase));
         if (loop is not null && !Regex.IsMatch(Value(page, loop), @"\boff\b", RegexOptions.IgnoreCase))
         {
-            await Select(loop.Text.Split("On", StringSplitOptions.TrimEntries)[0].Trim(), "Off");
+            string loopLabel = Regex.Replace(loop.Text, @"\s+\b(on|off)\b\s*$", "", RegexOptions.IgnoreCase).Trim();
+            await Select(loopLabel, "Off");
             page = await Read("loop-disabled");
         }
         if (!Click(page, @"^(graphics|graphics settings)$", true)) throw new InvalidDataException("Graphics menu was not found.");
@@ -95,18 +103,13 @@ internal sealed class UiAutomation(Desktop desktop, string output, CancellationT
         for (int i = 0; i < 8; i++)
         {
             var page = await Read("row");
-            var line = page.Lines.FirstOrDefault(l => l.Text.TrimStart().StartsWith(label, StringComparison.OrdinalIgnoreCase)
-                && (label != "super resolution" || !l.Text.Contains("Sampling", StringComparison.OrdinalIgnoreCase)));
+            var line = MenuParser.FindRow(page, label, width);
             if (line is not null) return (page, line);
             desktop.Scroll(-360); await Task.Delay(400, ct);
         }
         throw new InvalidDataException("Cannot locate setting: " + label);
     }
-    private string Value(OcrPage page, OcrLine label)
-    {
-        var first = label.Words[0];
-        return string.Join(" ", page.Words.Where(w => Math.Abs(w.CenterY - first.CenterY) < first.Height && w.X > width * .48).OrderBy(w => w.X).Select(w => w.Text));
-    }
+    private string Value(OcrPage page, OcrLine label) => MenuParser.Value(page, label, width);
     private async Task InspectRow(string label, string expected)
     {
         var (page, row) = await Row(label);
@@ -117,9 +120,13 @@ internal sealed class UiAutomation(Desktop desktop, string output, CancellationT
     {
         var (page, row) = await Row(label);
         if (Value(page, row).Contains(value, StringComparison.OrdinalIgnoreCase)) return;
-        desktop.Click(width * .72, row.Words[0].CenterY, width, height);
+        var control = Control(page, row);
+        desktop.Click(control.CenterX, control.CenterY, width, height);
         await Task.Delay(400, ct);
         page = await Read("select");
+        // Boolean controls and arrow selectors can change in place instead of opening a dropdown.
+        var changedRow = MenuParser.FindRow(page, label, width);
+        if (changedRow is not null && Value(page, changedRow).Trim().Equals(value, StringComparison.OrdinalIgnoreCase)) return;
         if (!Click(page, "^" + Regex.Escape(value) + "$", true))
             throw new InvalidDataException("Cannot select " + value + "; no unsupported INI enum is guessed.");
         await Task.Delay(400, ct);
@@ -132,13 +139,14 @@ internal sealed class UiAutomation(Desktop desktop, string output, CancellationT
             throw new InvalidDataException("Render scale slider cannot be distinguished from the upscaler selector.");
         var current = Value(page, row);
         if (Regex.IsMatch(current, $@"\b{value}\b")) return;
-        desktop.Click(width * .72, row.Words[0].CenterY, width, height);
+        var control = Control(page, row);
+        desktop.Click(control.CenterX, control.CenterY, width, height);
         // Move to an endpoint, then approach the requested value. Works without knowing the slider's INI encoding.
         for (int i = 0; i < 120; i++) { desktop.Key(value == 100 ? (ushort)0x27 : (ushort)0x25); await Task.Delay(15, ct); }
         for (int i = 0; i < 101; i++)
         {
             page = await Read("render-scale");
-            var newRow = page.Lines.FirstOrDefault(l => l.Text.TrimStart().StartsWith(label, StringComparison.OrdinalIgnoreCase) && !l.Text.Contains("Sampling", StringComparison.OrdinalIgnoreCase))
+            var newRow = MenuParser.FindRow(page, label, width)
                 ?? throw new InvalidDataException("Render scale slider disappeared.");
             if (Regex.IsMatch(Value(page, newRow), $@"\b{value}\b")) return;
             if (value == 100) break;
@@ -146,6 +154,7 @@ internal sealed class UiAutomation(Desktop desktop, string output, CancellationT
         }
         throw new InvalidDataException("Cannot verify render scale " + value);
     }
+    private OcrWord Control(OcrPage page, OcrLine label) => MenuParser.Control(page, label, width);
     public async Task<(Metrics Metrics, string Screenshot)> Run(TimeSpan timeout)
     {
         var menu = await Read("before-start");

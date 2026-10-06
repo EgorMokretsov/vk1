@@ -4,6 +4,8 @@ using System.Runtime.InteropServices;
 
 namespace WukongBench;
 
+internal sealed class WindowFocusException(string message) : InvalidOperationException(message);
+
 internal sealed class Desktop(Process process)
 {
     public bool Ready
@@ -12,7 +14,7 @@ internal sealed class Desktop(Process process)
         {
             if (process.HasExited) throw new InvalidOperationException("Benchmark process exited unexpectedly.");
             process.Refresh();
-            return process.MainWindowHandle != IntPtr.Zero;
+            return process.MainWindowHandle != IntPtr.Zero && IsWindowVisible(process.MainWindowHandle);
         }
     }
     public IntPtr Window
@@ -37,8 +39,13 @@ internal sealed class Desktop(Process process)
     {
         var w = Window;
         if (IsIconic(w)) ShowWindow(w, 9);
-        SetForegroundWindow(w);
-        if (GetForegroundWindow() != w) throw new InvalidOperationException("Cannot focus Benchmark Tool. Leave the desktop unlocked and do not switch windows during the run.");
+        // Steam creates the window before its foreground transition has completed.
+        for (int i = 0; i < 20 && GetForegroundWindow() != w; i++)
+        {
+            SetForegroundWindow(w);
+            if (GetForegroundWindow() != w) Thread.Sleep(100);
+        }
+        if (GetForegroundWindow() != w) throw new WindowFocusException("Cannot focus Benchmark Tool. Leave the desktop unlocked and do not switch windows during the run.");
     }
     public (int Width, int Height) Capture(string path)
     {
@@ -90,6 +97,7 @@ internal sealed class Desktop(Process process)
     [DllImport("user32.dll")] private static extern bool SetForegroundWindow(IntPtr window);
     [DllImport("user32.dll")] private static extern IntPtr GetForegroundWindow();
     [DllImport("user32.dll")] private static extern bool IsIconic(IntPtr window);
+    [DllImport("user32.dll")] private static extern bool IsWindowVisible(IntPtr window);
     [DllImport("user32.dll")] private static extern bool ShowWindow(IntPtr window, int command);
     [DllImport("user32.dll")] private static extern bool SetCursorPos(int x, int y);
     [DllImport("user32.dll", SetLastError = true)] private static extern uint SendInput(uint count, Input[] inputs, int size);
