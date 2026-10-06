@@ -12,7 +12,7 @@ internal sealed class Desktop(Process process)
     {
         get
         {
-            if (process.HasExited) throw new InvalidOperationException("Benchmark process exited unexpectedly.");
+            if (process.HasExited) throw new InvalidOperationException($"Benchmark process {process.Id} exited unexpectedly (exit code {process.ExitCode}).");
             process.Refresh();
             return process.MainWindowHandle != IntPtr.Zero && IsWindowVisible(process.MainWindowHandle);
         }
@@ -21,7 +21,7 @@ internal sealed class Desktop(Process process)
     {
         get
         {
-            if (process.HasExited) throw new InvalidOperationException("Benchmark process exited unexpectedly.");
+            if (process.HasExited) throw new InvalidOperationException($"Benchmark process {process.Id} exited unexpectedly (exit code {process.ExitCode}).");
             process.Refresh();
             if (process.MainWindowHandle == IntPtr.Zero) throw new InvalidOperationException("Benchmark window is unavailable.");
             return process.MainWindowHandle;
@@ -105,3 +105,4 @@ internal sealed class Desktop(Process process)
     [DllImport("user32.dll")] private static extern bool SetCursorPos(int x, int y);
     [DllImport("user32.dll", SetLastError = true)] private static extern uint SendInput(uint count, Input[] inputs, int size);
 }
+

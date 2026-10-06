@@ -24,6 +24,17 @@ Check(patched.Get("ScalabilityGroups", "sg.ViewDistanceQuality") == "4", "CPU vi
 cpu.Verify(cpu.Apply(original)); gpu.Verify(gpu.Apply(original)); Check(true, "verify CPU/GPU profiles");
 patched.Set("ScalabilityGroups", "sg.ShadowQuality", "4"); Reject(() => cpu.Verify(patched.ToString()), "reject silently overridden settings");
 Reject(() => cpu.Apply("[Unrelated]\nFoo=Bar"), "reject unknown config schema");
+var launchRequest = new DateTime(2026, 10, 6, 16, 49, 26, DateTimeKind.Utc);
+var excludedProcesses = new HashSet<int> { 20816 };
+var processTracker = new ProcessLaunchTracker(launchRequest, excludedProcesses);
+Check(!processTracker.MayAttach(20816, launchRequest.AddMinutes(-8), false), "GPU launch cannot attach exiting CPU PID still enumerated by Windows");
+Check(!processTracker.MayAttach(20816, launchRequest.AddMinutes(-8), true), "terminated previous pass cannot become new process ownership");
+Check(processTracker.MayAttach(10836, launchRequest.AddSeconds(8), false), "delayed fresh GPU PID is accepted after asynchronous Steam dispatch");
+Check(!processTracker.MayAttach(10836, launchRequest.AddSeconds(8), true), "new process which already exited cannot be attached");
+Check(!processTracker.MayAttach(19408, launchRequest.AddMinutes(-8), false), "unseen process predating launch request is excluded by creation time");
+excludedProcesses.Clear();
+Check(!processTracker.MayAttach(20816, launchRequest.AddSeconds(1), false), "launch snapshot remains stable when caller collection changes");
+Check(!processTracker.MayAttach(0, launchRequest.AddSeconds(1), false), "invalid PID cannot become benchmark process ownership");
 OcrWord W(string text, double x, double y, double w = 100, double h = 20) => new(text, x, y, w, h);
 OcrPage Page(bool separate, string avg = "60.5", string min = "40", string max = "90")
 {

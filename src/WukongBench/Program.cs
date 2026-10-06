@@ -82,6 +82,7 @@ internal static class Program
         var backup = SettingsBackup.Create(Path.GetDirectoryName(configFile)!, Path.Combine(output, "backup"));
         var report = new BenchmarkReport(DateTimeOffset.Now, steam.BuildId, hardware, [], "running", null);
         Process? owned = null;
+        var retiredProcessIds = new HashSet<int>();
         Console.WriteLine("Отчёт и подтверждающие файлы: " + output);
         try
         {
@@ -95,13 +96,14 @@ internal static class Program
                 File.SetAttributes(configFile, FileAttributes.Normal);
                 File.WriteAllText(configFile, profile.Apply(original), new UTF8Encoding(false));
                 File.Copy(configFile, Path.Combine(passDirectory, "requested.ini"), true);
-                owned = await Launch(steam, ct);
+                owned = await Launch(steam, passDirectory, retiredProcessIds, ct);
                 var desktop = new Desktop(owned);
                 var ui = new UiAutomation(desktop, passDirectory, ct);
                 await ui.MainMenu();
                 await ui.ConfigureAndInspect(profile, configFile);
                 var start = DateTimeOffset.Now;
                 var (metrics, screenshot) = await ui.Run(TimeSpan.FromSeconds(options.TimeoutSeconds));
+                retiredProcessIds.Add(owned.Id);
                 await Stop(owned); owned.Dispose(); owned = null;
                 string effective = File.ReadAllText(configFile);
                 File.WriteAllText(Path.Combine(passDirectory, "effective.ini"), effective);
@@ -144,13 +146,28 @@ internal static class Program
         foreach (var p in Process.GetProcessesByName("b1-Win64-Shipping"))
         {
             bool matches;
-            try { matches = string.Equals(p.MainModule?.FileName, steam.GameExe, StringComparison.OrdinalIgnoreCase); }
+            try
+            {
+                if (p.HasExited) { p.Dispose(); continue; }
+                matches = string.Equals(p.MainModule?.FileName, steam.GameExe, StringComparison.OrdinalIgnoreCase);
+            }
+            catch (InvalidOperationException) when (p.HasExited) { p.Dispose(); continue; }
             catch { p.Dispose(); throw new InvalidOperationException("Cannot inspect an existing Wukong process; close it before starting."); }
             if (matches) yield return p; else p.Dispose();
         }
     }
-    private static async Task<Process> Launch(SteamInstallation steam, CancellationToken ct)
+    private static async Task<Process> Launch(SteamInstallation steam, string output, HashSet<int> retiredIds, CancellationToken ct)
     {
+        var excludedIds = new HashSet<int>(retiredIds);
+        foreach (var previous in Process.GetProcessesByName("b1-Win64-Shipping"))
+        {
+            using (previous) excludedIds.Add(previous.Id);
+        }
+        DateTime requestUtc = DateTime.UtcNow;
+        var tracker = new ProcessLaunchTracker(requestUtc, excludedIds);
+        string diagnostic = Path.Combine(output, "launch.json");
+        File.WriteAllText(diagnostic, JsonSerializer.Serialize(new { RequestUtc = requestUtc, ExcludedProcessIds = excludedIds, Status = "waiting" }, Json));
+        Console.WriteLine("Ожидаю новый процесс Benchmark Tool от Steam.");
         var start = new ProcessStartInfo(steam.SteamExe) { UseShellExecute = false, WorkingDirectory = Path.GetDirectoryName(steam.SteamExe)! };
         foreach (string arg in new[] { "-applaunch", "3132990", "-culture=en", "-dx12" }) start.ArgumentList.Add(arg);
         using var launcher = Process.Start(start) ?? throw new IOException("Steam did not start.");
@@ -158,11 +175,30 @@ internal static class Program
         while (timer.Elapsed < TimeSpan.FromMinutes(3))
         {
             ct.ThrowIfCancellationRequested();
-            var process = FindGameProcesses(steam).FirstOrDefault();
-            if (process is not null)
+            foreach (var process in FindGameProcesses(steam))
             {
-                // Return ownership immediately, including a process that has not created its window yet.
-                return process;
+                bool attach;
+                DateTime startedUtc;
+                try
+                {
+                    startedUtc = process.StartTime.ToUniversalTime();
+                    attach = tracker.MayAttach(process.Id, startedUtc, process.HasExited);
+                }
+                catch (InvalidOperationException) { process.Dispose(); continue; }
+                if (attach)
+                {
+                    // Own the new process immediately, even before it has a window,
+                    // so later startup errors still stop it before INI restoration.
+                    try
+                    {
+                        File.WriteAllText(diagnostic, JsonSerializer.Serialize(new { RequestUtc = requestUtc, ExcludedProcessIds = excludedIds,
+                            Status = "attached", ProcessId = process.Id, StartedUtc = startedUtc }, Json));
+                        Console.WriteLine($"Новый процесс Benchmark Tool: PID {process.Id}.");
+                        return process;
+                    }
+                    catch { await Stop(process); process.Dispose(); throw; }
+                }
+                process.Dispose();
             }
             await Task.Delay(1000, ct);
         }
