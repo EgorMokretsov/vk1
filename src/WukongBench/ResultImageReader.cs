@@ -24,7 +24,7 @@ internal static class ResultImageReader
             Math.Min(height, (int)Math.Ceiling(captions.Max(w => w.Y + w.Height * 7))));
     }
 
-    internal static NumberCrop[] NumberAreas(OcrPage original, OcrPage column, Rectangle bounds)
+    internal static NumberCrop[] NumberAreas(OcrPage original, OcrPage column, Rectangle bounds, Bitmap? source = null)
     {
         return Labels.Select(pattern =>
         {
@@ -38,7 +38,11 @@ internal static class ResultImageReader
                 && w.Y < label.Y + label.Height * 7 && w.X >= label.X - label.Height
                 && w.X < label.X + label.Width && !Regex.IsMatch(w.Text, @"^FPS$", RegexOptions.IgnoreCase))
                 .OrderBy(w => w.Y).ThenBy(w => w.X).ToArray();
-            if (words.Length == 0) throw new InvalidDataException("Missing numeric image below " + label.Text);
+            if (words.Length == 0)
+            {
+                if (source is null) throw new InvalidDataException("Missing numeric image below " + label.Text);
+                return new NumberCrop(label, MissingNumberArea(source, label, bounds));
+            }
             // An OCR token such as I locates pixels only; it is never converted to 1.
             var glyph = words[0];
             var area = Rectangle.FromLTRB((int)Math.Floor(glyph.X - 3), (int)Math.Floor(glyph.Y - 3),
@@ -48,9 +52,60 @@ internal static class ResultImageReader
         }).ToArray();
     }
 
+    internal static Rectangle MissingNumberArea(Bitmap source, OcrWord label, Rectangle bounds)
+    {
+        // OCR can omit the entire large Average number. Locate its bright glyphs
+        // below the recognized caption, then ask OCR to read their original pixels.
+        // Pixel geometry selects an area only; it does not infer any digit or FPS.
+        var search = Rectangle.Intersect(bounds, Rectangle.FromLTRB((int)Math.Floor(label.X),
+            (int)Math.Ceiling(label.Y + label.Height * 1.6),
+            (int)Math.Ceiling(label.X + label.Width + label.Height * 10),
+            (int)Math.Floor(label.Y + label.Height * 7)));
+        if (search.Width <= 0 || search.Height <= 0 || !new Rectangle(0, 0, source.Width, source.Height).Contains(search))
+            throw new InvalidDataException("Invalid missing-number search area.");
+        var bright = new bool[search.Width, search.Height];
+        for (int y = 0; y < search.Height; y++)
+            for (int x = 0; x < search.Width; x++)
+            {
+                var color = source.GetPixel(search.X + x, search.Y + y);
+                bright[x, y] = (color.R + color.G + color.B) / 3 >= 140;
+            }
+        var components = new List<Rectangle>();
+        for (int y = 0; y < search.Height; y++)
+            for (int x = 0; x < search.Width; x++)
+            {
+                if (!bright[x, y]) continue;
+                var queue = new Queue<Point>();
+                queue.Enqueue(new Point(x, y)); bright[x, y] = false;
+                int left = x, right = x, top = y, bottom = y;
+                while (queue.TryDequeue(out var point))
+                {
+                    left = Math.Min(left, point.X); right = Math.Max(right, point.X);
+                    top = Math.Min(top, point.Y); bottom = Math.Max(bottom, point.Y);
+                    for (int dy = -1; dy <= 1; dy++)
+                        for (int dx = -1; dx <= 1; dx++)
+                        {
+                            int nx = point.X + dx, ny = point.Y + dy;
+                            if (nx >= 0 && ny >= 0 && nx < search.Width && ny < search.Height && bright[nx, ny])
+                            { bright[nx, ny] = false; queue.Enqueue(new Point(nx, ny)); }
+                        }
+                }
+                components.Add(Rectangle.FromLTRB(search.X + left, search.Y + top, search.X + right + 1, search.Y + bottom + 1));
+            }
+        // The large numeral is taller than the small FPS suffix. Keep one contiguous
+        // group; extra bright regions must fail instead of joining unrelated pixels.
+        var glyphs = components.Where(c => c.Height >= label.Height * 1.5).OrderBy(c => c.X).ToArray();
+        if (glyphs.Length == 0 || glyphs.Zip(glyphs.Skip(1)).Any(p => p.Second.Left - p.First.Right > label.Height * 1.5))
+            throw new InvalidDataException("Cannot isolate missing FPS glyphs.");
+        var area = Rectangle.FromLTRB(glyphs.Min(c => c.Left) - 3, glyphs.Min(c => c.Top) - 3,
+            glyphs.Max(c => c.Right) + 3, glyphs.Max(c => c.Bottom) + 3);
+        if (!bounds.Contains(area)) throw new InvalidDataException("Missing FPS glyphs leave result column.");
+        return area;
+    }
+
     internal static OcrPage MapNumbers(OcrPage recognized, NumberCrop[] crops, Rectangle[] tiles, double scale)
     {
-        if (recognized.Words.Count() != crops.Length) throw new InvalidDataException("Ambiguous numeric OCR strip.");
+        if (recognized.Words.Count() != crops.Length) throw new InvalidDataException("Ambiguous numeric OCR strip: " + recognized.Text);
         var lines = new List<OcrLine> { new("Benchmark Results", [new("Results", 0, 0, 1, 1)]) };
         for (int i = 0; i < crops.Length; i++)
         {
@@ -84,34 +139,49 @@ internal static class ResultImageReader
             File.WriteAllText(stem + "-results-column.json", JsonSerializer.Serialize(column, Program.Json));
             try { _ = ResultParser.Parse(column); return column; }
             catch (InvalidDataException) { }
-            var crops = NumberAreas(page, column, area);
-            const int padding = 30;
-            const double digitScale = 6;
-            int stripWidth = padding + crops.Sum(c => c.Area.Width * (int)digitScale + padding);
-            int stripHeight = crops.Max(c => c.Area.Height) * (int)digitScale + padding * 2;
-            if (Math.Max(stripWidth, stripHeight) > 2560) throw new InvalidDataException("Numeric strip exceeds OCR dimensions.");
-            using var strip = new Bitmap(stripWidth, stripHeight, PixelFormat.Format24bppRgb);
-            var tiles = new Rectangle[crops.Length];
-            using (var graphics = Graphics.FromImage(strip))
+            var crops = NumberAreas(page, column, area, bitmap);
+            InvalidDataException? lastError = null;
+            foreach (int padding in new[] { 30, 90 })
             {
-                graphics.Clear(Color.Black);
-                graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                int x = padding;
-                for (int i = 0; i < crops.Length; i++)
-                {
-                    tiles[i] = new Rectangle(x, padding, crops[i].Area.Width * (int)digitScale, crops[i].Area.Height * (int)digitScale);
-                    graphics.DrawImage(bitmap, tiles[i], crops[i].Area, GraphicsUnit.Pixel);
-                    x += tiles[i].Width + padding;
-                }
+                try { return await ReadStrip(bitmap, stem, crops, padding, recognize); }
+                catch (InvalidDataException error) { lastError = error; }
             }
-            string digitsImage = stem + "-results-digits-ocr.png";
-            strip.Save(digitsImage, ImageFormat.Png);
-            var digits = await recognize(digitsImage, 1, 0, 0);
-            File.WriteAllText(stem + "-results-digits.json", JsonSerializer.Serialize(digits, Program.Json));
-            return MapNumbers(digits, crops, tiles, digitScale);
+            throw lastError!;
         }
-        catch (InvalidDataException) { return page; } // Keep evidence; the caller can retry another capture.
-        catch (InvalidOperationException) { return page; } // Missing layout anchors are not guessed.
+        catch (Exception error) when (error is InvalidDataException or InvalidOperationException)
+        {
+            File.WriteAllText(stem + "-results-error.txt", error.Message);
+            return page; // Preserve evidence and retry another capture without guessing.
+        }
+    }
+
+    private static async Task<OcrPage> ReadStrip(Bitmap bitmap, string stem, NumberCrop[] crops, int padding,
+        Func<string, double, int, int, Task<OcrPage>> recognize)
+    {
+        const double digitScale = 6;
+        int stripWidth = padding + crops.Sum(c => c.Area.Width * (int)digitScale + padding);
+        int stripHeight = crops.Max(c => c.Area.Height) * (int)digitScale + padding * 2;
+        if (Math.Max(stripWidth, stripHeight) > 2560) throw new InvalidDataException("Numeric strip exceeds OCR dimensions.");
+        using var strip = new Bitmap(stripWidth, stripHeight, PixelFormat.Format24bppRgb);
+        var tiles = new Rectangle[crops.Length];
+        using (var graphics = Graphics.FromImage(strip))
+        {
+            graphics.Clear(Color.Black);
+            graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+            int x = padding;
+            for (int i = 0; i < crops.Length; i++)
+            {
+                tiles[i] = new Rectangle(x, padding, crops[i].Area.Width * (int)digitScale, crops[i].Area.Height * (int)digitScale);
+                graphics.DrawImage(bitmap, tiles[i], crops[i].Area, GraphicsUnit.Pixel);
+                x += tiles[i].Width + padding;
+            }
+        }
+        string digitStem = stem + (padding == 30 ? "-results-digits" : "-results-digits-spaced");
+        string digitsImage = digitStem + "-ocr.png";
+        strip.Save(digitsImage, ImageFormat.Png);
+        var digits = await recognize(digitsImage, 1, 0, 0);
+        File.WriteAllText(digitStem + ".json", JsonSerializer.Serialize(digits, Program.Json));
+        return MapNumbers(digits, crops, tiles, digitScale);
     }
 }
 

@@ -68,6 +68,23 @@ var crossedTile = numeralReading with { Lines = numeralReading.Lines.Select(l =>
 Reject(() => ResultImageReader.MapNumbers(crossedTile, actualCrops, actualTiles, 6), "strip value outside its source tile is rejected");
 var duplicateAverage = columnResult with { Lines = columnResult.Lines.Append(columnResult.Lines.Single(l => l.Text == "Average")).ToArray() };
 Reject(() => ResultImageReader.NumberAreas(fullResult, duplicateAverage, resultBounds), "ambiguous result captions cannot select numeric regions");
+var missingAverage = Fixture("results-missing-average.json");
+Reject(() => ResultImageReader.NumberAreas(fullResult, missingAverage, resultBounds), "OCR without Average digits requires actual image evidence");
+using (var pixelStream = new MemoryStream(Convert.FromBase64String(File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "Fixtures", "results-missing-average.png.base64")))))
+using (var averageImage = new System.Drawing.Bitmap(pixelStream))
+{
+    var caption = missingAverage.Words.Single(w => w.Text == "Average") with { X = 12.5, Y = 8.5 };
+    var imageBounds = new System.Drawing.Rectangle(0, 0, averageImage.Width, averageImage.Height);
+    var glyphArea = ResultImageReader.MissingNumberArea(averageImage, caption, imageBounds);
+    Check(glyphArea.Contains(30, 40) && glyphArea.Contains(52, 40) && glyphArea.Right < 65,
+        "actual omitted Average 20 pixels are isolated without the small FPS suffix");
+    using var blankImage = new System.Drawing.Bitmap(averageImage.Width, averageImage.Height);
+    Reject(() => ResultImageReader.MissingNumberArea(blankImage, caption, imageBounds), "empty pixel region cannot infer a missing FPS number");
+    using var ambiguousImage = new System.Drawing.Bitmap(averageImage);
+    using (var drawing = System.Drawing.Graphics.FromImage(ambiguousImage))
+        drawing.FillRectangle(System.Drawing.Brushes.White, 110, 25, 10, 25);
+    Reject(() => ResultImageReader.MissingNumberArea(ambiguousImage, caption, imageBounds), "unrelated bright region cannot be joined to omitted FPS glyphs");
+}
 var runningMerged = Fixture("running-current-merged.json");
 var runningNoSuffix = Fixture("running-current-no-fps-suffix.json");
 Check(BenchmarkStateParser.IsRunning(runningMerged, 1280, 720), "actual CurratFPS merged header identifies running scene");
@@ -271,10 +288,14 @@ try
         Check(evidence.Disabled, "real saved screenshot confirms dimmed RT row");
         Console.WriteLine(JsonSerializer.Serialize(evidence));
     }
-    if (args.Length == 2 && args[0] == "--result-evidence")
+    if (args.Length is 2 or 3 && args[0] == "--result-evidence")
     {
         var actualResult = await MenuImageReader.Read(Path.GetFullPath(args[1]), Path.Combine(testRoot, "captured-result"), CancellationToken.None);
-        Check(ResultParser.Parse(actualResult) == new Metrics(19, 1, 25), "Windows OCR and full reader recover actual saved CPU result 19/1/25");
+        string resultError = Path.Combine(testRoot, "captured-result-results-error.txt");
+        if (File.Exists(resultError)) throw new InvalidDataException(File.ReadAllText(resultError));
+        var values = (args.Length == 3 ? args[2] : "19,1,25").Split(',').Select(v => double.Parse(v, System.Globalization.CultureInfo.InvariantCulture)).ToArray();
+        var expected = new Metrics(values[0], values[1], values[2]);
+        Check(ResultParser.Parse(actualResult) == expected, "Windows OCR and full reader recover actual saved CPU result " + string.Join('/', values));
     }
     string config = Path.Combine(testRoot, "config"); Directory.CreateDirectory(config);
     string iniPath = Path.Combine(config, "GameUserSettings.ini");

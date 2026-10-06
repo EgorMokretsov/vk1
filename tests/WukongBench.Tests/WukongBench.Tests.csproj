@@ -14,6 +14,8 @@
     <None Include="Fixtures/results-full.json" CopyToOutputDirectory="PreserveNewest" />
     <None Include="Fixtures/results-column.json" CopyToOutputDirectory="PreserveNewest" />
     <None Include="Fixtures/results-numbers.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="Fixtures/results-missing-average.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="Fixtures/results-missing-average.png.base64" CopyToOutputDirectory="PreserveNewest" />
     <ProjectReference Include="../../src/WukongBench.Core/WukongBench.Core.csproj" />
     <ProjectReference Include="../../src/WukongBench/WukongBench.csproj" />
   </ItemGroup>

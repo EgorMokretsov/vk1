@@ -213,6 +213,7 @@ internal sealed class UiAutomation(Desktop desktop, string output, CancellationT
         if (!running) throw new TimeoutException("Cannot verify running benchmark HUD (Current FPS, numeric counter, bottom-right Exit) before startup timeout.");
         // Keep OCR and PowerShell out of the measured portion (~142s in the reference workflow).
         await Task.Delay(TimeSpan.FromSeconds(145), ct);
+        int resultFailures = 0;
         while (start.Elapsed < timeout)
         {
             var page = await Read("waiting-results");
@@ -220,7 +221,15 @@ internal sealed class UiAutomation(Desktop desktop, string output, CancellationT
             {
                 Metrics first;
                 try { first = ResultParser.Parse(page); }
-                catch (InvalidDataException) { await Task.Delay(3000, ct); continue; }
+                catch (InvalidDataException error)
+                {
+                    resultFailures++;
+                    Console.WriteLine($"Итоговая таблица найдена, но FPS не распознаны: попытка {resultFailures}/3.");
+                    if (resultFailures >= 3)
+                        throw new InvalidDataException("Cannot read final benchmark FPS after 3 result captures; see results-error.txt diagnostics. " + error.Message, error);
+                    await Task.Delay(3000, ct); continue;
+                }
+                Console.WriteLine($"Итоговые FPS считаны: avg {first.AverageFps}, min {first.MinimumFps}, max {first.MaximumFps}. Проверяю повторным снимком.");
                 await Task.Delay(3000, ct);
                 var second = await Read("results");
                 var metrics = ResultParser.Parse(second);
@@ -232,3 +241,4 @@ internal sealed class UiAutomation(Desktop desktop, string output, CancellationT
         throw new TimeoutException("No complete benchmark result screen before the timeout.");
     }
 }
+

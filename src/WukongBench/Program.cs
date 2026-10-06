@@ -35,7 +35,7 @@ internal static class Program
             }
             finally
             {
-                foreach (string suffix in new[] { "-ocr.png", "-values-ocr.png", "-values.json", "-rt-values-ocr.png", "-rt-values.json", "-results-ocr.png", "-results.json", "-results-column-ocr.png", "-results-column.json", "-results-digits-ocr.png", "-results-digits.json" })
+                foreach (string suffix in new[] { "-ocr.png", "-values-ocr.png", "-values.json", "-rt-values-ocr.png", "-rt-values.json", "-results-ocr.png", "-results.json", "-results-column-ocr.png", "-results-column.json", "-results-digits-ocr.png", "-results-digits.json", "-results-digits-spaced-ocr.png", "-results-digits-spaced.json", "-results-error.txt" })
                     if (File.Exists(temporary + suffix)) File.Delete(temporary + suffix);
             }
             return 0;
