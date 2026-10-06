@@ -1,0 +1,22 @@
+name: Build and verify
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - run: dotnet build src/WukongBench/WukongBench.csproj -c Release
+      - run: dotnet run --project tests/WukongBench.Tests -c Release
+      - run: dotnet publish src/WukongBench/WukongBench.csproj -c Release --no-restore -o artifacts/WukongBench
+      - uses: actions/upload-artifact@v4
+        with:
+          name: WukongBench-windows
+          path: artifacts/WukongBench/
