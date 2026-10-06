@@ -72,9 +72,8 @@ internal sealed class UiAutomation(Desktop desktop, string output, CancellationT
         foreach (var label in new[] { "anti-aliasing", "post-effects", "shadow quality", "texture quality", "visual effect", "hair quality", "global illumination", "reflection quality" })
             await InspectRow(label, profile.IsCpu ? @"\blow\b" : @"cinematic");
         await Task.Delay(500, ct);
-        await Read("graphics-top");
-        desktop.Scroll(-960); await Task.Delay(500, ct);
-        page = await Read("graphics-bottom");
+        page = await Read("graphics-before-final-check");
+        page = await ScrollGraphics(page, -960, "graphics-bottom");
         // At least two independent quality labels must be visible; INI validation after exit covers every field.
         if (!Regex.IsMatch(page.Text, "reflection|vegetation|texture", RegexOptions.IgnoreCase))
             throw new InvalidDataException("Cannot verify the graphics settings screen.");
@@ -107,15 +106,17 @@ internal sealed class UiAutomation(Desktop desktop, string output, CancellationT
     }
     private async Task<(OcrPage Page, OcrLine Line)> Row(string label)
     {
-        desktop.Scroll(2400); await Task.Delay(400, ct);
-        for (int i = 0; i < 8; i++)
-        {
-            var page = await Read("row");
-            var line = MenuParser.FindRow(page, label, width);
-            if (line is not null) return (page, line);
-            desktop.Scroll(-360); await Task.Delay(400, ct);
-        }
-        throw new InvalidDataException("Cannot locate setting: " + label);
+        var initial = await Read("row");
+        return await MenuNavigation.FindRow(label, width, height, initial,
+            async (delta, anchor) => await ScrollGraphics(delta, anchor, "row"));
+    }
+    private Task<OcrPage> ScrollGraphics(OcrPage page, int delta, string stage) =>
+        ScrollGraphics(delta, MenuNavigation.ScrollAnchor(page, width, height), stage);
+    private async Task<OcrPage> ScrollGraphics(int delta, OcrWord anchor, string stage)
+    {
+        desktop.Scroll(delta, anchor.CenterX, anchor.CenterY, width, height);
+        await Task.Delay(600, ct);
+        return await Read(stage);
     }
     private string Value(OcrPage page, OcrLine label) => MenuParser.Value(page, label, width);
     private async Task InspectRow(string label, string expected)

@@ -74,9 +74,12 @@ internal sealed class Desktop(Process process)
         Focus(); Send([new Input { Type = 1, Data = new InputUnion { Keyboard = new KeyboardInput { VirtualKey = code, Flags = extended } } },
                        new Input { Type = 1, Data = new InputUnion { Keyboard = new KeyboardInput { VirtualKey = code, Flags = extended | 2 } } }]);
     }
-    public void Scroll(int delta)
+    public void Scroll(int delta, double x, double y, int imageWidth, int imageHeight)
     {
-        Focus(); var r = Client(); SetCursorPos(r.X + r.Width * 2 / 3, r.Y + r.Height / 2);
+        Focus(); var r = Client();
+        int px = r.X + (int)(x * r.Width / imageWidth), py = r.Y + (int)(y * r.Height / imageHeight);
+        if (!r.Contains(px, py)) throw new ArgumentOutOfRangeException(nameof(x));
+        SetCursorPos(px, py);
         Send([new Input { Type = 0, Data = new InputUnion { Mouse = new MouseInput { Flags = 0x800, MouseData = unchecked((uint)delta) } } }]);
     }
     private static void Send(Input[] input)

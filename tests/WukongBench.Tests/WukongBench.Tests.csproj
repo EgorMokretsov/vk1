@@ -5,6 +5,8 @@
     <None Include="Fixtures/graphics-selected.json" CopyToOutputDirectory="PreserveNewest" />
     <None Include="Fixtures/graphics-slider.json" CopyToOutputDirectory="PreserveNewest" />
     <None Include="Fixtures/slider-value.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="Fixtures/graphics-scroll-before.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="Fixtures/graphics-scroll-stuck.json" CopyToOutputDirectory="PreserveNewest" />
     <ProjectReference Include="../../src/WukongBench.Core/WukongBench.Core.csproj" />
     <ProjectReference Include="../../src/WukongBench/WukongBench.csproj" />
   </ItemGroup>

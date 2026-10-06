@@ -151,6 +151,37 @@ var rtEnabled = new IniFile(cpu.Apply(original)); rtEnabled.UpdateMap(Profile.Se
 Reject(() => Profile.VerifyRayTracingDisabled(rtEnabled.ToString()), "reject RT enabled by UI config");
 rtEnabled = new IniFile(cpu.Apply(original)); rtEnabled.Set("RayTracing", "r.RayTracing.EnableInGame", "True");
 Reject(() => cpu.Verify(rtEnabled.ToString()), "reject RT enabled by engine config after pass");
+var scrollBefore = JsonSerializer.Deserialize<OcrPage>(File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "Fixtures", "graphics-scroll-before.json")), WukongBench.Program.Json)!;
+var scrollStuck = JsonSerializer.Deserialize<OcrPage>(File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "Fixtures", "graphics-scroll-stuck.json")), WukongBench.Program.Json)!;
+var anchor = MenuNavigation.ScrollAnchor(scrollBefore, 1280, 720);
+Check(anchor.CenterX > 208 && anchor.CenterX < 718 && anchor.CenterY > 125 && anchor.CenterY < 605,
+    "wheel pointer belongs to actual graphics list, not help column at x853");
+Check(!MenuNavigation.Moved(scrollBefore, scrollStuck, 1280), "actual repeated screenshots reveal graphics list did not scroll");
+var shifted = scrollBefore with { Lines = scrollBefore.Lines.Select(l => l with { Words = l.Words.Select(w => w with { Y = w.Y - 10 }).ToArray() }).ToArray() };
+Check(MenuNavigation.Moved(scrollBefore, shifted, 1280), "detect list movement from label positions");
+Reject(() => MenuNavigation.ScrollAnchor(new OcrPage("", [helperSlider]), 1280, 720), "help text cannot provide scroll anchor");
+int scrollCalls = 0;
+var distanceRow = new OcrLine("View Distance Quality", [W("View", 227, 400, 30, 13), W("Distance", 263, 400, 55, 13), W("Quality", 324, 400, 48, 13)]);
+var detailedMenu = scrollBefore with { Lines = scrollBefore.Lines.Append(distanceRow).Append(new OcrLine("Cinematic", [W("Cinematic", 563, 400, 70, 13)])).ToArray() };
+var located = await MenuNavigation.FindRow("view distance", 1280, 720, scrollBefore, (delta, scrollPoint) =>
+{
+    scrollCalls++;
+    if (scrollPoint.CenterX >= 718) throw new Exception("Scroll was sent outside settings list");
+    if (scrollCalls == 1 && delta != 2400 || scrollCalls == 2 && delta != -240) throw new Exception("Unexpected wheel direction");
+    return Task.FromResult(scrollCalls == 1 ? scrollBefore : detailedMenu);
+});
+Check(scrollCalls == 2 && located.Line == distanceRow && MenuParser.Value(located.Page, located.Line, 1280) == "Cinematic",
+    "navigation finds and verifies detailed quality after wheel over list");
+scrollCalls = 0;
+await MenuNavigation.FindRow("view distance", 1280, 720, detailedMenu, (_, _) => { scrollCalls++; return Task.FromResult(detailedMenu); });
+Check(scrollCalls == 0, "visible row needs no reset or scroll");
+scrollCalls = 0;
+try
+{
+    await MenuNavigation.FindRow("view distance", 1280, 720, scrollBefore, (_, _) => { scrollCalls++; return Task.FromResult(scrollStuck); });
+    throw new Exception("Expected stopped navigation");
+}
+catch (InvalidDataException) { Check(scrollCalls == 2, "unchanged list stops instead of repeating ineffective wheel input"); }
 string testRoot = Path.GetFullPath(Path.Combine(Path.GetTempPath(), "WukongBench-tests-" + Guid.NewGuid().ToString("N")));
 if (!testRoot.StartsWith(Path.GetFullPath(Path.GetTempPath()).TrimEnd(Path.DirectorySeparatorChar) + Path.DirectorySeparatorChar, StringComparison.OrdinalIgnoreCase)) throw new Exception("Invalid temporary path");
 Directory.CreateDirectory(testRoot);
