@@ -72,6 +72,58 @@ var absent = graphics with { Lines = graphics.Lines.Where(l => l.Text != "FSR").
 Reject(() => MenuParser.Control(absent, graphicsRow, 1280), "never treat help text as missing setting control");
 var enlarged = graphics with { Lines = graphics.Lines.Select(l => l with { Words = l.Words.Select(w => w with { X = w.X * 1.5, Y = w.Y * 1.5, Width = w.Width * 1.5, Height = w.Height * 1.5 }).ToArray() }).ToArray() };
 Check(MenuParser.Value(enlarged, MenuParser.FindRow(enlarged, "super resolution sampling", 1920)!, 1920) == "FSR", "same menu geometry at 1920 width");
+var selectedGraphics = JsonSerializer.Deserialize<OcrPage>(File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "Fixtures", "graphics-selected.json")), WukongBench.Program.Json)!;
+OcrPage WithSampling(string value) => selectedGraphics with
+{
+    Lines = selectedGraphics.Lines.Select(l => l.Text == "FSR"
+        ? l with { Text = value, Words = l.Words.Select(w => w with { Text = value }).ToArray() } : l).ToArray()
+};
+var withArrows = selectedGraphics with { Lines = selectedGraphics.Lines.Append(new OcrLine("< >", [W("<", 505, 312, 8, 12), W(">", 661, 312, 8, 12)])).ToArray() };
+Check(MenuParser.Value(withArrows, MenuParser.FindRow(withArrows, "super resolution sampling", 1280)!, 1280) == "FSR", "ignore selector arrows in OCR values");
+int focusCount = 0, selectionSteps = 0;
+await MenuSelector.Select("super resolution sampling", "TSR", 1280, graphics, control =>
+{
+    focusCount++;
+    if (control.CenterX != 588) throw new Exception("Wrong focus coordinates");
+    return Task.FromResult(selectedGraphics);
+}, direction =>
+{
+    if (direction != SelectionDirection.Right) throw new Exception("Unexpected direction");
+    return Task.FromResult(WithSampling(++selectionSteps == 1 ? "XeSS" : "TSR"));
+});
+Check(focusCount == 1 && selectionSteps == 2, "click focuses actual row, Right cycles to confirmed TSR");
+selectionSteps = 0;
+await MenuSelector.Select("super resolution sampling", "TSR", 1280, selectedGraphics, _ => Task.FromResult(selectedGraphics), direction =>
+{
+    selectionSteps++;
+    return Task.FromResult(WithSampling(direction == SelectionDirection.Right ? "FSR" : "TSR"));
+});
+Check(selectionSteps == 2, "try Left when Right reaches endpoint");
+bool selectedAlready = false;
+await MenuSelector.Select("super resolution sampling", "TSR", 1280, WithSampling("TSR"), _ => { selectedAlready = true; return Task.FromResult(selectedGraphics); }, _ => throw new Exception("Unexpected key"));
+Check(!selectedAlready, "already selected TSR requires no input");
+selectionSteps = 0;
+try
+{
+    await MenuSelector.Select("super resolution sampling", "TSR", 1280, selectedGraphics, _ => Task.FromResult(selectedGraphics), _ =>
+    {
+        selectionSteps++;
+        return Task.FromResult(selectedGraphics);
+    });
+    throw new Exception("Expected selection failure");
+}
+catch (InvalidDataException) { Check(selectionSteps == 2, "unchanged selector stops after both directions"); }
+selectionSteps = 0;
+try
+{
+    await MenuSelector.Select("super resolution sampling", "TSR", 1280, selectedGraphics, _ => Task.FromResult(selectedGraphics), _ =>
+    {
+        selectionSteps++;
+        return Task.FromResult(selectedGraphics with { Lines = selectedGraphics.Lines.Where(l => l.Text != "FSR").ToArray() });
+    });
+    throw new Exception("Expected missing value failure");
+}
+catch (InvalidDataException) { Check(selectionSteps == 1, "missing value stops further input"); }
 string testRoot = Path.GetFullPath(Path.Combine(Path.GetTempPath(), "WukongBench-tests-" + Guid.NewGuid().ToString("N")));
 if (!testRoot.StartsWith(Path.GetFullPath(Path.GetTempPath()).TrimEnd(Path.DirectorySeparatorChar) + Path.DirectorySeparatorChar, StringComparison.OrdinalIgnoreCase)) throw new Exception("Invalid temporary path");
 Directory.CreateDirectory(testRoot);

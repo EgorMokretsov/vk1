@@ -27,7 +27,7 @@ public static class MenuParser
             .Select(l => l.Words.Min(w => w.X)).Where(x => x >= width * .60)
             .DefaultIfEmpty(width).Min();
         double lastRight = 0;
-        foreach (var word in page.Words.Where(w => Math.Abs(w.CenterY - first.CenterY) < first.Height
+        foreach (var word in page.Words.Where(w => Regex.IsMatch(w.Text, @"[A-Za-z0-9]") && Math.Abs(w.CenterY - first.CenterY) < first.Height
                      && w.X >= labelRight + width * .015 && w.X + w.Width < helpLeft)
                  .OrderBy(w => w.X))
         {

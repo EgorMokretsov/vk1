@@ -119,18 +119,18 @@ internal sealed class UiAutomation(Desktop desktop, string output, CancellationT
     private async Task Select(string label, string value)
     {
         var (page, row) = await Row(label);
-        if (Value(page, row).Contains(value, StringComparison.OrdinalIgnoreCase)) return;
-        var control = Control(page, row);
-        desktop.Click(control.CenterX, control.CenterY, width, height);
-        await Task.Delay(400, ct);
-        page = await Read("select");
-        // Boolean controls and arrow selectors can change in place instead of opening a dropdown.
-        var changedRow = MenuParser.FindRow(page, label, width);
-        if (changedRow is not null && Value(page, changedRow).Trim().Equals(value, StringComparison.OrdinalIgnoreCase)) return;
-        if (!Click(page, "^" + Regex.Escape(value) + "$", true))
-            throw new InvalidDataException("Cannot select " + value + "; no unsupported INI enum is guessed.");
-        await Task.Delay(400, ct);
-        await InspectRow(label, "\\b" + Regex.Escape(value) + "\\b");
+        await MenuSelector.Select(label, value, width, page, async control =>
+        {
+            desktop.Click(control.CenterX, control.CenterY, width, height);
+            await Task.Delay(400, ct);
+            return await Read("select-focus");
+        }, async direction =>
+        {
+            ct.ThrowIfCancellationRequested();
+            desktop.Key(direction == SelectionDirection.Right ? (ushort)0x27 : (ushort)0x25);
+            await Task.Delay(400, ct);
+            return await Read("select-" + direction.ToString().ToLowerInvariant());
+        });
     }
     private async Task SetSlider(string label, int value)
     {
