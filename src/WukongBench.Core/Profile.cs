@@ -46,6 +46,7 @@ public sealed record Profile(string Name, int Width, int Height, int RenderPerce
     }
     public void Verify(string saved)
     {
+        if (!RayTracing) VerifyRayTracingDisabled(saved);
         var ini = new IniFile(saved);
         var map = ini.ReadMap(Section, "UISettingData");
         var differences = new List<string>();
@@ -59,5 +60,13 @@ public sealed record Profile(string Name, int Width, int Height, int RenderPerce
         foreach (var (k, v) in new[] { ("ResolutionSizeX", Width), ("ResolutionSizeY", Height) })
             if (ini.Get(Section, k) != v.ToString(CultureInfo.InvariantCulture)) differences.Add($"{k} differs");
         if (differences.Count > 0) throw new InvalidDataException("Benchmark changed requested settings: " + string.Join("; ", differences));
+    }
+    public static void VerifyRayTracingDisabled(string saved)
+    {
+        var ini = new IniFile(saved);
+        var map = ini.ReadMap(Section, "UISettingData");
+        if (!map.TryGetValue("Rtx", out string? rtx) || rtx != "0"
+            || !string.Equals(ini.Get("RayTracing", "r.RayTracing.EnableInGame"), "False", StringComparison.OrdinalIgnoreCase))
+            throw new InvalidDataException("Cannot verify disabled Full RT in the saved configuration.");
     }
 }

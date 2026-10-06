@@ -27,15 +27,17 @@ internal static class Program
         if (options.Help) { Console.WriteLine(Options.HelpText); return 0; }
         if (options.OcrImage is not null)
         {
-            string temporary = Path.Combine(Path.GetTempPath(), "WukongBench-ocr-" + Guid.NewGuid().ToString("N") + ".png");
+            string temporary = Path.Combine(Path.GetTempPath(), "WukongBench-ocr-" + Guid.NewGuid().ToString("N"));
             try
             {
-                double scale = OcrImage.Prepare(Path.GetFullPath(options.OcrImage), temporary);
-                var text = await Shell.PowerShell(Path.Combine(AppContext.BaseDirectory, "scripts", "Ocr.ps1"), ct, "-ImagePath", temporary);
-                var page = OcrImage.OriginalCoordinates(JsonSerializer.Deserialize<OcrPage>(text, Json)!, scale);
+                var page = await MenuImageReader.Read(Path.GetFullPath(options.OcrImage), temporary, ct);
                 Console.WriteLine(options.ParseImage ? JsonSerializer.Serialize(ResultParser.Parse(page), Json) : JsonSerializer.Serialize(page, Json));
             }
-            finally { if (File.Exists(temporary)) File.Delete(temporary); }
+            finally
+            {
+                foreach (string suffix in new[] { "-ocr.png", "-values-ocr.png", "-values.json", "-rt-values-ocr.png", "-rt-values.json", "-results-ocr.png", "-results.json" })
+                    if (File.Exists(temporary + suffix)) File.Delete(temporary + suffix);
+            }
             return 0;
         }
         using var gate = new Semaphore(1, 1, @"Local\WukongBench-3132990");
@@ -97,7 +99,7 @@ internal static class Program
                 var desktop = new Desktop(owned);
                 var ui = new UiAutomation(desktop, passDirectory, ct);
                 await ui.MainMenu();
-                await ui.ConfigureAndInspect(profile);
+                await ui.ConfigureAndInspect(profile, configFile);
                 var start = DateTimeOffset.Now;
                 var (metrics, screenshot) = await ui.Run(TimeSpan.FromSeconds(options.TimeoutSeconds));
                 await Stop(owned); owned.Dispose(); owned = null;

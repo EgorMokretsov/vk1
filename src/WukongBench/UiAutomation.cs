@@ -14,10 +14,7 @@ internal sealed class UiAutomation(Desktop desktop, string output, CancellationT
         ct.ThrowIfCancellationRequested();
         var stem = Path.Combine(output, $"{++sequence:D3}-{stage}");
         (width, height) = desktop.Capture(stem + ".png");
-        double scale = OcrImage.Prepare(stem + ".png", stem + "-ocr.png");
-        var json = await Shell.PowerShell(Path.Combine(AppContext.BaseDirectory, "scripts", "Ocr.ps1"), ct, "-ImagePath", stem + "-ocr.png");
-        var page = JsonSerializer.Deserialize<OcrPage>(json, Program.Json) ?? throw new InvalidDataException("Empty OCR response.");
-        page = OcrImage.OriginalCoordinates(page, scale);
+        var page = await MenuImageReader.Read(stem + ".png", stem, ct);
         File.WriteAllText(stem + ".json", JsonSerializer.Serialize(page, Program.Json));
         return page;
     }
@@ -50,7 +47,7 @@ internal sealed class UiAutomation(Desktop desktop, string output, CancellationT
         if (focusError is not null) throw focusError;
         throw new TimeoutException("Main menu did not appear within 3 minutes (Steam login, update, or shader compilation).");
     }
-    public async Task ConfigureAndInspect(Profile profile)
+    public async Task ConfigureAndInspect(Profile profile, string configFile)
     {
         var page = await Read("main-menu");
         if (!Click(page, @"^settings$", true)) throw new InvalidDataException("Settings menu was not found.");
@@ -69,7 +66,7 @@ internal sealed class UiAutomation(Desktop desktop, string output, CancellationT
         await Select("super resolution sampling", "TSR");
         await SetSlider("super resolution", profile.RenderPercent);
         await InspectRow("frame generation", @"\boff\b");
-        await InspectRow("full ray tracing", profile.RayTracing ? @"\bon\b" : @"\boff\b");
+        await InspectRayTracing(profile, configFile);
         if (profile.RayTracing) await Select("full ray tracing level", "Very High");
         foreach (var label in new[] { "view distance", "vegetation quality" }) await InspectRow(label, @"cinematic");
         foreach (var label in new[] { "anti-aliasing", "post-effects", "shadow quality", "texture quality", "visual effect", "hair quality", "global illumination", "reflection quality" })
@@ -81,6 +78,17 @@ internal sealed class UiAutomation(Desktop desktop, string output, CancellationT
         // At least two independent quality labels must be visible; INI validation after exit covers every field.
         if (!Regex.IsMatch(page.Text, "reflection|vegetation|texture", RegexOptions.IgnoreCase))
             throw new InvalidDataException("Cannot verify the graphics settings screen.");
+        if (MenuParser.HasPendingGraphicsChanges(page, height))
+        {
+            // The observed menu advertises T: Apply Graphics Changes in its footer.
+            desktop.Key(0x54); await Task.Delay(750, ct);
+            page = await Read("apply-graphics");
+            if (Regex.IsMatch(page.Text, "save.*changes|apply.*changes|restart", RegexOptions.IgnoreCase)
+                && Click(page, @"^(confirm|yes)$", true))
+            { await Task.Delay(750, ct); page = await Read("confirm-graphics"); }
+            if (MenuParser.HasPendingGraphicsChanges(page, height))
+                throw new InvalidDataException("Graphics changes remain pending after Apply; benchmark was not started.");
+        }
         desktop.Key(0x1B); await Task.Delay(500, ct);
         // Save/confirm applies the UI changes when the build asks for it.
         page = await Read("leave-graphics");
@@ -115,6 +123,31 @@ internal sealed class UiAutomation(Desktop desktop, string output, CancellationT
         var (page, row) = await Row(label);
         if (!Regex.IsMatch(Value(page, row), expected, RegexOptions.IgnoreCase))
             throw new InvalidDataException($"Visible {label} is not the requested value: {Value(page, row)}");
+    }
+    private async Task InspectRayTracing(Profile profile, string configFile)
+    {
+        var (page, row) = await Row("full ray tracing");
+        string actual = Value(page, row).Trim();
+        if (actual.Equals(profile.RayTracing ? "On" : "Off", StringComparison.OrdinalIgnoreCase)) return;
+        if (!profile.RayTracing && actual.Length == 0)
+        {
+            var reference = MenuParser.FindRow(page, "frame generation", width);
+            if (reference is not null)
+            {
+                var evidence = MenuAppearance.Inspect(Path.Combine(output, $"{sequence:D3}-row.png"), row, reference);
+                if (evidence.Disabled)
+                {
+                    // Unsupported hardware can gray out the entire RT row without displaying Off.
+                    // Require actual dimmed UI evidence and both known configuration switches.
+                    // Profile.Verify repeats the configuration check after the game closes.
+                    Profile.VerifyRayTracingDisabled(File.ReadAllText(configFile));
+                    File.WriteAllText(Path.Combine(output, "rt-disabled.json"), JsonSerializer.Serialize(evidence, Program.Json));
+                    Console.WriteLine("Full RT: пункт меню недоступен; выключение проверено по конфигурации.");
+                    return;
+                }
+            }
+        }
+        throw new InvalidDataException("Cannot verify Full RT: " + actual);
     }
     private async Task Select(string label, string value)
     {

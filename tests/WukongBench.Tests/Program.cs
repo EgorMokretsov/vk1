@@ -124,11 +124,66 @@ try
     throw new Exception("Expected missing value failure");
 }
 catch (InvalidDataException) { Check(selectionSteps == 1, "missing value stops further input"); }
+var sliderMenu = JsonSerializer.Deserialize<OcrPage>(File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "Fixtures", "graphics-slider.json")), WukongBench.Program.Json)!;
+var sliderRow = MenuParser.FindRow(sliderMenu, "super resolution", 1280)!;
+Check(sliderRow.Text == "Super Resolution", "actual Samphng heading cannot be selected as scale slider");
+Check(MenuParser.FindRow(sliderMenu with { Lines = sliderMenu.Lines.Where(l => l != sliderRow).ToArray() }, "super resolution", 1280) is null, "reject headings and help when slider label is missing");
+var numericReading = JsonSerializer.Deserialize<OcrPage>(File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "Fixtures", "slider-value.json")), WukongBench.Program.Json)!;
+var number = numericReading.Words.Single();
+var mergedSlider = sliderRow with { Text = "Super Resolution 100", Words = sliderRow.Words.Append(number).ToArray() };
+Check(MenuParser.FindRow(new OcrPage("", [mergedSlider]), "super resolution", 1280) == mergedSlider, "accept slider value merged with exact label");
+var helperSlider = sliderRow with { Words = sliderRow.Words.Select(w => w with { X = w.X + 600 }).ToArray() };
+Check(MenuParser.FindRow(new OcrPage("", [helperSlider]), "super resolution", 1280) is null, "exclude exact slider label in help column");
+var region = MenuParser.ValueRegion(sliderMenu, sliderRow, 1280, 720);
+Check(number.CenterX > region.X && number.CenterX < region.X + region.Width
+    && number.CenterY > region.Y && number.CenterY < region.Y + region.Height && region.X + region.Width < 799,
+    "actual numeric crop contains box and excludes help");
+var refinedMenu = sliderMenu with { Lines = sliderMenu.Lines.Concat(numericReading.Lines).ToArray() };
+Check(MenuParser.Value(refinedMenu, sliderRow, 1280) == "100"
+    && Math.Abs(MenuParser.Control(refinedMenu, sliderRow, 1280).CenterX - 635.67) < .01, "actual cropped OCR provides number and click coordinates");
+var croppedCoordinate = OcrImage.OriginalCoordinates(new OcrPage("100", [new OcrLine("100", [W("100", 60, 12, 18, 12)])]), 6, 352, 250).Words.Single();
+Check(croppedCoordinate.X == 362 && croppedCoordinate.Y == 252, "map numeric crop scale and offset back to window");
+Check(MenuParser.HasPendingGraphicsChanges(sliderMenu, 720) && !MenuParser.HasPendingGraphicsChanges(graphics, 720), "actual footer distinguishes pending graphics changes");
+var applyDescription = sliderMenu.Lines.Single(l => l.Text == "Apply Graphics Changes") with { Words = [W("Apply", 800, 140)] };
+Check(!MenuParser.HasPendingGraphicsChanges(new OcrPage("", [applyDescription]), 720), "help text cannot trigger Apply shortcut");
+Profile.VerifyRayTracingDisabled(cpu.Apply(original)); Check(true, "verify both Full RT disable switches");
+var rtEnabled = new IniFile(cpu.Apply(original)); rtEnabled.UpdateMap(Profile.Section, "UISettingData", new Dictionary<string, string> { ["Rtx"] = "1" });
+Reject(() => Profile.VerifyRayTracingDisabled(rtEnabled.ToString()), "reject RT enabled by UI config");
+rtEnabled = new IniFile(cpu.Apply(original)); rtEnabled.Set("RayTracing", "r.RayTracing.EnableInGame", "True");
+Reject(() => cpu.Verify(rtEnabled.ToString()), "reject RT enabled by engine config after pass");
 string testRoot = Path.GetFullPath(Path.Combine(Path.GetTempPath(), "WukongBench-tests-" + Guid.NewGuid().ToString("N")));
 if (!testRoot.StartsWith(Path.GetFullPath(Path.GetTempPath()).TrimEnd(Path.DirectorySeparatorChar) + Path.DirectorySeparatorChar, StringComparison.OrdinalIgnoreCase)) throw new Exception("Invalid temporary path");
 Directory.CreateDirectory(testRoot);
 try
 {
+    string appearanceFile = Path.Combine(testRoot, "appearance.png");
+    using (var appearance = new System.Drawing.Bitmap(80, 30))
+    {
+        using var drawing = System.Drawing.Graphics.FromImage(appearance);
+        drawing.Clear(System.Drawing.Color.Black);
+        using var disabledBrush = new System.Drawing.SolidBrush(System.Drawing.Color.FromArgb(25, 25, 25));
+        using var enabledBrush = new System.Drawing.SolidBrush(System.Drawing.Color.FromArgb(200, 200, 200));
+        drawing.FillRectangle(disabledBrush, 2, 2, 10, 10);
+        drawing.FillRectangle(enabledBrush, 32, 2, 10, 10);
+        appearance.Save(appearanceFile, System.Drawing.Imaging.ImageFormat.Png);
+    }
+    var disabledLabel = new OcrLine("Full Ray Tracing", [W("Full", 0, 0, 20, 20)]);
+    var enabledLabel = new OcrLine("Frame Generation", [W("Frame", 30, 0, 20, 20)]);
+    Check(MenuAppearance.Inspect(appearanceFile, disabledLabel, enabledLabel).Disabled, "dimmed label evidence relative to active setting");
+    Check(!MenuAppearance.Inspect(appearanceFile, enabledLabel, enabledLabel).Disabled, "active RT label cannot bypass visible verification");
+    Check(!MenuAppearance.Inspect(appearanceFile, disabledLabel, disabledLabel).Disabled, "dark reference cannot prove unavailable RT");
+    if (args.Length == 2 && args[0] == "--menu-evidence")
+    {
+        string capturedImage = Path.GetFullPath(args[1]);
+        var actualMenu = await MenuImageReader.Read(capturedImage, Path.Combine(testRoot, "captured-menu"), CancellationToken.None);
+        using var capturedBitmap = new System.Drawing.Bitmap(capturedImage);
+        var actualSlider = MenuParser.FindRow(actualMenu, "super resolution", capturedBitmap.Width)!;
+        Check(MenuParser.Value(actualMenu, actualSlider, capturedBitmap.Width) == "100", "real Windows OCR reads saved slider box as 100");
+        var evidence = MenuAppearance.Inspect(capturedImage, MenuParser.FindRow(actualMenu, "full ray tracing", capturedBitmap.Width)!,
+            MenuParser.FindRow(actualMenu, "frame generation", capturedBitmap.Width)!);
+        Check(evidence.Disabled, "real saved screenshot confirms dimmed RT row");
+        Console.WriteLine(JsonSerializer.Serialize(evidence));
+    }
     string config = Path.Combine(testRoot, "config"); Directory.CreateDirectory(config);
     string iniPath = Path.Combine(config, "GameUserSettings.ini");
     byte[] bytes = [0xff, 0xfe, 0x41, 0x00, 0x0d, 0x00, 0x0a, 0x00];

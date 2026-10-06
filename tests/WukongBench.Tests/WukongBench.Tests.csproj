@@ -3,6 +3,8 @@
   <ItemGroup>
     <None Include="Fixtures/graphics-menu.json" CopyToOutputDirectory="PreserveNewest" />
     <None Include="Fixtures/graphics-selected.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="Fixtures/graphics-slider.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="Fixtures/slider-value.json" CopyToOutputDirectory="PreserveNewest" />
     <ProjectReference Include="../../src/WukongBench.Core/WukongBench.Core.csproj" />
     <ProjectReference Include="../../src/WukongBench/WukongBench.csproj" />
   </ItemGroup>
