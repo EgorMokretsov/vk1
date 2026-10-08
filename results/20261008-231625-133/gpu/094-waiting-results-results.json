@@ -1,0 +1,566 @@
+{
+  "Text": "WU KONG Benchmark Results may signific antly from Oct 8. 2026 2 FPs I FPs 0,5 GB O FPs Detected Io V B chm r e sults ef",
+  "Lines": [
+    {
+      "Text": "WU KONG",
+      "Words": [
+        {
+          "Text": "WU",
+          "X": 48,
+          "Y": 91,
+          "Width": 47,
+          "Height": 20,
+          "CenterX": 71.5,
+          "CenterY": 101
+        },
+        {
+          "Text": "KONG",
+          "X": 104,
+          "Y": 88,
+          "Width": 90,
+          "Height": 23,
+          "CenterX": 149,
+          "CenterY": 99.5
+        }
+      ]
+    },
+    {
+      "Text": "Benchmark Results",
+      "Words": [
+        {
+          "Text": "Benchmark",
+          "X": 47,
+          "Y": 165,
+          "Width": 90,
+          "Height": 13,
+          "CenterX": 92,
+          "CenterY": 171.5
+        },
+        {
+          "Text": "Results",
+          "X": 141,
+          "Y": 165,
+          "Width": 55,
+          "Height": 13,
+          "CenterX": 168.5,
+          "CenterY": 171.5
+        }
+      ]
+    },
+    {
+      "Text": "may signific antly from",
+      "Words": [
+        {
+          "Text": "may",
+          "X": 976,
+          "Y": 575,
+          "Width": 21,
+          "Height": 7,
+          "CenterX": 986.5,
+          "CenterY": 578.5
+        },
+        {
+          "Text": "signific",
+          "X": 1000,
+          "Y": 572,
+          "Width": 33,
+          "Height": 10,
+          "CenterX": 1016.5,
+          "CenterY": 577
+        },
+        {
+          "Text": "antly",
+          "X": 1035,
+          "Y": 572,
+          "Width": 24,
+          "Height": 11,
+          "CenterX": 1047,
+          "CenterY": 577.5
+        },
+        {
+          "Text": "from",
+          "X": 1088,
+          "Y": 572,
+          "Width": 23,
+          "Height": 8,
+          "CenterX": 1099.5,
+          "CenterY": 576
+        }
+      ]
+    },
+    {
+      "Text": "Oct 8. 2026",
+      "Words": [
+        {
+          "Text": "Oct",
+          "X": 47,
+          "Y": 189,
+          "Width": 17,
+          "Height": 7,
+          "CenterX": 55.5,
+          "CenterY": 192.5
+        },
+        {
+          "Text": "8.",
+          "X": 68,
+          "Y": 189,
+          "Width": 7,
+          "Height": 8,
+          "CenterX": 71.5,
+          "CenterY": 193
+        },
+        {
+          "Text": "2026",
+          "X": 79,
+          "Y": 189,
+          "Width": 23,
+          "Height": 7,
+          "CenterX": 90.5,
+          "CenterY": 192.5
+        }
+      ]
+    },
+    {
+      "Text": "2 FPs",
+      "Words": [
+        {
+          "Text": "2",
+          "X": 54,
+          "Y": 312,
+          "Width": 8,
+          "Height": 11,
+          "CenterX": 58,
+          "CenterY": 317.5
+        },
+        {
+          "Text": "FPs",
+          "X": 66,
+          "Y": 316,
+          "Width": 16,
+          "Height": 7,
+          "CenterX": 74,
+          "CenterY": 319.5
+        }
+      ]
+    },
+    {
+      "Text": "I FPs",
+      "Words": [
+        {
+          "Text": "I",
+          "X": 54,
+          "Y": 364,
+          "Width": 5,
+          "Height": 11,
+          "CenterX": 56.5,
+          "CenterY": 369.5
+        },
+        {
+          "Text": "FPs",
+          "X": 63,
+          "Y": 368,
+          "Width": 16,
+          "Height": 7,
+          "CenterX": 71,
+          "CenterY": 371.5
+        }
+      ]
+    },
+    {
+      "Text": "0,5 GB",
+      "Words": [
+        {
+          "Text": "0,5",
+          "X": 55,
+          "Y": 416,
+          "Width": 21,
+          "Height": 14,
+          "CenterX": 65.5,
+          "CenterY": 423
+        },
+        {
+          "Text": "GB",
+          "X": 81,
+          "Y": 421,
+          "Width": 12,
+          "Height": 7,
+          "CenterX": 87,
+          "CenterY": 424.5
+        }
+      ]
+    },
+    {
+      "Text": "O FPs",
+      "Words": [
+        {
+          "Text": "O",
+          "X": 218,
+          "Y": 312,
+          "Width": 8,
+          "Height": 11,
+          "CenterX": 222,
+          "CenterY": 317.5
+        },
+        {
+          "Text": "FPs",
+          "X": 230,
+          "Y": 316,
+          "Width": 16,
+          "Height": 7,
+          "CenterX": 238,
+          "CenterY": 319.5
+        }
+      ]
+    },
+    {
+      "Text": "Detected Io",
+      "Words": [
+        {
+          "Text": "Detected",
+          "X": 784,
+          "Y": 572,
+          "Width": 44,
+          "Height": 8,
+          "CenterX": 806,
+          "CenterY": 576
+        },
+        {
+          "Text": "Io",
+          "X": 830,
+          "Y": 572,
+          "Width": 9,
+          "Height": 8,
+          "CenterX": 834.5,
+          "CenterY": 576
+        }
+      ]
+    },
+    {
+      "Text": "V B chm r e sults",
+      "Words": [
+        {
+          "Text": "V",
+          "X": 851,
+          "Y": 573,
+          "Width": 7,
+          "Height": 7,
+          "CenterX": 854.5,
+          "CenterY": 576.5
+        },
+        {
+          "Text": "B",
+          "X": 886,
+          "Y": 573,
+          "Width": 6,
+          "Height": 7,
+          "CenterX": 889,
+          "CenterY": 576.5
+        },
+        {
+          "Text": "chm",
+          "X": 905,
+          "Y": 572,
+          "Width": 19,
+          "Height": 8,
+          "CenterX": 914.5,
+          "CenterY": 576
+        },
+        {
+          "Text": "r",
+          "X": 942,
+          "Y": 575,
+          "Width": 4,
+          "Height": 5,
+          "CenterX": 944,
+          "CenterY": 577.5
+        },
+        {
+          "Text": "e",
+          "X": 947,
+          "Y": 575,
+          "Width": 4,
+          "Height": 5,
+          "CenterX": 949,
+          "CenterY": 577.5
+        },
+        {
+          "Text": "sults",
+          "X": 952,
+          "Y": 572,
+          "Width": 22,
+          "Height": 8,
+          "CenterX": 963,
+          "CenterY": 576
+        }
+      ]
+    },
+    {
+      "Text": "ef",
+      "Words": [
+        {
+          "Text": "ef",
+          "X": 934,
+          "Y": 590,
+          "Width": 8,
+          "Height": 8,
+          "CenterX": 938,
+          "CenterY": 594
+        }
+      ]
+    }
+  ],
+  "Words": [
+    {
+      "Text": "WU",
+      "X": 48,
+      "Y": 91,
+      "Width": 47,
+      "Height": 20,
+      "CenterX": 71.5,
+      "CenterY": 101
+    },
+    {
+      "Text": "KONG",
+      "X": 104,
+      "Y": 88,
+      "Width": 90,
+      "Height": 23,
+      "CenterX": 149,
+      "CenterY": 99.5
+    },
+    {
+      "Text": "Benchmark",
+      "X": 47,
+      "Y": 165,
+      "Width": 90,
+      "Height": 13,
+      "CenterX": 92,
+      "CenterY": 171.5
+    },
+    {
+      "Text": "Results",
+      "X": 141,
+      "Y": 165,
+      "Width": 55,
+      "Height": 13,
+      "CenterX": 168.5,
+      "CenterY": 171.5
+    },
+    {
+      "Text": "may",
+      "X": 976,
+      "Y": 575,
+      "Width": 21,
+      "Height": 7,
+      "CenterX": 986.5,
+      "CenterY": 578.5
+    },
+    {
+      "Text": "signific",
+      "X": 1000,
+      "Y": 572,
+      "Width": 33,
+      "Height": 10,
+      "CenterX": 1016.5,
+      "CenterY": 577
+    },
+    {
+      "Text": "antly",
+      "X": 1035,
+      "Y": 572,
+      "Width": 24,
+      "Height": 11,
+      "CenterX": 1047,
+      "CenterY": 577.5
+    },
+    {
+      "Text": "from",
+      "X": 1088,
+      "Y": 572,
+      "Width": 23,
+      "Height": 8,
+      "CenterX": 1099.5,
+      "CenterY": 576
+    },
+    {
+      "Text": "Oct",
+      "X": 47,
+      "Y": 189,
+      "Width": 17,
+      "Height": 7,
+      "CenterX": 55.5,
+      "CenterY": 192.5
+    },
+    {
+      "Text": "8.",
+      "X": 68,
+      "Y": 189,
+      "Width": 7,
+      "Height": 8,
+      "CenterX": 71.5,
+      "CenterY": 193
+    },
+    {
+      "Text": "2026",
+      "X": 79,
+      "Y": 189,
+      "Width": 23,
+      "Height": 7,
+      "CenterX": 90.5,
+      "CenterY": 192.5
+    },
+    {
+      "Text": "2",
+      "X": 54,
+      "Y": 312,
+      "Width": 8,
+      "Height": 11,
+      "CenterX": 58,
+      "CenterY": 317.5
+    },
+    {
+      "Text": "FPs",
+      "X": 66,
+      "Y": 316,
+      "Width": 16,
+      "Height": 7,
+      "CenterX": 74,
+      "CenterY": 319.5
+    },
+    {
+      "Text": "I",
+      "X": 54,
+      "Y": 364,
+      "Width": 5,
+      "Height": 11,
+      "CenterX": 56.5,
+      "CenterY": 369.5
+    },
+    {
+      "Text": "FPs",
+      "X": 63,
+      "Y": 368,
+      "Width": 16,
+      "Height": 7,
+      "CenterX": 71,
+      "CenterY": 371.5
+    },
+    {
+      "Text": "0,5",
+      "X": 55,
+      "Y": 416,
+      "Width": 21,
+      "Height": 14,
+      "CenterX": 65.5,
+      "CenterY": 423
+    },
+    {
+      "Text": "GB",
+      "X": 81,
+      "Y": 421,
+      "Width": 12,
+      "Height": 7,
+      "CenterX": 87,
+      "CenterY": 424.5
+    },
+    {
+      "Text": "O",
+      "X": 218,
+      "Y": 312,
+      "Width": 8,
+      "Height": 11,
+      "CenterX": 222,
+      "CenterY": 317.5
+    },
+    {
+      "Text": "FPs",
+      "X": 230,
+      "Y": 316,
+      "Width": 16,
+      "Height": 7,
+      "CenterX": 238,
+      "CenterY": 319.5
+    },
+    {
+      "Text": "Detected",
+      "X": 784,
+      "Y": 572,
+      "Width": 44,
+      "Height": 8,
+      "CenterX": 806,
+      "CenterY": 576
+    },
+    {
+      "Text": "Io",
+      "X": 830,
+      "Y": 572,
+      "Width": 9,
+      "Height": 8,
+      "CenterX": 834.5,
+      "CenterY": 576
+    },
+    {
+      "Text": "V",
+      "X": 851,
+      "Y": 573,
+      "Width": 7,
+      "Height": 7,
+      "CenterX": 854.5,
+      "CenterY": 576.5
+    },
+    {
+      "Text": "B",
+      "X": 886,
+      "Y": 573,
+      "Width": 6,
+      "Height": 7,
+      "CenterX": 889,
+      "CenterY": 576.5
+    },
+    {
+      "Text": "chm",
+      "X": 905,
+      "Y": 572,
+      "Width": 19,
+      "Height": 8,
+      "CenterX": 914.5,
+      "CenterY": 576
+    },
+    {
+      "Text": "r",
+      "X": 942,
+      "Y": 575,
+      "Width": 4,
+      "Height": 5,
+      "CenterX": 944,
+      "CenterY": 577.5
+    },
+    {
+      "Text": "e",
+      "X": 947,
+      "Y": 575,
+      "Width": 4,
+      "Height": 5,
+      "CenterX": 949,
+      "CenterY": 577.5
+    },
+    {
+      "Text": "sults",
+      "X": 952,
+      "Y": 572,
+      "Width": 22,
+      "Height": 8,
+      "CenterX": 963,
+      "CenterY": 576
+    },
+    {
+      "Text": "ef",
+      "X": 934,
+      "Y": 590,
+      "Width": 8,
+      "Height": 8,
+      "CenterX": 938,
+      "CenterY": 594
+    }
+  ]
+}

@@ -1,0 +1,702 @@
+{
+  "Text": "Benchmark Results Oct 8, 2026 Av\u00ABage Maximum 2 FPS Low 5th I FPS Total VRAM Used 0,5 GB Minimum O FPS Detected low VRAM. Balchmarkresultsmay siB1ificantly differfrom actual gaming experience and are for ref\u00ABence only.",
+  "Lines": [
+    {
+      "Text": "Benchmark Results",
+      "Words": [
+        {
+          "Text": "Benchmark",
+          "X": 46,
+          "Y": 164.5,
+          "Width": 90.5,
+          "Height": 14,
+          "CenterX": 91.25,
+          "CenterY": 171.5
+        },
+        {
+          "Text": "Results",
+          "X": 140,
+          "Y": 164.5,
+          "Width": 56,
+          "Height": 14,
+          "CenterX": 168,
+          "CenterY": 171.5
+        }
+      ]
+    },
+    {
+      "Text": "Oct 8, 2026",
+      "Words": [
+        {
+          "Text": "Oct",
+          "X": 46,
+          "Y": 188.5,
+          "Width": 19,
+          "Height": 7.5,
+          "CenterX": 55.5,
+          "CenterY": 192.25
+        },
+        {
+          "Text": "8,",
+          "X": 67,
+          "Y": 188.5,
+          "Width": 8,
+          "Height": 9.5,
+          "CenterX": 71,
+          "CenterY": 193.25
+        },
+        {
+          "Text": "2026",
+          "X": 78,
+          "Y": 188.5,
+          "Width": 24,
+          "Height": 7.5,
+          "CenterX": 90,
+          "CenterY": 192.25
+        }
+      ]
+    },
+    {
+      "Text": "Av\u00ABage",
+      "Words": [
+        {
+          "Text": "Av\u00ABage",
+          "X": 45.5,
+          "Y": 218.5,
+          "Width": 39.5,
+          "Height": 9.5,
+          "CenterX": 65.25,
+          "CenterY": 223.25
+        }
+      ]
+    },
+    {
+      "Text": "Maximum",
+      "Words": [
+        {
+          "Text": "Maximum",
+          "X": 45.5,
+          "Y": 290.5,
+          "Width": 47,
+          "Height": 7.5,
+          "CenterX": 69,
+          "CenterY": 294.25
+        }
+      ]
+    },
+    {
+      "Text": "2 FPS",
+      "Words": [
+        {
+          "Text": "2",
+          "X": 54,
+          "Y": 311.5,
+          "Width": 8,
+          "Height": 12,
+          "CenterX": 58,
+          "CenterY": 317.5
+        },
+        {
+          "Text": "FPS",
+          "X": 66,
+          "Y": 315.5,
+          "Width": 16,
+          "Height": 7.5,
+          "CenterX": 74,
+          "CenterY": 319.25
+        }
+      ]
+    },
+    {
+      "Text": "Low 5th",
+      "Words": [
+        {
+          "Text": "Low",
+          "X": 45.5,
+          "Y": 342.5,
+          "Width": 22.5,
+          "Height": 7.5,
+          "CenterX": 56.75,
+          "CenterY": 346.25
+        },
+        {
+          "Text": "5th",
+          "X": 69.5,
+          "Y": 341.5,
+          "Width": 16,
+          "Height": 8.5,
+          "CenterX": 77.5,
+          "CenterY": 345.75
+        }
+      ]
+    },
+    {
+      "Text": "I FPS",
+      "Words": [
+        {
+          "Text": "I",
+          "X": 54,
+          "Y": 363.5,
+          "Width": 5,
+          "Height": 12,
+          "CenterX": 56.5,
+          "CenterY": 369.5
+        },
+        {
+          "Text": "FPS",
+          "X": 63,
+          "Y": 367.5,
+          "Width": 16,
+          "Height": 7.5,
+          "CenterX": 71,
+          "CenterY": 371.25
+        }
+      ]
+    },
+    {
+      "Text": "Total VRAM Used",
+      "Words": [
+        {
+          "Text": "Total",
+          "X": 45.5,
+          "Y": 393.5,
+          "Width": 27,
+          "Height": 8.5,
+          "CenterX": 59,
+          "CenterY": 397.75
+        },
+        {
+          "Text": "VRAM",
+          "X": 74.5,
+          "Y": 394.5,
+          "Width": 30,
+          "Height": 7.5,
+          "CenterX": 89.5,
+          "CenterY": 398.25
+        },
+        {
+          "Text": "Used",
+          "X": 106.5,
+          "Y": 393.5,
+          "Width": 25.5,
+          "Height": 8.5,
+          "CenterX": 119.25,
+          "CenterY": 397.75
+        }
+      ]
+    },
+    {
+      "Text": "0,5 GB",
+      "Words": [
+        {
+          "Text": "0,5",
+          "X": 54.5,
+          "Y": 415,
+          "Width": 21.5,
+          "Height": 15,
+          "CenterX": 65.25,
+          "CenterY": 422.5
+        },
+        {
+          "Text": "GB",
+          "X": 80.5,
+          "Y": 420.5,
+          "Width": 12.5,
+          "Height": 7.5,
+          "CenterX": 86.75,
+          "CenterY": 424.25
+        }
+      ]
+    },
+    {
+      "Text": "Minimum",
+      "Words": [
+        {
+          "Text": "Minimum",
+          "X": 208.5,
+          "Y": 290.5,
+          "Width": 45,
+          "Height": 7.5,
+          "CenterX": 231,
+          "CenterY": 294.25
+        }
+      ]
+    },
+    {
+      "Text": "O FPS",
+      "Words": [
+        {
+          "Text": "O",
+          "X": 217.5,
+          "Y": 311.5,
+          "Width": 8.5,
+          "Height": 11.5,
+          "CenterX": 221.75,
+          "CenterY": 317.25
+        },
+        {
+          "Text": "FPS",
+          "X": 230,
+          "Y": 315.5,
+          "Width": 16,
+          "Height": 7.5,
+          "CenterX": 238,
+          "CenterY": 319.25
+        }
+      ]
+    },
+    {
+      "Text": "Detected low VRAM. Balchmarkresultsmay siB1ificantly differfrom actual",
+      "Words": [
+        {
+          "Text": "Detected",
+          "X": 783.5,
+          "Y": 571.5,
+          "Width": 44,
+          "Height": 8.5,
+          "CenterX": 805.5,
+          "CenterY": 575.75
+        },
+        {
+          "Text": "low",
+          "X": 829.5,
+          "Y": 571.5,
+          "Width": 19.5,
+          "Height": 8.5,
+          "CenterX": 839.25,
+          "CenterY": 575.75
+        },
+        {
+          "Text": "VRAM.",
+          "X": 851,
+          "Y": 572.5,
+          "Width": 32,
+          "Height": 7.5,
+          "CenterX": 867,
+          "CenterY": 576.25
+        },
+        {
+          "Text": "Balchmarkresultsmay",
+          "X": 885.5,
+          "Y": 571.5,
+          "Width": 111,
+          "Height": 11,
+          "CenterX": 941,
+          "CenterY": 577
+        },
+        {
+          "Text": "siB1ificantly",
+          "X": 999.5,
+          "Y": 571.5,
+          "Width": 59,
+          "Height": 11,
+          "CenterX": 1029,
+          "CenterY": 577
+        },
+        {
+          "Text": "differfrom",
+          "X": 1061,
+          "Y": 571.5,
+          "Width": 49.5,
+          "Height": 8.5,
+          "CenterX": 1085.75,
+          "CenterY": 575.75
+        },
+        {
+          "Text": "actual",
+          "X": 1113.5,
+          "Y": 571.5,
+          "Width": 30,
+          "Height": 8.5,
+          "CenterX": 1128.5,
+          "CenterY": 575.75
+        }
+      ]
+    },
+    {
+      "Text": "gaming experience and are for ref\u00ABence only.",
+      "Words": [
+        {
+          "Text": "gaming",
+          "X": 784.5,
+          "Y": 590.5,
+          "Width": 35.5,
+          "Height": 9.5,
+          "CenterX": 802.25,
+          "CenterY": 595.25
+        },
+        {
+          "Text": "experience",
+          "X": 822.5,
+          "Y": 590.5,
+          "Width": 50.5,
+          "Height": 9.5,
+          "CenterX": 847.75,
+          "CenterY": 595.25
+        },
+        {
+          "Text": "and",
+          "X": 875.5,
+          "Y": 589.5,
+          "Width": 18,
+          "Height": 8.5,
+          "CenterX": 884.5,
+          "CenterY": 593.75
+        },
+        {
+          "Text": "are",
+          "X": 896.5,
+          "Y": 592.5,
+          "Width": 14.5,
+          "Height": 5.5,
+          "CenterX": 903.75,
+          "CenterY": 595.25
+        },
+        {
+          "Text": "for",
+          "X": 913,
+          "Y": 589.5,
+          "Width": 14,
+          "Height": 8.5,
+          "CenterX": 920,
+          "CenterY": 593.75
+        },
+        {
+          "Text": "ref\u00ABence",
+          "X": 928.5,
+          "Y": 589.5,
+          "Width": 43.5,
+          "Height": 8.5,
+          "CenterX": 950.25,
+          "CenterY": 593.75
+        },
+        {
+          "Text": "only.",
+          "X": 974,
+          "Y": 589.5,
+          "Width": 24,
+          "Height": 11,
+          "CenterX": 986,
+          "CenterY": 595
+        }
+      ]
+    }
+  ],
+  "Words": [
+    {
+      "Text": "Benchmark",
+      "X": 46,
+      "Y": 164.5,
+      "Width": 90.5,
+      "Height": 14,
+      "CenterX": 91.25,
+      "CenterY": 171.5
+    },
+    {
+      "Text": "Results",
+      "X": 140,
+      "Y": 164.5,
+      "Width": 56,
+      "Height": 14,
+      "CenterX": 168,
+      "CenterY": 171.5
+    },
+    {
+      "Text": "Oct",
+      "X": 46,
+      "Y": 188.5,
+      "Width": 19,
+      "Height": 7.5,
+      "CenterX": 55.5,
+      "CenterY": 192.25
+    },
+    {
+      "Text": "8,",
+      "X": 67,
+      "Y": 188.5,
+      "Width": 8,
+      "Height": 9.5,
+      "CenterX": 71,
+      "CenterY": 193.25
+    },
+    {
+      "Text": "2026",
+      "X": 78,
+      "Y": 188.5,
+      "Width": 24,
+      "Height": 7.5,
+      "CenterX": 90,
+      "CenterY": 192.25
+    },
+    {
+      "Text": "Av\u00ABage",
+      "X": 45.5,
+      "Y": 218.5,
+      "Width": 39.5,
+      "Height": 9.5,
+      "CenterX": 65.25,
+      "CenterY": 223.25
+    },
+    {
+      "Text": "Maximum",
+      "X": 45.5,
+      "Y": 290.5,
+      "Width": 47,
+      "Height": 7.5,
+      "CenterX": 69,
+      "CenterY": 294.25
+    },
+    {
+      "Text": "2",
+      "X": 54,
+      "Y": 311.5,
+      "Width": 8,
+      "Height": 12,
+      "CenterX": 58,
+      "CenterY": 317.5
+    },
+    {
+      "Text": "FPS",
+      "X": 66,
+      "Y": 315.5,
+      "Width": 16,
+      "Height": 7.5,
+      "CenterX": 74,
+      "CenterY": 319.25
+    },
+    {
+      "Text": "Low",
+      "X": 45.5,
+      "Y": 342.5,
+      "Width": 22.5,
+      "Height": 7.5,
+      "CenterX": 56.75,
+      "CenterY": 346.25
+    },
+    {
+      "Text": "5th",
+      "X": 69.5,
+      "Y": 341.5,
+      "Width": 16,
+      "Height": 8.5,
+      "CenterX": 77.5,
+      "CenterY": 345.75
+    },
+    {
+      "Text": "I",
+      "X": 54,
+      "Y": 363.5,
+      "Width": 5,
+      "Height": 12,
+      "CenterX": 56.5,
+      "CenterY": 369.5
+    },
+    {
+      "Text": "FPS",
+      "X": 63,
+      "Y": 367.5,
+      "Width": 16,
+      "Height": 7.5,
+      "CenterX": 71,
+      "CenterY": 371.25
+    },
+    {
+      "Text": "Total",
+      "X": 45.5,
+      "Y": 393.5,
+      "Width": 27,
+      "Height": 8.5,
+      "CenterX": 59,
+      "CenterY": 397.75
+    },
+    {
+      "Text": "VRAM",
+      "X": 74.5,
+      "Y": 394.5,
+      "Width": 30,
+      "Height": 7.5,
+      "CenterX": 89.5,
+      "CenterY": 398.25
+    },
+    {
+      "Text": "Used",
+      "X": 106.5,
+      "Y": 393.5,
+      "Width": 25.5,
+      "Height": 8.5,
+      "CenterX": 119.25,
+      "CenterY": 397.75
+    },
+    {
+      "Text": "0,5",
+      "X": 54.5,
+      "Y": 415,
+      "Width": 21.5,
+      "Height": 15,
+      "CenterX": 65.25,
+      "CenterY": 422.5
+    },
+    {
+      "Text": "GB",
+      "X": 80.5,
+      "Y": 420.5,
+      "Width": 12.5,
+      "Height": 7.5,
+      "CenterX": 86.75,
+      "CenterY": 424.25
+    },
+    {
+      "Text": "Minimum",
+      "X": 208.5,
+      "Y": 290.5,
+      "Width": 45,
+      "Height": 7.5,
+      "CenterX": 231,
+      "CenterY": 294.25
+    },
+    {
+      "Text": "O",
+      "X": 217.5,
+      "Y": 311.5,
+      "Width": 8.5,
+      "Height": 11.5,
+      "CenterX": 221.75,
+      "CenterY": 317.25
+    },
+    {
+      "Text": "FPS",
+      "X": 230,
+      "Y": 315.5,
+      "Width": 16,
+      "Height": 7.5,
+      "CenterX": 238,
+      "CenterY": 319.25
+    },
+    {
+      "Text": "Detected",
+      "X": 783.5,
+      "Y": 571.5,
+      "Width": 44,
+      "Height": 8.5,
+      "CenterX": 805.5,
+      "CenterY": 575.75
+    },
+    {
+      "Text": "low",
+      "X": 829.5,
+      "Y": 571.5,
+      "Width": 19.5,
+      "Height": 8.5,
+      "CenterX": 839.25,
+      "CenterY": 575.75
+    },
+    {
+      "Text": "VRAM.",
+      "X": 851,
+      "Y": 572.5,
+      "Width": 32,
+      "Height": 7.5,
+      "CenterX": 867,
+      "CenterY": 576.25
+    },
+    {
+      "Text": "Balchmarkresultsmay",
+      "X": 885.5,
+      "Y": 571.5,
+      "Width": 111,
+      "Height": 11,
+      "CenterX": 941,
+      "CenterY": 577
+    },
+    {
+      "Text": "siB1ificantly",
+      "X": 999.5,
+      "Y": 571.5,
+      "Width": 59,
+      "Height": 11,
+      "CenterX": 1029,
+      "CenterY": 577
+    },
+    {
+      "Text": "differfrom",
+      "X": 1061,
+      "Y": 571.5,
+      "Width": 49.5,
+      "Height": 8.5,
+      "CenterX": 1085.75,
+      "CenterY": 575.75
+    },
+    {
+      "Text": "actual",
+      "X": 1113.5,
+      "Y": 571.5,
+      "Width": 30,
+      "Height": 8.5,
+      "CenterX": 1128.5,
+      "CenterY": 575.75
+    },
+    {
+      "Text": "gaming",
+      "X": 784.5,
+      "Y": 590.5,
+      "Width": 35.5,
+      "Height": 9.5,
+      "CenterX": 802.25,
+      "CenterY": 595.25
+    },
+    {
+      "Text": "experience",
+      "X": 822.5,
+      "Y": 590.5,
+      "Width": 50.5,
+      "Height": 9.5,
+      "CenterX": 847.75,
+      "CenterY": 595.25
+    },
+    {
+      "Text": "and",
+      "X": 875.5,
+      "Y": 589.5,
+      "Width": 18,
+      "Height": 8.5,
+      "CenterX": 884.5,
+      "CenterY": 593.75
+    },
+    {
+      "Text": "are",
+      "X": 896.5,
+      "Y": 592.5,
+      "Width": 14.5,
+      "Height": 5.5,
+      "CenterX": 903.75,
+      "CenterY": 595.25
+    },
+    {
+      "Text": "for",
+      "X": 913,
+      "Y": 589.5,
+      "Width": 14,
+      "Height": 8.5,
+      "CenterX": 920,
+      "CenterY": 593.75
+    },
+    {
+      "Text": "ref\u00ABence",
+      "X": 928.5,
+      "Y": 589.5,
+      "Width": 43.5,
+      "Height": 8.5,
+      "CenterX": 950.25,
+      "CenterY": 593.75
+    },
+    {
+      "Text": "only.",
+      "X": 974,
+      "Y": 589.5,
+      "Width": 24,
+      "Height": 11,
+      "CenterX": 986,
+      "CenterY": 595
+    }
+  ]
+}

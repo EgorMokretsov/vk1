@@ -1,0 +1,1280 @@
+{
+  "Text": "WU KONG Benchmark Results Editio C in ati c ef Oct 8, 2026 -2 FPs Low 5th -l FPs Total VRAMUsed -0,5 GB Operating System 1.0.3.14649 10.0.26200.1.768.64bit a Graphics deon O FPs Graphics cu n(TM) Graphics AMD Radeo Graphics AMD softw n22.20.46.15 Graphic Settings 1280 *720 post-Effects Quality tedlo Detec Qu alit\u002B Vegetation Quality TSR DX12 Rerun a View History Exit",
+  "Lines": [
+    {
+      "Text": "WU KONG",
+      "Words": [
+        {
+          "Text": "WU",
+          "X": 48,
+          "Y": 91,
+          "Width": 47,
+          "Height": 20,
+          "CenterX": 71.5,
+          "CenterY": 101
+        },
+        {
+          "Text": "KONG",
+          "X": 104,
+          "Y": 88,
+          "Width": 90,
+          "Height": 23,
+          "CenterX": 149,
+          "CenterY": 99.5
+        }
+      ]
+    },
+    {
+      "Text": "Benchmark Results",
+      "Words": [
+        {
+          "Text": "Benchmark",
+          "X": 49,
+          "Y": 165,
+          "Width": 90,
+          "Height": 13,
+          "CenterX": 94,
+          "CenterY": 171.5
+        },
+        {
+          "Text": "Results",
+          "X": 143,
+          "Y": 165,
+          "Width": 55,
+          "Height": 13,
+          "CenterX": 170.5,
+          "CenterY": 171.5
+        }
+      ]
+    },
+    {
+      "Text": "Editio",
+      "Words": [
+        {
+          "Text": "Editio",
+          "X": 525,
+          "Y": 364,
+          "Width": 29,
+          "Height": 8,
+          "CenterX": 539.5,
+          "CenterY": 368
+        }
+      ]
+    },
+    {
+      "Text": "C in ati c",
+      "Words": [
+        {
+          "Text": "C",
+          "X": 755,
+          "Y": 365,
+          "Width": 6,
+          "Height": 7,
+          "CenterX": 758,
+          "CenterY": 368.5
+        },
+        {
+          "Text": "in",
+          "X": 762,
+          "Y": 365,
+          "Width": 9,
+          "Height": 7,
+          "CenterX": 766.5,
+          "CenterY": 368.5
+        },
+        {
+          "Text": "ati",
+          "X": 786,
+          "Y": 365,
+          "Width": 12,
+          "Height": 7,
+          "CenterX": 792,
+          "CenterY": 368.5
+        },
+        {
+          "Text": "c",
+          "X": 799,
+          "Y": 367,
+          "Width": 4,
+          "Height": 5,
+          "CenterX": 801,
+          "CenterY": 369.5
+        }
+      ]
+    },
+    {
+      "Text": "ef",
+      "Words": [
+        {
+          "Text": "ef",
+          "X": 934,
+          "Y": 590,
+          "Width": 8,
+          "Height": 8,
+          "CenterX": 938,
+          "CenterY": 594
+        }
+      ]
+    },
+    {
+      "Text": "Oct 8, 2026",
+      "Words": [
+        {
+          "Text": "Oct",
+          "X": 49,
+          "Y": 189,
+          "Width": 18,
+          "Height": 7,
+          "CenterX": 58,
+          "CenterY": 192.5
+        },
+        {
+          "Text": "8,",
+          "X": 70,
+          "Y": 189,
+          "Width": 7,
+          "Height": 9,
+          "CenterX": 73.5,
+          "CenterY": 193.5
+        },
+        {
+          "Text": "2026",
+          "X": 80,
+          "Y": 189,
+          "Width": 24,
+          "Height": 7,
+          "CenterX": 92,
+          "CenterY": 192.5
+        }
+      ]
+    },
+    {
+      "Text": "-2 FPs",
+      "Words": [
+        {
+          "Text": "-2",
+          "X": 54,
+          "Y": 312,
+          "Width": 10,
+          "Height": 11,
+          "CenterX": 59,
+          "CenterY": 317.5
+        },
+        {
+          "Text": "FPs",
+          "X": 68,
+          "Y": 316,
+          "Width": 16,
+          "Height": 7,
+          "CenterX": 76,
+          "CenterY": 319.5
+        }
+      ]
+    },
+    {
+      "Text": "Low 5th",
+      "Words": [
+        {
+          "Text": "Low",
+          "X": 48,
+          "Y": 343,
+          "Width": 22,
+          "Height": 7,
+          "CenterX": 59,
+          "CenterY": 346.5
+        },
+        {
+          "Text": "5th",
+          "X": 72,
+          "Y": 342,
+          "Width": 16,
+          "Height": 8,
+          "CenterX": 80,
+          "CenterY": 346
+        }
+      ]
+    },
+    {
+      "Text": "-l FPs",
+      "Words": [
+        {
+          "Text": "-l",
+          "X": 54,
+          "Y": 364,
+          "Width": 7,
+          "Height": 11,
+          "CenterX": 57.5,
+          "CenterY": 369.5
+        },
+        {
+          "Text": "FPs",
+          "X": 65,
+          "Y": 368,
+          "Width": 16,
+          "Height": 7,
+          "CenterX": 73,
+          "CenterY": 371.5
+        }
+      ]
+    },
+    {
+      "Text": "Total VRAMUsed",
+      "Words": [
+        {
+          "Text": "Total",
+          "X": 48,
+          "Y": 394,
+          "Width": 27,
+          "Height": 8,
+          "CenterX": 61.5,
+          "CenterY": 398
+        },
+        {
+          "Text": "VRAMUsed",
+          "X": 77,
+          "Y": 394,
+          "Width": 57,
+          "Height": 8,
+          "CenterX": 105.5,
+          "CenterY": 398
+        }
+      ]
+    },
+    {
+      "Text": "-0,5 GB",
+      "Words": [
+        {
+          "Text": "-0,5",
+          "X": 54,
+          "Y": 416,
+          "Width": 24,
+          "Height": 14,
+          "CenterX": 66,
+          "CenterY": 423
+        },
+        {
+          "Text": "GB",
+          "X": 83,
+          "Y": 421,
+          "Width": 12,
+          "Height": 7,
+          "CenterX": 89,
+          "CenterY": 424.5
+        }
+      ]
+    },
+    {
+      "Text": "Operating System",
+      "Words": [
+        {
+          "Text": "Operating",
+          "X": 398,
+          "Y": 167,
+          "Width": 83,
+          "Height": 15,
+          "CenterX": 439.5,
+          "CenterY": 174.5
+        },
+        {
+          "Text": "System",
+          "X": 486,
+          "Y": 167,
+          "Width": 55,
+          "Height": 16,
+          "CenterX": 513.5,
+          "CenterY": 175
+        }
+      ]
+    },
+    {
+      "Text": "1.0.3.14649",
+      "Words": [
+        {
+          "Text": "1.0.3.14649",
+          "X": 402,
+          "Y": 210,
+          "Width": 53,
+          "Height": 8,
+          "CenterX": 428.5,
+          "CenterY": 214
+        }
+      ]
+    },
+    {
+      "Text": "10.0.26200.1.768.64bit",
+      "Words": [
+        {
+          "Text": "10.0.26200.1.768.64bit",
+          "X": 402,
+          "Y": 248,
+          "Width": 110,
+          "Height": 8,
+          "CenterX": 457,
+          "CenterY": 252
+        }
+      ]
+    },
+    {
+      "Text": "a Graphics",
+      "Words": [
+        {
+          "Text": "a",
+          "X": 532,
+          "Y": 290,
+          "Width": 5,
+          "Height": 5,
+          "CenterX": 534.5,
+          "CenterY": 292.5
+        },
+        {
+          "Text": "Graphics",
+          "X": 565,
+          "Y": 287,
+          "Width": 44,
+          "Height": 10,
+          "CenterX": 587,
+          "CenterY": 292
+        }
+      ]
+    },
+    {
+      "Text": "deon",
+      "Words": [
+        {
+          "Text": "deon",
+          "X": 538,
+          "Y": 287,
+          "Width": 24,
+          "Height": 8,
+          "CenterX": 550,
+          "CenterY": 291
+        }
+      ]
+    },
+    {
+      "Text": "O FPs",
+      "Words": [
+        {
+          "Text": "O",
+          "X": 220,
+          "Y": 312,
+          "Width": 8,
+          "Height": 11,
+          "CenterX": 224,
+          "CenterY": 317.5
+        },
+        {
+          "Text": "FPs",
+          "X": 232,
+          "Y": 316,
+          "Width": 16,
+          "Height": 7,
+          "CenterX": 240,
+          "CenterY": 319.5
+        }
+      ]
+    },
+    {
+      "Text": "Graphics cu",
+      "Words": [
+        {
+          "Text": "Graphics",
+          "X": 401,
+          "Y": 311,
+          "Width": 44,
+          "Height": 10,
+          "CenterX": 423,
+          "CenterY": 316
+        },
+        {
+          "Text": "cu",
+          "X": 448,
+          "Y": 312,
+          "Width": 17,
+          "Height": 7,
+          "CenterX": 456.5,
+          "CenterY": 315.5
+        }
+      ]
+    },
+    {
+      "Text": "n(TM) Graphics",
+      "Words": [
+        {
+          "Text": "n(TM)",
+          "X": 459,
+          "Y": 325,
+          "Width": 29,
+          "Height": 11,
+          "CenterX": 473.5,
+          "CenterY": 330.5
+        },
+        {
+          "Text": "Graphics",
+          "X": 492,
+          "Y": 326,
+          "Width": 44,
+          "Height": 10,
+          "CenterX": 514,
+          "CenterY": 331
+        }
+      ]
+    },
+    {
+      "Text": "AMD Radeo",
+      "Words": [
+        {
+          "Text": "AMD",
+          "X": 401,
+          "Y": 327,
+          "Width": 23,
+          "Height": 7,
+          "CenterX": 412.5,
+          "CenterY": 330.5
+        },
+        {
+          "Text": "Radeo",
+          "X": 428,
+          "Y": 326,
+          "Width": 30,
+          "Height": 8,
+          "CenterX": 443,
+          "CenterY": 330
+        }
+      ]
+    },
+    {
+      "Text": "Graphics",
+      "Words": [
+        {
+          "Text": "Graphics",
+          "X": 401,
+          "Y": 350,
+          "Width": 44,
+          "Height": 10,
+          "CenterX": 423,
+          "CenterY": 355
+        }
+      ]
+    },
+    {
+      "Text": "AMD softw",
+      "Words": [
+        {
+          "Text": "AMD",
+          "X": 401,
+          "Y": 365,
+          "Width": 23,
+          "Height": 7,
+          "CenterX": 412.5,
+          "CenterY": 368.5
+        },
+        {
+          "Text": "softw",
+          "X": 428,
+          "Y": 364,
+          "Width": 28,
+          "Height": 8,
+          "CenterX": 442,
+          "CenterY": 368
+        }
+      ]
+    },
+    {
+      "Text": "n22.20.46.15",
+      "Words": [
+        {
+          "Text": "n22.20.46.15",
+          "X": 555,
+          "Y": 364,
+          "Width": 63,
+          "Height": 8,
+          "CenterX": 586.5,
+          "CenterY": 368
+        }
+      ]
+    },
+    {
+      "Text": "Graphic Settings",
+      "Words": [
+        {
+          "Text": "Graphic",
+          "X": 754,
+          "Y": 165,
+          "Width": 61,
+          "Height": 17,
+          "CenterX": 784.5,
+          "CenterY": 173.5
+        },
+        {
+          "Text": "Settings",
+          "X": 820,
+          "Y": 167,
+          "Width": 63,
+          "Height": 15,
+          "CenterX": 851.5,
+          "CenterY": 174.5
+        }
+      ]
+    },
+    {
+      "Text": "1280 *720",
+      "Words": [
+        {
+          "Text": "1280",
+          "X": 755,
+          "Y": 249,
+          "Width": 22,
+          "Height": 7,
+          "CenterX": 766,
+          "CenterY": 252.5
+        },
+        {
+          "Text": "*720",
+          "X": 780,
+          "Y": 249,
+          "Width": 25,
+          "Height": 7,
+          "CenterX": 792.5,
+          "CenterY": 252.5
+        }
+      ]
+    },
+    {
+      "Text": "post-Effects Quality",
+      "Words": [
+        {
+          "Text": "post-Effects",
+          "X": 753,
+          "Y": 427,
+          "Width": 57,
+          "Height": 8,
+          "CenterX": 781.5,
+          "CenterY": 431
+        },
+        {
+          "Text": "Quality",
+          "X": 813,
+          "Y": 427,
+          "Width": 36,
+          "Height": 10,
+          "CenterX": 831,
+          "CenterY": 432
+        }
+      ]
+    },
+    {
+      "Text": "tedlo",
+      "Words": [
+        {
+          "Text": "tedlo",
+          "X": 812,
+          "Y": 572,
+          "Width": 27,
+          "Height": 8,
+          "CenterX": 825.5,
+          "CenterY": 576
+        }
+      ]
+    },
+    {
+      "Text": "Detec",
+      "Words": [
+        {
+          "Text": "Detec",
+          "X": 784,
+          "Y": 573,
+          "Width": 27,
+          "Height": 7,
+          "CenterX": 797.5,
+          "CenterY": 576.5
+        }
+      ]
+    },
+    {
+      "Text": "Qu alit\u002B",
+      "Words": [
+        {
+          "Text": "Qu",
+          "X": 995,
+          "Y": 196,
+          "Width": 13,
+          "Height": 9,
+          "CenterX": 1001.5,
+          "CenterY": 200.5
+        },
+        {
+          "Text": "alit\u002B",
+          "X": 1010,
+          "Y": 193,
+          "Width": 21,
+          "Height": 12,
+          "CenterX": 1020.5,
+          "CenterY": 199
+        }
+      ]
+    },
+    {
+      "Text": "Vegetation Quality",
+      "Words": [
+        {
+          "Text": "Vegetation",
+          "X": 956,
+          "Y": 274,
+          "Width": 52,
+          "Height": 9,
+          "CenterX": 982,
+          "CenterY": 278.5
+        },
+        {
+          "Text": "Quality",
+          "X": 1012,
+          "Y": 273,
+          "Width": 36,
+          "Height": 10,
+          "CenterX": 1030,
+          "CenterY": 278
+        }
+      ]
+    },
+    {
+      "Text": "TSR",
+      "Words": [
+        {
+          "Text": "TSR",
+          "X": 956,
+          "Y": 404,
+          "Width": 20,
+          "Height": 7,
+          "CenterX": 966,
+          "CenterY": 407.5
+        }
+      ]
+    },
+    {
+      "Text": "DX12",
+      "Words": [
+        {
+          "Text": "DX12",
+          "X": 956,
+          "Y": 467,
+          "Width": 26,
+          "Height": 7,
+          "CenterX": 969,
+          "CenterY": 470.5
+        }
+      ]
+    },
+    {
+      "Text": "Rerun",
+      "Words": [
+        {
+          "Text": "Rerun",
+          "X": 948,
+          "Y": 681,
+          "Width": 39,
+          "Height": 10,
+          "CenterX": 967.5,
+          "CenterY": 686
+        }
+      ]
+    },
+    {
+      "Text": "a View History",
+      "Words": [
+        {
+          "Text": "a",
+          "X": 1018,
+          "Y": 680,
+          "Width": 14,
+          "Height": 14,
+          "CenterX": 1025,
+          "CenterY": 687
+        },
+        {
+          "Text": "View",
+          "X": 1040,
+          "Y": 681,
+          "Width": 33,
+          "Height": 10,
+          "CenterX": 1056.5,
+          "CenterY": 686
+        },
+        {
+          "Text": "History",
+          "X": 1077,
+          "Y": 681,
+          "Width": 47,
+          "Height": 14,
+          "CenterX": 1100.5,
+          "CenterY": 688
+        }
+      ]
+    },
+    {
+      "Text": "Exit",
+      "Words": [
+        {
+          "Text": "Exit",
+          "X": 1177,
+          "Y": 681,
+          "Width": 24,
+          "Height": 10,
+          "CenterX": 1189,
+          "CenterY": 686
+        }
+      ]
+    }
+  ],
+  "Words": [
+    {
+      "Text": "WU",
+      "X": 48,
+      "Y": 91,
+      "Width": 47,
+      "Height": 20,
+      "CenterX": 71.5,
+      "CenterY": 101
+    },
+    {
+      "Text": "KONG",
+      "X": 104,
+      "Y": 88,
+      "Width": 90,
+      "Height": 23,
+      "CenterX": 149,
+      "CenterY": 99.5
+    },
+    {
+      "Text": "Benchmark",
+      "X": 49,
+      "Y": 165,
+      "Width": 90,
+      "Height": 13,
+      "CenterX": 94,
+      "CenterY": 171.5
+    },
+    {
+      "Text": "Results",
+      "X": 143,
+      "Y": 165,
+      "Width": 55,
+      "Height": 13,
+      "CenterX": 170.5,
+      "CenterY": 171.5
+    },
+    {
+      "Text": "Editio",
+      "X": 525,
+      "Y": 364,
+      "Width": 29,
+      "Height": 8,
+      "CenterX": 539.5,
+      "CenterY": 368
+    },
+    {
+      "Text": "C",
+      "X": 755,
+      "Y": 365,
+      "Width": 6,
+      "Height": 7,
+      "CenterX": 758,
+      "CenterY": 368.5
+    },
+    {
+      "Text": "in",
+      "X": 762,
+      "Y": 365,
+      "Width": 9,
+      "Height": 7,
+      "CenterX": 766.5,
+      "CenterY": 368.5
+    },
+    {
+      "Text": "ati",
+      "X": 786,
+      "Y": 365,
+      "Width": 12,
+      "Height": 7,
+      "CenterX": 792,
+      "CenterY": 368.5
+    },
+    {
+      "Text": "c",
+      "X": 799,
+      "Y": 367,
+      "Width": 4,
+      "Height": 5,
+      "CenterX": 801,
+      "CenterY": 369.5
+    },
+    {
+      "Text": "ef",
+      "X": 934,
+      "Y": 590,
+      "Width": 8,
+      "Height": 8,
+      "CenterX": 938,
+      "CenterY": 594
+    },
+    {
+      "Text": "Oct",
+      "X": 49,
+      "Y": 189,
+      "Width": 18,
+      "Height": 7,
+      "CenterX": 58,
+      "CenterY": 192.5
+    },
+    {
+      "Text": "8,",
+      "X": 70,
+      "Y": 189,
+      "Width": 7,
+      "Height": 9,
+      "CenterX": 73.5,
+      "CenterY": 193.5
+    },
+    {
+      "Text": "2026",
+      "X": 80,
+      "Y": 189,
+      "Width": 24,
+      "Height": 7,
+      "CenterX": 92,
+      "CenterY": 192.5
+    },
+    {
+      "Text": "-2",
+      "X": 54,
+      "Y": 312,
+      "Width": 10,
+      "Height": 11,
+      "CenterX": 59,
+      "CenterY": 317.5
+    },
+    {
+      "Text": "FPs",
+      "X": 68,
+      "Y": 316,
+      "Width": 16,
+      "Height": 7,
+      "CenterX": 76,
+      "CenterY": 319.5
+    },
+    {
+      "Text": "Low",
+      "X": 48,
+      "Y": 343,
+      "Width": 22,
+      "Height": 7,
+      "CenterX": 59,
+      "CenterY": 346.5
+    },
+    {
+      "Text": "5th",
+      "X": 72,
+      "Y": 342,
+      "Width": 16,
+      "Height": 8,
+      "CenterX": 80,
+      "CenterY": 346
+    },
+    {
+      "Text": "-l",
+      "X": 54,
+      "Y": 364,
+      "Width": 7,
+      "Height": 11,
+      "CenterX": 57.5,
+      "CenterY": 369.5
+    },
+    {
+      "Text": "FPs",
+      "X": 65,
+      "Y": 368,
+      "Width": 16,
+      "Height": 7,
+      "CenterX": 73,
+      "CenterY": 371.5
+    },
+    {
+      "Text": "Total",
+      "X": 48,
+      "Y": 394,
+      "Width": 27,
+      "Height": 8,
+      "CenterX": 61.5,
+      "CenterY": 398
+    },
+    {
+      "Text": "VRAMUsed",
+      "X": 77,
+      "Y": 394,
+      "Width": 57,
+      "Height": 8,
+      "CenterX": 105.5,
+      "CenterY": 398
+    },
+    {
+      "Text": "-0,5",
+      "X": 54,
+      "Y": 416,
+      "Width": 24,
+      "Height": 14,
+      "CenterX": 66,
+      "CenterY": 423
+    },
+    {
+      "Text": "GB",
+      "X": 83,
+      "Y": 421,
+      "Width": 12,
+      "Height": 7,
+      "CenterX": 89,
+      "CenterY": 424.5
+    },
+    {
+      "Text": "Operating",
+      "X": 398,
+      "Y": 167,
+      "Width": 83,
+      "Height": 15,
+      "CenterX": 439.5,
+      "CenterY": 174.5
+    },
+    {
+      "Text": "System",
+      "X": 486,
+      "Y": 167,
+      "Width": 55,
+      "Height": 16,
+      "CenterX": 513.5,
+      "CenterY": 175
+    },
+    {
+      "Text": "1.0.3.14649",
+      "X": 402,
+      "Y": 210,
+      "Width": 53,
+      "Height": 8,
+      "CenterX": 428.5,
+      "CenterY": 214
+    },
+    {
+      "Text": "10.0.26200.1.768.64bit",
+      "X": 402,
+      "Y": 248,
+      "Width": 110,
+      "Height": 8,
+      "CenterX": 457,
+      "CenterY": 252
+    },
+    {
+      "Text": "a",
+      "X": 532,
+      "Y": 290,
+      "Width": 5,
+      "Height": 5,
+      "CenterX": 534.5,
+      "CenterY": 292.5
+    },
+    {
+      "Text": "Graphics",
+      "X": 565,
+      "Y": 287,
+      "Width": 44,
+      "Height": 10,
+      "CenterX": 587,
+      "CenterY": 292
+    },
+    {
+      "Text": "deon",
+      "X": 538,
+      "Y": 287,
+      "Width": 24,
+      "Height": 8,
+      "CenterX": 550,
+      "CenterY": 291
+    },
+    {
+      "Text": "O",
+      "X": 220,
+      "Y": 312,
+      "Width": 8,
+      "Height": 11,
+      "CenterX": 224,
+      "CenterY": 317.5
+    },
+    {
+      "Text": "FPs",
+      "X": 232,
+      "Y": 316,
+      "Width": 16,
+      "Height": 7,
+      "CenterX": 240,
+      "CenterY": 319.5
+    },
+    {
+      "Text": "Graphics",
+      "X": 401,
+      "Y": 311,
+      "Width": 44,
+      "Height": 10,
+      "CenterX": 423,
+      "CenterY": 316
+    },
+    {
+      "Text": "cu",
+      "X": 448,
+      "Y": 312,
+      "Width": 17,
+      "Height": 7,
+      "CenterX": 456.5,
+      "CenterY": 315.5
+    },
+    {
+      "Text": "n(TM)",
+      "X": 459,
+      "Y": 325,
+      "Width": 29,
+      "Height": 11,
+      "CenterX": 473.5,
+      "CenterY": 330.5
+    },
+    {
+      "Text": "Graphics",
+      "X": 492,
+      "Y": 326,
+      "Width": 44,
+      "Height": 10,
+      "CenterX": 514,
+      "CenterY": 331
+    },
+    {
+      "Text": "AMD",
+      "X": 401,
+      "Y": 327,
+      "Width": 23,
+      "Height": 7,
+      "CenterX": 412.5,
+      "CenterY": 330.5
+    },
+    {
+      "Text": "Radeo",
+      "X": 428,
+      "Y": 326,
+      "Width": 30,
+      "Height": 8,
+      "CenterX": 443,
+      "CenterY": 330
+    },
+    {
+      "Text": "Graphics",
+      "X": 401,
+      "Y": 350,
+      "Width": 44,
+      "Height": 10,
+      "CenterX": 423,
+      "CenterY": 355
+    },
+    {
+      "Text": "AMD",
+      "X": 401,
+      "Y": 365,
+      "Width": 23,
+      "Height": 7,
+      "CenterX": 412.5,
+      "CenterY": 368.5
+    },
+    {
+      "Text": "softw",
+      "X": 428,
+      "Y": 364,
+      "Width": 28,
+      "Height": 8,
+      "CenterX": 442,
+      "CenterY": 368
+    },
+    {
+      "Text": "n22.20.46.15",
+      "X": 555,
+      "Y": 364,
+      "Width": 63,
+      "Height": 8,
+      "CenterX": 586.5,
+      "CenterY": 368
+    },
+    {
+      "Text": "Graphic",
+      "X": 754,
+      "Y": 165,
+      "Width": 61,
+      "Height": 17,
+      "CenterX": 784.5,
+      "CenterY": 173.5
+    },
+    {
+      "Text": "Settings",
+      "X": 820,
+      "Y": 167,
+      "Width": 63,
+      "Height": 15,
+      "CenterX": 851.5,
+      "CenterY": 174.5
+    },
+    {
+      "Text": "1280",
+      "X": 755,
+      "Y": 249,
+      "Width": 22,
+      "Height": 7,
+      "CenterX": 766,
+      "CenterY": 252.5
+    },
+    {
+      "Text": "*720",
+      "X": 780,
+      "Y": 249,
+      "Width": 25,
+      "Height": 7,
+      "CenterX": 792.5,
+      "CenterY": 252.5
+    },
+    {
+      "Text": "post-Effects",
+      "X": 753,
+      "Y": 427,
+      "Width": 57,
+      "Height": 8,
+      "CenterX": 781.5,
+      "CenterY": 431
+    },
+    {
+      "Text": "Quality",
+      "X": 813,
+      "Y": 427,
+      "Width": 36,
+      "Height": 10,
+      "CenterX": 831,
+      "CenterY": 432
+    },
+    {
+      "Text": "tedlo",
+      "X": 812,
+      "Y": 572,
+      "Width": 27,
+      "Height": 8,
+      "CenterX": 825.5,
+      "CenterY": 576
+    },
+    {
+      "Text": "Detec",
+      "X": 784,
+      "Y": 573,
+      "Width": 27,
+      "Height": 7,
+      "CenterX": 797.5,
+      "CenterY": 576.5
+    },
+    {
+      "Text": "Qu",
+      "X": 995,
+      "Y": 196,
+      "Width": 13,
+      "Height": 9,
+      "CenterX": 1001.5,
+      "CenterY": 200.5
+    },
+    {
+      "Text": "alit\u002B",
+      "X": 1010,
+      "Y": 193,
+      "Width": 21,
+      "Height": 12,
+      "CenterX": 1020.5,
+      "CenterY": 199
+    },
+    {
+      "Text": "Vegetation",
+      "X": 956,
+      "Y": 274,
+      "Width": 52,
+      "Height": 9,
+      "CenterX": 982,
+      "CenterY": 278.5
+    },
+    {
+      "Text": "Quality",
+      "X": 1012,
+      "Y": 273,
+      "Width": 36,
+      "Height": 10,
+      "CenterX": 1030,
+      "CenterY": 278
+    },
+    {
+      "Text": "TSR",
+      "X": 956,
+      "Y": 404,
+      "Width": 20,
+      "Height": 7,
+      "CenterX": 966,
+      "CenterY": 407.5
+    },
+    {
+      "Text": "DX12",
+      "X": 956,
+      "Y": 467,
+      "Width": 26,
+      "Height": 7,
+      "CenterX": 969,
+      "CenterY": 470.5
+    },
+    {
+      "Text": "Rerun",
+      "X": 948,
+      "Y": 681,
+      "Width": 39,
+      "Height": 10,
+      "CenterX": 967.5,
+      "CenterY": 686
+    },
+    {
+      "Text": "a",
+      "X": 1018,
+      "Y": 680,
+      "Width": 14,
+      "Height": 14,
+      "CenterX": 1025,
+      "CenterY": 687
+    },
+    {
+      "Text": "View",
+      "X": 1040,
+      "Y": 681,
+      "Width": 33,
+      "Height": 10,
+      "CenterX": 1056.5,
+      "CenterY": 686
+    },
+    {
+      "Text": "History",
+      "X": 1077,
+      "Y": 681,
+      "Width": 47,
+      "Height": 14,
+      "CenterX": 1100.5,
+      "CenterY": 688
+    },
+    {
+      "Text": "Exit",
+      "X": 1177,
+      "Y": 681,
+      "Width": 24,
+      "Height": 10,
+      "CenterX": 1189,
+      "CenterY": 686
+    }
+  ]
+}

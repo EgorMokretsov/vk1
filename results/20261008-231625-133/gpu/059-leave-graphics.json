@@ -1,0 +1,927 @@
+{
+  "Text": "Benchmark @ Gameplay Q Language Display Graphics Sound Recommended Settings Apply Recommended Graphics Settings Sypgr Resolution Sa lin Super Resolution Super Resolution Sampling Frame Generation NVIDIA Full Ray Tracing Full Ray Tracing Full RayTracing Level Detailed Graphics Graphics Preset TSR Off Cinematic a Confirm Return",
+  "Lines": [
+    {
+      "Text": "Benchmark",
+      "Words": [
+        {
+          "Text": "Benchmark",
+          "X": 165,
+          "Y": 142,
+          "Width": 72,
+          "Height": 12.5,
+          "CenterX": 201,
+          "CenterY": 148.25
+        }
+      ]
+    },
+    {
+      "Text": "@ Gameplay",
+      "Words": [
+        {
+          "Text": "@",
+          "X": 138.5,
+          "Y": 184.5,
+          "Width": 15.5,
+          "Height": 15.5,
+          "CenterX": 146.25,
+          "CenterY": 192.25
+        },
+        {
+          "Text": "Gameplay",
+          "X": 165,
+          "Y": 185.5,
+          "Width": 61.5,
+          "Height": 15.5,
+          "CenterX": 195.75,
+          "CenterY": 193.25
+        }
+      ]
+    },
+    {
+      "Text": "Q Language",
+      "Words": [
+        {
+          "Text": "Q",
+          "X": 139.5,
+          "Y": 228.5,
+          "Width": 15.5,
+          "Height": 14,
+          "CenterX": 147.25,
+          "CenterY": 235.5
+        },
+        {
+          "Text": "Language",
+          "X": 165,
+          "Y": 229,
+          "Width": 60.5,
+          "Height": 14.5,
+          "CenterX": 195.25,
+          "CenterY": 236.25
+        }
+      ]
+    },
+    {
+      "Text": "Display",
+      "Words": [
+        {
+          "Text": "Display",
+          "X": 165,
+          "Y": 270.5,
+          "Width": 45,
+          "Height": 15.5,
+          "CenterX": 187.5,
+          "CenterY": 278.25
+        }
+      ]
+    },
+    {
+      "Text": "Graphics",
+      "Words": [
+        {
+          "Text": "Graphics",
+          "X": 165.5,
+          "Y": 313.5,
+          "Width": 52.5,
+          "Height": 14.5,
+          "CenterX": 191.75,
+          "CenterY": 320.75
+        }
+      ]
+    },
+    {
+      "Text": "Sound",
+      "Words": [
+        {
+          "Text": "Sound",
+          "X": 164.5,
+          "Y": 356,
+          "Width": 40,
+          "Height": 12.5,
+          "CenterX": 184.5,
+          "CenterY": 362.25
+        }
+      ]
+    },
+    {
+      "Text": "Recommended Settings",
+      "Words": [
+        {
+          "Text": "Recommended",
+          "X": 347.5,
+          "Y": 140.5,
+          "Width": 92.5,
+          "Height": 11.5,
+          "CenterX": 393.75,
+          "CenterY": 146.25
+        },
+        {
+          "Text": "Settings",
+          "X": 443,
+          "Y": 141.5,
+          "Width": 50.5,
+          "Height": 11,
+          "CenterX": 468.25,
+          "CenterY": 147
+        }
+      ]
+    },
+    {
+      "Text": "Apply Recommended Graphics Settings",
+      "Words": [
+        {
+          "Text": "Apply",
+          "X": 359.5,
+          "Y": 183.5,
+          "Width": 36.5,
+          "Height": 15.5,
+          "CenterX": 377.75,
+          "CenterY": 191.25
+        },
+        {
+          "Text": "Recommended",
+          "X": 399,
+          "Y": 183.5,
+          "Width": 93,
+          "Height": 11.5,
+          "CenterX": 445.5,
+          "CenterY": 189.25
+        },
+        {
+          "Text": "Graphics",
+          "X": 495,
+          "Y": 183.5,
+          "Width": 53,
+          "Height": 15,
+          "CenterX": 521.5,
+          "CenterY": 191
+        },
+        {
+          "Text": "Settings",
+          "X": 552,
+          "Y": 184,
+          "Width": 50.5,
+          "Height": 14.5,
+          "CenterX": 577.25,
+          "CenterY": 191.25
+        }
+      ]
+    },
+    {
+      "Text": "Sypgr Resolution Sa lin",
+      "Words": [
+        {
+          "Text": "Sypgr",
+          "X": 347,
+          "Y": 226.5,
+          "Width": 36,
+          "Height": 14.5,
+          "CenterX": 365,
+          "CenterY": 233.75
+        },
+        {
+          "Text": "Resolution",
+          "X": 386.5,
+          "Y": 225.5,
+          "Width": 66.5,
+          "Height": 11.5,
+          "CenterX": 419.75,
+          "CenterY": 231.25
+        },
+        {
+          "Text": "Sa",
+          "X": 456,
+          "Y": 226,
+          "Width": 14,
+          "Height": 11,
+          "CenterX": 463,
+          "CenterY": 231.5
+        },
+        {
+          "Text": "lin",
+          "X": 490,
+          "Y": 225,
+          "Width": 15,
+          "Height": 12,
+          "CenterX": 497.5,
+          "CenterY": 231
+        }
+      ]
+    },
+    {
+      "Text": "Super Resolution",
+      "Words": [
+        {
+          "Text": "Super",
+          "X": 360,
+          "Y": 270.5,
+          "Width": 36,
+          "Height": 13.5,
+          "CenterX": 378,
+          "CenterY": 277.25
+        },
+        {
+          "Text": "Resolution",
+          "X": 399,
+          "Y": 269.5,
+          "Width": 67,
+          "Height": 11.5,
+          "CenterX": 432.5,
+          "CenterY": 275.25
+        }
+      ]
+    },
+    {
+      "Text": "Super Resolution Sampling",
+      "Words": [
+        {
+          "Text": "Super",
+          "X": 360,
+          "Y": 312.5,
+          "Width": 36,
+          "Height": 13.5,
+          "CenterX": 378,
+          "CenterY": 319.25
+        },
+        {
+          "Text": "Resolution",
+          "X": 399,
+          "Y": 311.5,
+          "Width": 67,
+          "Height": 11.5,
+          "CenterX": 432.5,
+          "CenterY": 317.25
+        },
+        {
+          "Text": "Sampling",
+          "X": 469,
+          "Y": 311.5,
+          "Width": 56.5,
+          "Height": 15,
+          "CenterX": 497.25,
+          "CenterY": 319
+        }
+      ]
+    },
+    {
+      "Text": "Frame Generation",
+      "Words": [
+        {
+          "Text": "Frame",
+          "X": 360,
+          "Y": 355,
+          "Width": 39,
+          "Height": 11,
+          "CenterX": 379.5,
+          "CenterY": 360.5
+        },
+        {
+          "Text": "Generation",
+          "X": 403,
+          "Y": 355.5,
+          "Width": 69,
+          "Height": 10.5,
+          "CenterX": 437.5,
+          "CenterY": 360.75
+        }
+      ]
+    },
+    {
+      "Text": "NVIDIA Full Ray Tracing",
+      "Words": [
+        {
+          "Text": "NVIDIA",
+          "X": 347,
+          "Y": 397,
+          "Width": 49,
+          "Height": 11,
+          "CenterX": 371.5,
+          "CenterY": 402.5
+        },
+        {
+          "Text": "Full",
+          "X": 399,
+          "Y": 396,
+          "Width": 24,
+          "Height": 12.5,
+          "CenterX": 411,
+          "CenterY": 402.25
+        },
+        {
+          "Text": "Ray",
+          "X": 426,
+          "Y": 397,
+          "Width": 23.5,
+          "Height": 15.5,
+          "CenterX": 437.75,
+          "CenterY": 404.75
+        },
+        {
+          "Text": "Tracing",
+          "X": 451.5,
+          "Y": 397,
+          "Width": 48.5,
+          "Height": 14,
+          "CenterX": 475.75,
+          "CenterY": 404
+        }
+      ]
+    },
+    {
+      "Text": "Full Ray Tracing",
+      "Words": [
+        {
+          "Text": "Full",
+          "X": 360.5,
+          "Y": 439.5,
+          "Width": 23.5,
+          "Height": 11.5,
+          "CenterX": 372.25,
+          "CenterY": 445.25
+        },
+        {
+          "Text": "Ray",
+          "X": 387.5,
+          "Y": 440.5,
+          "Width": 22.5,
+          "Height": 14.5,
+          "CenterX": 398.75,
+          "CenterY": 447.75
+        },
+        {
+          "Text": "Tracing",
+          "X": 413,
+          "Y": 440.5,
+          "Width": 47.5,
+          "Height": 14,
+          "CenterX": 436.75,
+          "CenterY": 447.5
+        }
+      ]
+    },
+    {
+      "Text": "Full RayTracing Level",
+      "Words": [
+        {
+          "Text": "Full",
+          "X": 360.5,
+          "Y": 482.5,
+          "Width": 23,
+          "Height": 11.5,
+          "CenterX": 372,
+          "CenterY": 488.25
+        },
+        {
+          "Text": "RayTracing",
+          "X": 387.5,
+          "Y": 483,
+          "Width": 72.5,
+          "Height": 15,
+          "CenterX": 423.75,
+          "CenterY": 490.5
+        },
+        {
+          "Text": "Level",
+          "X": 464.5,
+          "Y": 482.5,
+          "Width": 32.5,
+          "Height": 11.5,
+          "CenterX": 480.75,
+          "CenterY": 488.25
+        }
+      ]
+    },
+    {
+      "Text": "Detailed Graphics",
+      "Words": [
+        {
+          "Text": "Detailed",
+          "X": 347,
+          "Y": 524,
+          "Width": 52,
+          "Height": 12.5,
+          "CenterX": 373,
+          "CenterY": 530.25
+        },
+        {
+          "Text": "Graphics",
+          "X": 402,
+          "Y": 524,
+          "Width": 53.5,
+          "Height": 15,
+          "CenterX": 428.75,
+          "CenterY": 531.5
+        }
+      ]
+    },
+    {
+      "Text": "Graphics Preset",
+      "Words": [
+        {
+          "Text": "Graphics",
+          "X": 360,
+          "Y": 567.5,
+          "Width": 53,
+          "Height": 15,
+          "CenterX": 386.5,
+          "CenterY": 575
+        },
+        {
+          "Text": "Preset",
+          "X": 417,
+          "Y": 568.5,
+          "Width": 39.5,
+          "Height": 11,
+          "CenterX": 436.75,
+          "CenterY": 574
+        }
+      ]
+    },
+    {
+      "Text": "TSR",
+      "Words": [
+        {
+          "Text": "TSR",
+          "X": 708.5,
+          "Y": 312,
+          "Width": 25.5,
+          "Height": 11.5,
+          "CenterX": 721.25,
+          "CenterY": 317.75
+        }
+      ]
+    },
+    {
+      "Text": "Off",
+      "Words": [
+        {
+          "Text": "Off",
+          "X": 711,
+          "Y": 354,
+          "Width": 21,
+          "Height": 12.5,
+          "CenterX": 721.5,
+          "CenterY": 360.25
+        }
+      ]
+    },
+    {
+      "Text": "Cinematic",
+      "Words": [
+        {
+          "Text": "Cinematic",
+          "X": 690,
+          "Y": 568,
+          "Width": 61.5,
+          "Height": 11.5,
+          "CenterX": 720.75,
+          "CenterY": 573.75
+        }
+      ]
+    },
+    {
+      "Text": "a Confirm",
+      "Words": [
+        {
+          "Text": "a",
+          "X": 1025,
+          "Y": 679,
+          "Width": 15.5,
+          "Height": 16,
+          "CenterX": 1032.75,
+          "CenterY": 687
+        },
+        {
+          "Text": "Confirm",
+          "X": 1047.5,
+          "Y": 679,
+          "Width": 54,
+          "Height": 12.5,
+          "CenterX": 1074.5,
+          "CenterY": 685.25
+        }
+      ]
+    },
+    {
+      "Text": "Return",
+      "Words": [
+        {
+          "Text": "Return",
+          "X": 1153.5,
+          "Y": 680,
+          "Width": 47,
+          "Height": 11.5,
+          "CenterX": 1177,
+          "CenterY": 685.75
+        }
+      ]
+    }
+  ],
+  "Words": [
+    {
+      "Text": "Benchmark",
+      "X": 165,
+      "Y": 142,
+      "Width": 72,
+      "Height": 12.5,
+      "CenterX": 201,
+      "CenterY": 148.25
+    },
+    {
+      "Text": "@",
+      "X": 138.5,
+      "Y": 184.5,
+      "Width": 15.5,
+      "Height": 15.5,
+      "CenterX": 146.25,
+      "CenterY": 192.25
+    },
+    {
+      "Text": "Gameplay",
+      "X": 165,
+      "Y": 185.5,
+      "Width": 61.5,
+      "Height": 15.5,
+      "CenterX": 195.75,
+      "CenterY": 193.25
+    },
+    {
+      "Text": "Q",
+      "X": 139.5,
+      "Y": 228.5,
+      "Width": 15.5,
+      "Height": 14,
+      "CenterX": 147.25,
+      "CenterY": 235.5
+    },
+    {
+      "Text": "Language",
+      "X": 165,
+      "Y": 229,
+      "Width": 60.5,
+      "Height": 14.5,
+      "CenterX": 195.25,
+      "CenterY": 236.25
+    },
+    {
+      "Text": "Display",
+      "X": 165,
+      "Y": 270.5,
+      "Width": 45,
+      "Height": 15.5,
+      "CenterX": 187.5,
+      "CenterY": 278.25
+    },
+    {
+      "Text": "Graphics",
+      "X": 165.5,
+      "Y": 313.5,
+      "Width": 52.5,
+      "Height": 14.5,
+      "CenterX": 191.75,
+      "CenterY": 320.75
+    },
+    {
+      "Text": "Sound",
+      "X": 164.5,
+      "Y": 356,
+      "Width": 40,
+      "Height": 12.5,
+      "CenterX": 184.5,
+      "CenterY": 362.25
+    },
+    {
+      "Text": "Recommended",
+      "X": 347.5,
+      "Y": 140.5,
+      "Width": 92.5,
+      "Height": 11.5,
+      "CenterX": 393.75,
+      "CenterY": 146.25
+    },
+    {
+      "Text": "Settings",
+      "X": 443,
+      "Y": 141.5,
+      "Width": 50.5,
+      "Height": 11,
+      "CenterX": 468.25,
+      "CenterY": 147
+    },
+    {
+      "Text": "Apply",
+      "X": 359.5,
+      "Y": 183.5,
+      "Width": 36.5,
+      "Height": 15.5,
+      "CenterX": 377.75,
+      "CenterY": 191.25
+    },
+    {
+      "Text": "Recommended",
+      "X": 399,
+      "Y": 183.5,
+      "Width": 93,
+      "Height": 11.5,
+      "CenterX": 445.5,
+      "CenterY": 189.25
+    },
+    {
+      "Text": "Graphics",
+      "X": 495,
+      "Y": 183.5,
+      "Width": 53,
+      "Height": 15,
+      "CenterX": 521.5,
+      "CenterY": 191
+    },
+    {
+      "Text": "Settings",
+      "X": 552,
+      "Y": 184,
+      "Width": 50.5,
+      "Height": 14.5,
+      "CenterX": 577.25,
+      "CenterY": 191.25
+    },
+    {
+      "Text": "Sypgr",
+      "X": 347,
+      "Y": 226.5,
+      "Width": 36,
+      "Height": 14.5,
+      "CenterX": 365,
+      "CenterY": 233.75
+    },
+    {
+      "Text": "Resolution",
+      "X": 386.5,
+      "Y": 225.5,
+      "Width": 66.5,
+      "Height": 11.5,
+      "CenterX": 419.75,
+      "CenterY": 231.25
+    },
+    {
+      "Text": "Sa",
+      "X": 456,
+      "Y": 226,
+      "Width": 14,
+      "Height": 11,
+      "CenterX": 463,
+      "CenterY": 231.5
+    },
+    {
+      "Text": "lin",
+      "X": 490,
+      "Y": 225,
+      "Width": 15,
+      "Height": 12,
+      "CenterX": 497.5,
+      "CenterY": 231
+    },
+    {
+      "Text": "Super",
+      "X": 360,
+      "Y": 270.5,
+      "Width": 36,
+      "Height": 13.5,
+      "CenterX": 378,
+      "CenterY": 277.25
+    },
+    {
+      "Text": "Resolution",
+      "X": 399,
+      "Y": 269.5,
+      "Width": 67,
+      "Height": 11.5,
+      "CenterX": 432.5,
+      "CenterY": 275.25
+    },
+    {
+      "Text": "Super",
+      "X": 360,
+      "Y": 312.5,
+      "Width": 36,
+      "Height": 13.5,
+      "CenterX": 378,
+      "CenterY": 319.25
+    },
+    {
+      "Text": "Resolution",
+      "X": 399,
+      "Y": 311.5,
+      "Width": 67,
+      "Height": 11.5,
+      "CenterX": 432.5,
+      "CenterY": 317.25
+    },
+    {
+      "Text": "Sampling",
+      "X": 469,
+      "Y": 311.5,
+      "Width": 56.5,
+      "Height": 15,
+      "CenterX": 497.25,
+      "CenterY": 319
+    },
+    {
+      "Text": "Frame",
+      "X": 360,
+      "Y": 355,
+      "Width": 39,
+      "Height": 11,
+      "CenterX": 379.5,
+      "CenterY": 360.5
+    },
+    {
+      "Text": "Generation",
+      "X": 403,
+      "Y": 355.5,
+      "Width": 69,
+      "Height": 10.5,
+      "CenterX": 437.5,
+      "CenterY": 360.75
+    },
+    {
+      "Text": "NVIDIA",
+      "X": 347,
+      "Y": 397,
+      "Width": 49,
+      "Height": 11,
+      "CenterX": 371.5,
+      "CenterY": 402.5
+    },
+    {
+      "Text": "Full",
+      "X": 399,
+      "Y": 396,
+      "Width": 24,
+      "Height": 12.5,
+      "CenterX": 411,
+      "CenterY": 402.25
+    },
+    {
+      "Text": "Ray",
+      "X": 426,
+      "Y": 397,
+      "Width": 23.5,
+      "Height": 15.5,
+      "CenterX": 437.75,
+      "CenterY": 404.75
+    },
+    {
+      "Text": "Tracing",
+      "X": 451.5,
+      "Y": 397,
+      "Width": 48.5,
+      "Height": 14,
+      "CenterX": 475.75,
+      "CenterY": 404
+    },
+    {
+      "Text": "Full",
+      "X": 360.5,
+      "Y": 439.5,
+      "Width": 23.5,
+      "Height": 11.5,
+      "CenterX": 372.25,
+      "CenterY": 445.25
+    },
+    {
+      "Text": "Ray",
+      "X": 387.5,
+      "Y": 440.5,
+      "Width": 22.5,
+      "Height": 14.5,
+      "CenterX": 398.75,
+      "CenterY": 447.75
+    },
+    {
+      "Text": "Tracing",
+      "X": 413,
+      "Y": 440.5,
+      "Width": 47.5,
+      "Height": 14,
+      "CenterX": 436.75,
+      "CenterY": 447.5
+    },
+    {
+      "Text": "Full",
+      "X": 360.5,
+      "Y": 482.5,
+      "Width": 23,
+      "Height": 11.5,
+      "CenterX": 372,
+      "CenterY": 488.25
+    },
+    {
+      "Text": "RayTracing",
+      "X": 387.5,
+      "Y": 483,
+      "Width": 72.5,
+      "Height": 15,
+      "CenterX": 423.75,
+      "CenterY": 490.5
+    },
+    {
+      "Text": "Level",
+      "X": 464.5,
+      "Y": 482.5,
+      "Width": 32.5,
+      "Height": 11.5,
+      "CenterX": 480.75,
+      "CenterY": 488.25
+    },
+    {
+      "Text": "Detailed",
+      "X": 347,
+      "Y": 524,
+      "Width": 52,
+      "Height": 12.5,
+      "CenterX": 373,
+      "CenterY": 530.25
+    },
+    {
+      "Text": "Graphics",
+      "X": 402,
+      "Y": 524,
+      "Width": 53.5,
+      "Height": 15,
+      "CenterX": 428.75,
+      "CenterY": 531.5
+    },
+    {
+      "Text": "Graphics",
+      "X": 360,
+      "Y": 567.5,
+      "Width": 53,
+      "Height": 15,
+      "CenterX": 386.5,
+      "CenterY": 575
+    },
+    {
+      "Text": "Preset",
+      "X": 417,
+      "Y": 568.5,
+      "Width": 39.5,
+      "Height": 11,
+      "CenterX": 436.75,
+      "CenterY": 574
+    },
+    {
+      "Text": "TSR",
+      "X": 708.5,
+      "Y": 312,
+      "Width": 25.5,
+      "Height": 11.5,
+      "CenterX": 721.25,
+      "CenterY": 317.75
+    },
+    {
+      "Text": "Off",
+      "X": 711,
+      "Y": 354,
+      "Width": 21,
+      "Height": 12.5,
+      "CenterX": 721.5,
+      "CenterY": 360.25
+    },
+    {
+      "Text": "Cinematic",
+      "X": 690,
+      "Y": 568,
+      "Width": 61.5,
+      "Height": 11.5,
+      "CenterX": 720.75,
+      "CenterY": 573.75
+    },
+    {
+      "Text": "a",
+      "X": 1025,
+      "Y": 679,
+      "Width": 15.5,
+      "Height": 16,
+      "CenterX": 1032.75,
+      "CenterY": 687
+    },
+    {
+      "Text": "Confirm",
+      "X": 1047.5,
+      "Y": 679,
+      "Width": 54,
+      "Height": 12.5,
+      "CenterX": 1074.5,
+      "CenterY": 685.25
+    },
+    {
+      "Text": "Return",
+      "X": 1153.5,
+      "Y": 680,
+      "Width": 47,
+      "Height": 11.5,
+      "CenterX": 1177,
+      "CenterY": 685.75
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "Text": "1 FPS",
+  "Lines": [
+    {
+      "Text": "1 FPS",
+      "Words": [
+        {
+          "Text": "1",
+          "X": 47,
+          "Y": 48,
+          "Width": 35,
+          "Height": 82,
+          "CenterX": 64.5,
+          "CenterY": 89
+        },
+        {
+          "Text": "FPS",
+          "X": 113,
+          "Y": 50,
+          "Width": 208,
+          "Height": 83,
+          "CenterX": 217,
+          "CenterY": 91.5
+        }
+      ]
+    }
+  ],
+  "Words": [
+    {
+      "Text": "1",
+      "X": 47,
+      "Y": 48,
+      "Width": 35,
+      "Height": 82,
+      "CenterX": 64.5,
+      "CenterY": 89
+    },
+    {
+      "Text": "FPS",
+      "X": 113,
+      "Y": 50,
+      "Width": 208,
+      "Height": 83,
+      "CenterX": 217,
+      "CenterY": 91.5
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "Text": "Benchmark Results\nAverage\n20\nMinimum\n3\nMaximum\n26",
+  "Lines": [
+    {
+      "Text": "Benchmark Results",
+      "Words": [
+        {
+          "Text": "Results",
+          "X": 0,
+          "Y": 0,
+          "Width": 1,
+          "Height": 1,
+          "CenterX": 0.5,
+          "CenterY": 0.5
+        }
+      ]
+    },
+    {
+      "Text": "Average",
+      "Words": [
+        {
+          "Text": "Average",
+          "X": 47.5,
+          "Y": 218.5,
+          "Width": 39.25,
+          "Height": 9,
+          "CenterX": 67.125,
+          "CenterY": 223
+        }
+      ]
+    },
+    {
+      "Text": "20",
+      "Words": [
+        {
+          "Text": "20",
+          "X": 57.5,
+          "Y": 241.5,
+          "Width": 36.166666666666664,
+          "Height": 24.166666666666668,
+          "CenterX": 75.58333333333333,
+          "CenterY": 253.58333333333334
+        }
+      ]
+    },
+    {
+      "Text": "Minimum",
+      "Words": [
+        {
+          "Text": "Minimum",
+          "X": 210.75,
+          "Y": 290.5,
+          "Width": 44.5,
+          "Height": 7.25,
+          "CenterX": 233,
+          "CenterY": 294.125
+        }
+      ]
+    },
+    {
+      "Text": "3",
+      "Words": [
+        {
+          "Text": "3",
+          "X": 219.16666666666666,
+          "Y": 311.3333333333333,
+          "Width": 7.5,
+          "Height": 11.5,
+          "CenterX": 222.91666666666666,
+          "CenterY": 317.0833333333333
+        }
+      ]
+    },
+    {
+      "Text": "Maximum",
+      "Words": [
+        {
+          "Text": "Maximum",
+          "X": 47.5,
+          "Y": 290.5,
+          "Width": 47.5,
+          "Height": 7.5,
+          "CenterX": 71.25,
+          "CenterY": 294.25
+        }
+      ]
+    },
+    {
+      "Text": "26",
+      "Words": [
+        {
+          "Text": "26",
+          "X": 56.166666666666664,
+          "Y": 311.3333333333333,
+          "Width": 17.333333333333332,
+          "Height": 11.5,
+          "CenterX": 64.83333333333333,
+          "CenterY": 317.0833333333333
+        }
+      ]
+    }
+  ],
+  "Words": [
+    {
+      "Text": "Results",
+      "X": 0,
+      "Y": 0,
+      "Width": 1,
+      "Height": 1,
+      "CenterX": 0.5,
+      "CenterY": 0.5
+    },
+    {
+      "Text": "Average",
+      "X": 47.5,
+      "Y": 218.5,
+      "Width": 39.25,
+      "Height": 9,
+      "CenterX": 67.125,
+      "CenterY": 223
+    },
+    {
+      "Text": "20",
+      "X": 57.5,
+      "Y": 241.5,
+      "Width": 36.166666666666664,
+      "Height": 24.166666666666668,
+      "CenterX": 75.58333333333333,
+      "CenterY": 253.58333333333334
+    },
+    {
+      "Text": "Minimum",
+      "X": 210.75,
+      "Y": 290.5,
+      "Width": 44.5,
+      "Height": 7.25,
+      "CenterX": 233,
+      "CenterY": 294.125
+    },
+    {
+      "Text": "3",
+      "X": 219.16666666666666,
+      "Y": 311.3333333333333,
+      "Width": 7.5,
+      "Height": 11.5,
+      "CenterX": 222.91666666666666,
+      "CenterY": 317.0833333333333
+    },
+    {
+      "Text": "Maximum",
+      "X": 47.5,
+      "Y": 290.5,
+      "Width": 47.5,
+      "Height": 7.5,
+      "CenterX": 71.25,
+      "CenterY": 294.25
+    },
+    {
+      "Text": "26",
+      "X": 56.166666666666664,
+      "Y": 311.3333333333333,
+      "Width": 17.333333333333332,
+      "Height": 11.5,
+      "CenterX": 64.83333333333333,
+      "CenterY": 317.0833333333333
+    }
+  ]
+}

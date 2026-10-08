@@ -1,0 +1,30 @@
+{
+  "Text": "FPS",
+  "Lines": [
+    {
+      "Text": "FPS",
+      "Words": [
+        {
+          "Text": "FPS",
+          "X": 150,
+          "Y": 146,
+          "Width": 137,
+          "Height": 61,
+          "CenterX": 218.5,
+          "CenterY": 176.5
+        }
+      ]
+    }
+  ],
+  "Words": [
+    {
+      "Text": "FPS",
+      "X": 150,
+      "Y": 146,
+      "Width": 137,
+      "Height": 61,
+      "CenterX": 218.5,
+      "CenterY": 176.5
+    }
+  ]
+}

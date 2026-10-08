@@ -1,0 +1,238 @@
+{
+  "Text": "Are you sure you want to apply the graphics changes? Confirm Cancel",
+  "Lines": [
+    {
+      "Text": "Are you sure you want to apply the graphics changes?",
+      "Words": [
+        {
+          "Text": "Are",
+          "X": 443.5,
+          "Y": 328.5,
+          "Width": 25.5,
+          "Height": 11.5,
+          "CenterX": 456.25,
+          "CenterY": 334.25
+        },
+        {
+          "Text": "you",
+          "X": 471.5,
+          "Y": 331.5,
+          "Width": 28.5,
+          "Height": 13,
+          "CenterX": 485.75,
+          "CenterY": 338
+        },
+        {
+          "Text": "sure",
+          "X": 503.5,
+          "Y": 331.5,
+          "Width": 31.5,
+          "Height": 9,
+          "CenterX": 519.25,
+          "CenterY": 336
+        },
+        {
+          "Text": "you",
+          "X": 537.5,
+          "Y": 331.5,
+          "Width": 28.5,
+          "Height": 13.5,
+          "CenterX": 551.75,
+          "CenterY": 338.25
+        },
+        {
+          "Text": "want",
+          "X": 568.5,
+          "Y": 329.5,
+          "Width": 39,
+          "Height": 10.5,
+          "CenterX": 588,
+          "CenterY": 334.75
+        },
+        {
+          "Text": "to",
+          "X": 611,
+          "Y": 329.5,
+          "Width": 16,
+          "Height": 11,
+          "CenterX": 619,
+          "CenterY": 335
+        },
+        {
+          "Text": "apply",
+          "X": 630.5,
+          "Y": 326.5,
+          "Width": 40,
+          "Height": 18,
+          "CenterX": 650.5,
+          "CenterY": 335.5
+        },
+        {
+          "Text": "the",
+          "X": 674.5,
+          "Y": 326.5,
+          "Width": 24.5,
+          "Height": 13.5,
+          "CenterX": 686.75,
+          "CenterY": 333.25
+        },
+        {
+          "Text": "graphics",
+          "X": 702.5,
+          "Y": 326.5,
+          "Width": 62.5,
+          "Height": 18,
+          "CenterX": 733.75,
+          "CenterY": 335.5
+        },
+        {
+          "Text": "changes?",
+          "X": 768,
+          "Y": 326,
+          "Width": 68,
+          "Height": 18,
+          "CenterX": 802,
+          "CenterY": 335
+        }
+      ]
+    },
+    {
+      "Text": "Confirm",
+      "Words": [
+        {
+          "Text": "Confirm",
+          "X": 470.5,
+          "Y": 414.5,
+          "Width": 65.5,
+          "Height": 14.5,
+          "CenterX": 503.25,
+          "CenterY": 421.75
+        }
+      ]
+    },
+    {
+      "Text": "Cancel",
+      "Words": [
+        {
+          "Text": "Cancel",
+          "X": 749.5,
+          "Y": 414.5,
+          "Width": 54.5,
+          "Height": 14.5,
+          "CenterX": 776.75,
+          "CenterY": 421.75
+        }
+      ]
+    }
+  ],
+  "Words": [
+    {
+      "Text": "Are",
+      "X": 443.5,
+      "Y": 328.5,
+      "Width": 25.5,
+      "Height": 11.5,
+      "CenterX": 456.25,
+      "CenterY": 334.25
+    },
+    {
+      "Text": "you",
+      "X": 471.5,
+      "Y": 331.5,
+      "Width": 28.5,
+      "Height": 13,
+      "CenterX": 485.75,
+      "CenterY": 338
+    },
+    {
+      "Text": "sure",
+      "X": 503.5,
+      "Y": 331.5,
+      "Width": 31.5,
+      "Height": 9,
+      "CenterX": 519.25,
+      "CenterY": 336
+    },
+    {
+      "Text": "you",
+      "X": 537.5,
+      "Y": 331.5,
+      "Width": 28.5,
+      "Height": 13.5,
+      "CenterX": 551.75,
+      "CenterY": 338.25
+    },
+    {
+      "Text": "want",
+      "X": 568.5,
+      "Y": 329.5,
+      "Width": 39,
+      "Height": 10.5,
+      "CenterX": 588,
+      "CenterY": 334.75
+    },
+    {
+      "Text": "to",
+      "X": 611,
+      "Y": 329.5,
+      "Width": 16,
+      "Height": 11,
+      "CenterX": 619,
+      "CenterY": 335
+    },
+    {
+      "Text": "apply",
+      "X": 630.5,
+      "Y": 326.5,
+      "Width": 40,
+      "Height": 18,
+      "CenterX": 650.5,
+      "CenterY": 335.5
+    },
+    {
+      "Text": "the",
+      "X": 674.5,
+      "Y": 326.5,
+      "Width": 24.5,
+      "Height": 13.5,
+      "CenterX": 686.75,
+      "CenterY": 333.25
+    },
+    {
+      "Text": "graphics",
+      "X": 702.5,
+      "Y": 326.5,
+      "Width": 62.5,
+      "Height": 18,
+      "CenterX": 733.75,
+      "CenterY": 335.5
+    },
+    {
+      "Text": "changes?",
+      "X": 768,
+      "Y": 326,
+      "Width": 68,
+      "Height": 18,
+      "CenterX": 802,
+      "CenterY": 335
+    },
+    {
+      "Text": "Confirm",
+      "X": 470.5,
+      "Y": 414.5,
+      "Width": 65.5,
+      "Height": 14.5,
+      "CenterX": 503.25,
+      "CenterY": 421.75
+    },
+    {
+      "Text": "Cancel",
+      "X": 749.5,
+      "Y": 414.5,
+      "Width": 54.5,
+      "Height": 14.5,
+      "CenterX": 776.75,
+      "CenterY": 421.75
+    }
+  ]
+}

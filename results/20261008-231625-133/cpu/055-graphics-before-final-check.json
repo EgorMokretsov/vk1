@@ -1,0 +1,1417 @@
+{
+  "Text": "Graphics Preset View Distance Quality Anti-Aliasing Quality Post-Effects Quality\u0027 Shadow Quality Texture Quality! Visual Effect Quality Hair Quality Vegetation Quality Global Illumination Quality Reflection Quality Custom Cinematic Low Low Low Low Low Low Cinematic Low Low Texture Quality the texture quahty to change the level ofitems, buildngs, and characters. The current settings exceed the recommended settings and may lead to performance issues. Apply Graphics Changes Reset Settings forThis Page Return",
+  "Lines": [
+    {
+      "Text": "Graphics Preset",
+      "Words": [
+        {
+          "Text": "Graphics",
+          "X": 227,
+          "Y": 138.5,
+          "Width": 53.5,
+          "Height": 14.5,
+          "CenterX": 253.75,
+          "CenterY": 145.75
+        },
+        {
+          "Text": "Preset",
+          "X": 284,
+          "Y": 139,
+          "Width": 39.5,
+          "Height": 11.5,
+          "CenterX": 303.75,
+          "CenterY": 144.75
+        }
+      ]
+    },
+    {
+      "Text": "View Distance Quality",
+      "Words": [
+        {
+          "Text": "View",
+          "X": 226.5,
+          "Y": 181,
+          "Width": 30.5,
+          "Height": 11,
+          "CenterX": 241.75,
+          "CenterY": 186.5
+        },
+        {
+          "Text": "Distance",
+          "X": 260,
+          "Y": 181,
+          "Width": 53.5,
+          "Height": 11.5,
+          "CenterX": 286.75,
+          "CenterY": 186.75
+        },
+        {
+          "Text": "Quality",
+          "X": 317,
+          "Y": 180,
+          "Width": 45.5,
+          "Height": 16.5,
+          "CenterX": 339.75,
+          "CenterY": 188.25
+        }
+      ]
+    },
+    {
+      "Text": "Anti-Aliasing Quality",
+      "Words": [
+        {
+          "Text": "Anti-Aliasing",
+          "X": 226,
+          "Y": 223.5,
+          "Width": 79.5,
+          "Height": 15,
+          "CenterX": 265.75,
+          "CenterY": 231
+        },
+        {
+          "Text": "Quality",
+          "X": 309,
+          "Y": 223.5,
+          "Width": 45.5,
+          "Height": 16,
+          "CenterX": 331.75,
+          "CenterY": 231.5
+        }
+      ]
+    },
+    {
+      "Text": "Post-Effects Quality\u0027",
+      "Words": [
+        {
+          "Text": "Post-Effects",
+          "X": 227,
+          "Y": 266.5,
+          "Width": 76.5,
+          "Height": 12,
+          "CenterX": 265.25,
+          "CenterY": 272.5
+        },
+        {
+          "Text": "Quality\u0027",
+          "X": 307,
+          "Y": 266.5,
+          "Width": 49.5,
+          "Height": 16,
+          "CenterX": 331.75,
+          "CenterY": 274.5
+        }
+      ]
+    },
+    {
+      "Text": "Shadow Quality",
+      "Words": [
+        {
+          "Text": "Shadow",
+          "X": 226.5,
+          "Y": 308,
+          "Width": 49.5,
+          "Height": 12.5,
+          "CenterX": 251.25,
+          "CenterY": 314.25
+        },
+        {
+          "Text": "Quality",
+          "X": 279,
+          "Y": 308.5,
+          "Width": 45.5,
+          "Height": 16,
+          "CenterX": 301.75,
+          "CenterY": 316.5
+        }
+      ]
+    },
+    {
+      "Text": "Texture Quality!",
+      "Words": [
+        {
+          "Text": "Texture",
+          "X": 227,
+          "Y": 352.5,
+          "Width": 49,
+          "Height": 10.5,
+          "CenterX": 251.5,
+          "CenterY": 357.75
+        },
+        {
+          "Text": "Quality!",
+          "X": 280.5,
+          "Y": 351.5,
+          "Width": 49,
+          "Height": 15.5,
+          "CenterX": 305,
+          "CenterY": 359.25
+        }
+      ]
+    },
+    {
+      "Text": "Visual Effect Quality",
+      "Words": [
+        {
+          "Text": "Visual",
+          "X": 226.5,
+          "Y": 394,
+          "Width": 37.5,
+          "Height": 12.5,
+          "CenterX": 245.25,
+          "CenterY": 400.25
+        },
+        {
+          "Text": "Effect",
+          "X": 267,
+          "Y": 394.5,
+          "Width": 37.5,
+          "Height": 12,
+          "CenterX": 285.75,
+          "CenterY": 400.5
+        },
+        {
+          "Text": "Quality",
+          "X": 308,
+          "Y": 394.5,
+          "Width": 45.5,
+          "Height": 16,
+          "CenterX": 330.75,
+          "CenterY": 402.5
+        }
+      ]
+    },
+    {
+      "Text": "Hair Quality",
+      "Words": [
+        {
+          "Text": "Hair",
+          "X": 227,
+          "Y": 437,
+          "Width": 26,
+          "Height": 11.5,
+          "CenterX": 240,
+          "CenterY": 442.75
+        },
+        {
+          "Text": "Quality",
+          "X": 256,
+          "Y": 436,
+          "Width": 45.5,
+          "Height": 16.5,
+          "CenterX": 278.75,
+          "CenterY": 444.25
+        }
+      ]
+    },
+    {
+      "Text": "Vegetation Quality",
+      "Words": [
+        {
+          "Text": "Vegetation",
+          "X": 226.5,
+          "Y": 480,
+          "Width": 69.5,
+          "Height": 14.5,
+          "CenterX": 261.25,
+          "CenterY": 487.25
+        },
+        {
+          "Text": "Quality",
+          "X": 299,
+          "Y": 479.5,
+          "Width": 45.5,
+          "Height": 16,
+          "CenterX": 321.75,
+          "CenterY": 487.5
+        }
+      ]
+    },
+    {
+      "Text": "Global Illumination Quality",
+      "Words": [
+        {
+          "Text": "Global",
+          "X": 227,
+          "Y": 522.5,
+          "Width": 40,
+          "Height": 12,
+          "CenterX": 247,
+          "CenterY": 528.5
+        },
+        {
+          "Text": "Illumination",
+          "X": 270,
+          "Y": 522.5,
+          "Width": 76,
+          "Height": 12,
+          "CenterX": 308,
+          "CenterY": 528.5
+        },
+        {
+          "Text": "Quality",
+          "X": 349,
+          "Y": 522.5,
+          "Width": 45.5,
+          "Height": 16,
+          "CenterX": 371.75,
+          "CenterY": 530.5
+        }
+      ]
+    },
+    {
+      "Text": "Reflection Quality",
+      "Words": [
+        {
+          "Text": "Reflection",
+          "X": 227,
+          "Y": 564,
+          "Width": 64,
+          "Height": 12.5,
+          "CenterX": 259,
+          "CenterY": 570.25
+        },
+        {
+          "Text": "Quality",
+          "X": 294,
+          "Y": 564,
+          "Width": 45.5,
+          "Height": 16.5,
+          "CenterX": 316.75,
+          "CenterY": 572.25
+        }
+      ]
+    },
+    {
+      "Text": "Custom",
+      "Words": [
+        {
+          "Text": "Custom",
+          "X": 563,
+          "Y": 138,
+          "Width": 49,
+          "Height": 11.5,
+          "CenterX": 587.5,
+          "CenterY": 143.75
+        }
+      ]
+    },
+    {
+      "Text": "Cinematic",
+      "Words": [
+        {
+          "Text": "Cinematic",
+          "X": 557,
+          "Y": 181,
+          "Width": 61.5,
+          "Height": 11.5,
+          "CenterX": 587.75,
+          "CenterY": 186.75
+        }
+      ]
+    },
+    {
+      "Text": "Low",
+      "Words": [
+        {
+          "Text": "Low",
+          "X": 574,
+          "Y": 224,
+          "Width": 27,
+          "Height": 11.5,
+          "CenterX": 587.5,
+          "CenterY": 229.75
+        }
+      ]
+    },
+    {
+      "Text": "Low",
+      "Words": [
+        {
+          "Text": "Low",
+          "X": 574,
+          "Y": 266,
+          "Width": 27,
+          "Height": 11.5,
+          "CenterX": 587.5,
+          "CenterY": 271.75
+        }
+      ]
+    },
+    {
+      "Text": "Low",
+      "Words": [
+        {
+          "Text": "Low",
+          "X": 574,
+          "Y": 309,
+          "Width": 27,
+          "Height": 11.5,
+          "CenterX": 587.5,
+          "CenterY": 314.75
+        }
+      ]
+    },
+    {
+      "Text": "Low",
+      "Words": [
+        {
+          "Text": "Low",
+          "X": 574.5,
+          "Y": 351.5,
+          "Width": 27,
+          "Height": 10.5,
+          "CenterX": 588,
+          "CenterY": 356.75
+        }
+      ]
+    },
+    {
+      "Text": "Low",
+      "Words": [
+        {
+          "Text": "Low",
+          "X": 574,
+          "Y": 394,
+          "Width": 27,
+          "Height": 11.5,
+          "CenterX": 587.5,
+          "CenterY": 399.75
+        }
+      ]
+    },
+    {
+      "Text": "Low",
+      "Words": [
+        {
+          "Text": "Low",
+          "X": 574,
+          "Y": 437,
+          "Width": 27,
+          "Height": 11.5,
+          "CenterX": 587.5,
+          "CenterY": 442.75
+        }
+      ]
+    },
+    {
+      "Text": "Cinematic",
+      "Words": [
+        {
+          "Text": "Cinematic",
+          "X": 557,
+          "Y": 480,
+          "Width": 61.5,
+          "Height": 11.5,
+          "CenterX": 587.75,
+          "CenterY": 485.75
+        }
+      ]
+    },
+    {
+      "Text": "Low",
+      "Words": [
+        {
+          "Text": "Low",
+          "X": 574,
+          "Y": 522,
+          "Width": 27,
+          "Height": 11.5,
+          "CenterX": 587.5,
+          "CenterY": 527.75
+        }
+      ]
+    },
+    {
+      "Text": "Low",
+      "Words": [
+        {
+          "Text": "Low",
+          "X": 574,
+          "Y": 565,
+          "Width": 27,
+          "Height": 11.5,
+          "CenterX": 587.5,
+          "CenterY": 570.75
+        }
+      ]
+    },
+    {
+      "Text": "Texture Quality",
+      "Words": [
+        {
+          "Text": "Texture",
+          "X": 799,
+          "Y": 141,
+          "Width": 50.5,
+          "Height": 11.5,
+          "CenterX": 824.25,
+          "CenterY": 146.75
+        },
+        {
+          "Text": "Quality",
+          "X": 852.5,
+          "Y": 140,
+          "Width": 46,
+          "Height": 16.5,
+          "CenterX": 875.5,
+          "CenterY": 148.25
+        }
+      ]
+    },
+    {
+      "Text": "the texture quahty to change the",
+      "Words": [
+        {
+          "Text": "the",
+          "X": 844,
+          "Y": 185,
+          "Width": 22.5,
+          "Height": 12.5,
+          "CenterX": 855.25,
+          "CenterY": 191.25
+        },
+        {
+          "Text": "texture",
+          "X": 870,
+          "Y": 187.5,
+          "Width": 49.5,
+          "Height": 10,
+          "CenterX": 894.75,
+          "CenterY": 192.5
+        },
+        {
+          "Text": "quahty",
+          "X": 922.5,
+          "Y": 185,
+          "Width": 45.5,
+          "Height": 16.5,
+          "CenterX": 945.25,
+          "CenterY": 193.25
+        },
+        {
+          "Text": "to",
+          "X": 971,
+          "Y": 187.5,
+          "Width": 13.5,
+          "Height": 10,
+          "CenterX": 977.75,
+          "CenterY": 192.5
+        },
+        {
+          "Text": "change",
+          "X": 987.5,
+          "Y": 185,
+          "Width": 48,
+          "Height": 15.5,
+          "CenterX": 1011.5,
+          "CenterY": 192.75
+        },
+        {
+          "Text": "the",
+          "X": 1039,
+          "Y": 185,
+          "Width": 22.5,
+          "Height": 12.5,
+          "CenterX": 1050.25,
+          "CenterY": 191.25
+        }
+      ]
+    },
+    {
+      "Text": "level ofitems, buildngs, and characters.",
+      "Words": [
+        {
+          "Text": "level",
+          "X": 799.5,
+          "Y": 208,
+          "Width": 33,
+          "Height": 12.5,
+          "CenterX": 816,
+          "CenterY": 214.25
+        },
+        {
+          "Text": "ofitems,",
+          "X": 834.5,
+          "Y": 208,
+          "Width": 55,
+          "Height": 15.5,
+          "CenterX": 862,
+          "CenterY": 215.75
+        },
+        {
+          "Text": "buildngs,",
+          "X": 891.5,
+          "Y": 208,
+          "Width": 62,
+          "Height": 15.5,
+          "CenterX": 922.5,
+          "CenterY": 215.75
+        },
+        {
+          "Text": "and",
+          "X": 956.5,
+          "Y": 208,
+          "Width": 25,
+          "Height": 12.5,
+          "CenterX": 969,
+          "CenterY": 214.25
+        },
+        {
+          "Text": "characters.",
+          "X": 983.5,
+          "Y": 208,
+          "Width": 72,
+          "Height": 12.5,
+          "CenterX": 1019.5,
+          "CenterY": 214.25
+        }
+      ]
+    },
+    {
+      "Text": "The current settings exceed the recommended",
+      "Words": [
+        {
+          "Text": "The",
+          "X": 799,
+          "Y": 254,
+          "Width": 26.5,
+          "Height": 12.5,
+          "CenterX": 812.25,
+          "CenterY": 260.25
+        },
+        {
+          "Text": "current",
+          "X": 828.5,
+          "Y": 256.5,
+          "Width": 51.5,
+          "Height": 10,
+          "CenterX": 854.25,
+          "CenterY": 261.5
+        },
+        {
+          "Text": "settings",
+          "X": 882.5,
+          "Y": 255,
+          "Width": 52,
+          "Height": 14.5,
+          "CenterX": 908.5,
+          "CenterY": 262.25
+        },
+        {
+          "Text": "exceed",
+          "X": 937.5,
+          "Y": 254,
+          "Width": 47,
+          "Height": 12.5,
+          "CenterX": 961,
+          "CenterY": 260.25
+        },
+        {
+          "Text": "the",
+          "X": 987,
+          "Y": 254,
+          "Width": 22.5,
+          "Height": 12.5,
+          "CenterX": 998.25,
+          "CenterY": 260.25
+        },
+        {
+          "Text": "recommended",
+          "X": 1012.5,
+          "Y": 254,
+          "Width": 97,
+          "Height": 12.5,
+          "CenterX": 1061,
+          "CenterY": 260.25
+        }
+      ]
+    },
+    {
+      "Text": "settings and may lead to performance issues.",
+      "Words": [
+        {
+          "Text": "settings",
+          "X": 799.5,
+          "Y": 278,
+          "Width": 52,
+          "Height": 14.5,
+          "CenterX": 825.5,
+          "CenterY": 285.25
+        },
+        {
+          "Text": "and",
+          "X": 854.5,
+          "Y": 277,
+          "Width": 25,
+          "Height": 12.5,
+          "CenterX": 867,
+          "CenterY": 283.25
+        },
+        {
+          "Text": "may",
+          "X": 882,
+          "Y": 281,
+          "Width": 28,
+          "Height": 12.5,
+          "CenterX": 896,
+          "CenterY": 287.25
+        },
+        {
+          "Text": "lead",
+          "X": 912.5,
+          "Y": 277,
+          "Width": 28,
+          "Height": 12.5,
+          "CenterX": 926.5,
+          "CenterY": 283.25
+        },
+        {
+          "Text": "to",
+          "X": 943,
+          "Y": 279.5,
+          "Width": 13.5,
+          "Height": 10,
+          "CenterX": 949.75,
+          "CenterY": 284.5
+        },
+        {
+          "Text": "performance",
+          "X": 959.5,
+          "Y": 277,
+          "Width": 86,
+          "Height": 15.5,
+          "CenterX": 1002.5,
+          "CenterY": 284.75
+        },
+        {
+          "Text": "issues.",
+          "X": 1048,
+          "Y": 278,
+          "Width": 41.5,
+          "Height": 11.5,
+          "CenterX": 1068.75,
+          "CenterY": 283.75
+        }
+      ]
+    },
+    {
+      "Text": "Apply Graphics Changes",
+      "Words": [
+        {
+          "Text": "Apply",
+          "X": 709,
+          "Y": 679,
+          "Width": 40,
+          "Height": 16.5,
+          "CenterX": 729,
+          "CenterY": 687.25
+        },
+        {
+          "Text": "Graphics",
+          "X": 751.5,
+          "Y": 679,
+          "Width": 58,
+          "Height": 15.5,
+          "CenterX": 780.5,
+          "CenterY": 686.75
+        },
+        {
+          "Text": "Changes",
+          "X": 812.5,
+          "Y": 679,
+          "Width": 57,
+          "Height": 15.5,
+          "CenterX": 841,
+          "CenterY": 686.75
+        }
+      ]
+    },
+    {
+      "Text": "Reset Settings forThis Page",
+      "Words": [
+        {
+          "Text": "Reset",
+          "X": 921.5,
+          "Y": 680,
+          "Width": 37.5,
+          "Height": 11.5,
+          "CenterX": 940.25,
+          "CenterY": 685.75
+        },
+        {
+          "Text": "Settings",
+          "X": 961.5,
+          "Y": 680,
+          "Width": 54,
+          "Height": 14.5,
+          "CenterX": 988.5,
+          "CenterY": 687.25
+        },
+        {
+          "Text": "forThis",
+          "X": 1019,
+          "Y": 679,
+          "Width": 48.5,
+          "Height": 12.5,
+          "CenterX": 1043.25,
+          "CenterY": 685.25
+        },
+        {
+          "Text": "Page",
+          "X": 1070.5,
+          "Y": 680,
+          "Width": 31,
+          "Height": 14.5,
+          "CenterX": 1086,
+          "CenterY": 687.25
+        }
+      ]
+    },
+    {
+      "Text": "Return",
+      "Words": [
+        {
+          "Text": "Return",
+          "X": 1153.5,
+          "Y": 680,
+          "Width": 47,
+          "Height": 11.5,
+          "CenterX": 1177,
+          "CenterY": 685.75
+        }
+      ]
+    }
+  ],
+  "Words": [
+    {
+      "Text": "Graphics",
+      "X": 227,
+      "Y": 138.5,
+      "Width": 53.5,
+      "Height": 14.5,
+      "CenterX": 253.75,
+      "CenterY": 145.75
+    },
+    {
+      "Text": "Preset",
+      "X": 284,
+      "Y": 139,
+      "Width": 39.5,
+      "Height": 11.5,
+      "CenterX": 303.75,
+      "CenterY": 144.75
+    },
+    {
+      "Text": "View",
+      "X": 226.5,
+      "Y": 181,
+      "Width": 30.5,
+      "Height": 11,
+      "CenterX": 241.75,
+      "CenterY": 186.5
+    },
+    {
+      "Text": "Distance",
+      "X": 260,
+      "Y": 181,
+      "Width": 53.5,
+      "Height": 11.5,
+      "CenterX": 286.75,
+      "CenterY": 186.75
+    },
+    {
+      "Text": "Quality",
+      "X": 317,
+      "Y": 180,
+      "Width": 45.5,
+      "Height": 16.5,
+      "CenterX": 339.75,
+      "CenterY": 188.25
+    },
+    {
+      "Text": "Anti-Aliasing",
+      "X": 226,
+      "Y": 223.5,
+      "Width": 79.5,
+      "Height": 15,
+      "CenterX": 265.75,
+      "CenterY": 231
+    },
+    {
+      "Text": "Quality",
+      "X": 309,
+      "Y": 223.5,
+      "Width": 45.5,
+      "Height": 16,
+      "CenterX": 331.75,
+      "CenterY": 231.5
+    },
+    {
+      "Text": "Post-Effects",
+      "X": 227,
+      "Y": 266.5,
+      "Width": 76.5,
+      "Height": 12,
+      "CenterX": 265.25,
+      "CenterY": 272.5
+    },
+    {
+      "Text": "Quality\u0027",
+      "X": 307,
+      "Y": 266.5,
+      "Width": 49.5,
+      "Height": 16,
+      "CenterX": 331.75,
+      "CenterY": 274.5
+    },
+    {
+      "Text": "Shadow",
+      "X": 226.5,
+      "Y": 308,
+      "Width": 49.5,
+      "Height": 12.5,
+      "CenterX": 251.25,
+      "CenterY": 314.25
+    },
+    {
+      "Text": "Quality",
+      "X": 279,
+      "Y": 308.5,
+      "Width": 45.5,
+      "Height": 16,
+      "CenterX": 301.75,
+      "CenterY": 316.5
+    },
+    {
+      "Text": "Texture",
+      "X": 227,
+      "Y": 352.5,
+      "Width": 49,
+      "Height": 10.5,
+      "CenterX": 251.5,
+      "CenterY": 357.75
+    },
+    {
+      "Text": "Quality!",
+      "X": 280.5,
+      "Y": 351.5,
+      "Width": 49,
+      "Height": 15.5,
+      "CenterX": 305,
+      "CenterY": 359.25
+    },
+    {
+      "Text": "Visual",
+      "X": 226.5,
+      "Y": 394,
+      "Width": 37.5,
+      "Height": 12.5,
+      "CenterX": 245.25,
+      "CenterY": 400.25
+    },
+    {
+      "Text": "Effect",
+      "X": 267,
+      "Y": 394.5,
+      "Width": 37.5,
+      "Height": 12,
+      "CenterX": 285.75,
+      "CenterY": 400.5
+    },
+    {
+      "Text": "Quality",
+      "X": 308,
+      "Y": 394.5,
+      "Width": 45.5,
+      "Height": 16,
+      "CenterX": 330.75,
+      "CenterY": 402.5
+    },
+    {
+      "Text": "Hair",
+      "X": 227,
+      "Y": 437,
+      "Width": 26,
+      "Height": 11.5,
+      "CenterX": 240,
+      "CenterY": 442.75
+    },
+    {
+      "Text": "Quality",
+      "X": 256,
+      "Y": 436,
+      "Width": 45.5,
+      "Height": 16.5,
+      "CenterX": 278.75,
+      "CenterY": 444.25
+    },
+    {
+      "Text": "Vegetation",
+      "X": 226.5,
+      "Y": 480,
+      "Width": 69.5,
+      "Height": 14.5,
+      "CenterX": 261.25,
+      "CenterY": 487.25
+    },
+    {
+      "Text": "Quality",
+      "X": 299,
+      "Y": 479.5,
+      "Width": 45.5,
+      "Height": 16,
+      "CenterX": 321.75,
+      "CenterY": 487.5
+    },
+    {
+      "Text": "Global",
+      "X": 227,
+      "Y": 522.5,
+      "Width": 40,
+      "Height": 12,
+      "CenterX": 247,
+      "CenterY": 528.5
+    },
+    {
+      "Text": "Illumination",
+      "X": 270,
+      "Y": 522.5,
+      "Width": 76,
+      "Height": 12,
+      "CenterX": 308,
+      "CenterY": 528.5
+    },
+    {
+      "Text": "Quality",
+      "X": 349,
+      "Y": 522.5,
+      "Width": 45.5,
+      "Height": 16,
+      "CenterX": 371.75,
+      "CenterY": 530.5
+    },
+    {
+      "Text": "Reflection",
+      "X": 227,
+      "Y": 564,
+      "Width": 64,
+      "Height": 12.5,
+      "CenterX": 259,
+      "CenterY": 570.25
+    },
+    {
+      "Text": "Quality",
+      "X": 294,
+      "Y": 564,
+      "Width": 45.5,
+      "Height": 16.5,
+      "CenterX": 316.75,
+      "CenterY": 572.25
+    },
+    {
+      "Text": "Custom",
+      "X": 563,
+      "Y": 138,
+      "Width": 49,
+      "Height": 11.5,
+      "CenterX": 587.5,
+      "CenterY": 143.75
+    },
+    {
+      "Text": "Cinematic",
+      "X": 557,
+      "Y": 181,
+      "Width": 61.5,
+      "Height": 11.5,
+      "CenterX": 587.75,
+      "CenterY": 186.75
+    },
+    {
+      "Text": "Low",
+      "X": 574,
+      "Y": 224,
+      "Width": 27,
+      "Height": 11.5,
+      "CenterX": 587.5,
+      "CenterY": 229.75
+    },
+    {
+      "Text": "Low",
+      "X": 574,
+      "Y": 266,
+      "Width": 27,
+      "Height": 11.5,
+      "CenterX": 587.5,
+      "CenterY": 271.75
+    },
+    {
+      "Text": "Low",
+      "X": 574,
+      "Y": 309,
+      "Width": 27,
+      "Height": 11.5,
+      "CenterX": 587.5,
+      "CenterY": 314.75
+    },
+    {
+      "Text": "Low",
+      "X": 574.5,
+      "Y": 351.5,
+      "Width": 27,
+      "Height": 10.5,
+      "CenterX": 588,
+      "CenterY": 356.75
+    },
+    {
+      "Text": "Low",
+      "X": 574,
+      "Y": 394,
+      "Width": 27,
+      "Height": 11.5,
+      "CenterX": 587.5,
+      "CenterY": 399.75
+    },
+    {
+      "Text": "Low",
+      "X": 574,
+      "Y": 437,
+      "Width": 27,
+      "Height": 11.5,
+      "CenterX": 587.5,
+      "CenterY": 442.75
+    },
+    {
+      "Text": "Cinematic",
+      "X": 557,
+      "Y": 480,
+      "Width": 61.5,
+      "Height": 11.5,
+      "CenterX": 587.75,
+      "CenterY": 485.75
+    },
+    {
+      "Text": "Low",
+      "X": 574,
+      "Y": 522,
+      "Width": 27,
+      "Height": 11.5,
+      "CenterX": 587.5,
+      "CenterY": 527.75
+    },
+    {
+      "Text": "Low",
+      "X": 574,
+      "Y": 565,
+      "Width": 27,
+      "Height": 11.5,
+      "CenterX": 587.5,
+      "CenterY": 570.75
+    },
+    {
+      "Text": "Texture",
+      "X": 799,
+      "Y": 141,
+      "Width": 50.5,
+      "Height": 11.5,
+      "CenterX": 824.25,
+      "CenterY": 146.75
+    },
+    {
+      "Text": "Quality",
+      "X": 852.5,
+      "Y": 140,
+      "Width": 46,
+      "Height": 16.5,
+      "CenterX": 875.5,
+      "CenterY": 148.25
+    },
+    {
+      "Text": "the",
+      "X": 844,
+      "Y": 185,
+      "Width": 22.5,
+      "Height": 12.5,
+      "CenterX": 855.25,
+      "CenterY": 191.25
+    },
+    {
+      "Text": "texture",
+      "X": 870,
+      "Y": 187.5,
+      "Width": 49.5,
+      "Height": 10,
+      "CenterX": 894.75,
+      "CenterY": 192.5
+    },
+    {
+      "Text": "quahty",
+      "X": 922.5,
+      "Y": 185,
+      "Width": 45.5,
+      "Height": 16.5,
+      "CenterX": 945.25,
+      "CenterY": 193.25
+    },
+    {
+      "Text": "to",
+      "X": 971,
+      "Y": 187.5,
+      "Width": 13.5,
+      "Height": 10,
+      "CenterX": 977.75,
+      "CenterY": 192.5
+    },
+    {
+      "Text": "change",
+      "X": 987.5,
+      "Y": 185,
+      "Width": 48,
+      "Height": 15.5,
+      "CenterX": 1011.5,
+      "CenterY": 192.75
+    },
+    {
+      "Text": "the",
+      "X": 1039,
+      "Y": 185,
+      "Width": 22.5,
+      "Height": 12.5,
+      "CenterX": 1050.25,
+      "CenterY": 191.25
+    },
+    {
+      "Text": "level",
+      "X": 799.5,
+      "Y": 208,
+      "Width": 33,
+      "Height": 12.5,
+      "CenterX": 816,
+      "CenterY": 214.25
+    },
+    {
+      "Text": "ofitems,",
+      "X": 834.5,
+      "Y": 208,
+      "Width": 55,
+      "Height": 15.5,
+      "CenterX": 862,
+      "CenterY": 215.75
+    },
+    {
+      "Text": "buildngs,",
+      "X": 891.5,
+      "Y": 208,
+      "Width": 62,
+      "Height": 15.5,
+      "CenterX": 922.5,
+      "CenterY": 215.75
+    },
+    {
+      "Text": "and",
+      "X": 956.5,
+      "Y": 208,
+      "Width": 25,
+      "Height": 12.5,
+      "CenterX": 969,
+      "CenterY": 214.25
+    },
+    {
+      "Text": "characters.",
+      "X": 983.5,
+      "Y": 208,
+      "Width": 72,
+      "Height": 12.5,
+      "CenterX": 1019.5,
+      "CenterY": 214.25
+    },
+    {
+      "Text": "The",
+      "X": 799,
+      "Y": 254,
+      "Width": 26.5,
+      "Height": 12.5,
+      "CenterX": 812.25,
+      "CenterY": 260.25
+    },
+    {
+      "Text": "current",
+      "X": 828.5,
+      "Y": 256.5,
+      "Width": 51.5,
+      "Height": 10,
+      "CenterX": 854.25,
+      "CenterY": 261.5
+    },
+    {
+      "Text": "settings",
+      "X": 882.5,
+      "Y": 255,
+      "Width": 52,
+      "Height": 14.5,
+      "CenterX": 908.5,
+      "CenterY": 262.25
+    },
+    {
+      "Text": "exceed",
+      "X": 937.5,
+      "Y": 254,
+      "Width": 47,
+      "Height": 12.5,
+      "CenterX": 961,
+      "CenterY": 260.25
+    },
+    {
+      "Text": "the",
+      "X": 987,
+      "Y": 254,
+      "Width": 22.5,
+      "Height": 12.5,
+      "CenterX": 998.25,
+      "CenterY": 260.25
+    },
+    {
+      "Text": "recommended",
+      "X": 1012.5,
+      "Y": 254,
+      "Width": 97,
+      "Height": 12.5,
+      "CenterX": 1061,
+      "CenterY": 260.25
+    },
+    {
+      "Text": "settings",
+      "X": 799.5,
+      "Y": 278,
+      "Width": 52,
+      "Height": 14.5,
+      "CenterX": 825.5,
+      "CenterY": 285.25
+    },
+    {
+      "Text": "and",
+      "X": 854.5,
+      "Y": 277,
+      "Width": 25,
+      "Height": 12.5,
+      "CenterX": 867,
+      "CenterY": 283.25
+    },
+    {
+      "Text": "may",
+      "X": 882,
+      "Y": 281,
+      "Width": 28,
+      "Height": 12.5,
+      "CenterX": 896,
+      "CenterY": 287.25
+    },
+    {
+      "Text": "lead",
+      "X": 912.5,
+      "Y": 277,
+      "Width": 28,
+      "Height": 12.5,
+      "CenterX": 926.5,
+      "CenterY": 283.25
+    },
+    {
+      "Text": "to",
+      "X": 943,
+      "Y": 279.5,
+      "Width": 13.5,
+      "Height": 10,
+      "CenterX": 949.75,
+      "CenterY": 284.5
+    },
+    {
+      "Text": "performance",
+      "X": 959.5,
+      "Y": 277,
+      "Width": 86,
+      "Height": 15.5,
+      "CenterX": 1002.5,
+      "CenterY": 284.75
+    },
+    {
+      "Text": "issues.",
+      "X": 1048,
+      "Y": 278,
+      "Width": 41.5,
+      "Height": 11.5,
+      "CenterX": 1068.75,
+      "CenterY": 283.75
+    },
+    {
+      "Text": "Apply",
+      "X": 709,
+      "Y": 679,
+      "Width": 40,
+      "Height": 16.5,
+      "CenterX": 729,
+      "CenterY": 687.25
+    },
+    {
+      "Text": "Graphics",
+      "X": 751.5,
+      "Y": 679,
+      "Width": 58,
+      "Height": 15.5,
+      "CenterX": 780.5,
+      "CenterY": 686.75
+    },
+    {
+      "Text": "Changes",
+      "X": 812.5,
+      "Y": 679,
+      "Width": 57,
+      "Height": 15.5,
+      "CenterX": 841,
+      "CenterY": 686.75
+    },
+    {
+      "Text": "Reset",
+      "X": 921.5,
+      "Y": 680,
+      "Width": 37.5,
+      "Height": 11.5,
+      "CenterX": 940.25,
+      "CenterY": 685.75
+    },
+    {
+      "Text": "Settings",
+      "X": 961.5,
+      "Y": 680,
+      "Width": 54,
+      "Height": 14.5,
+      "CenterX": 988.5,
+      "CenterY": 687.25
+    },
+    {
+      "Text": "forThis",
+      "X": 1019,
+      "Y": 679,
+      "Width": 48.5,
+      "Height": 12.5,
+      "CenterX": 1043.25,
+      "CenterY": 685.25
+    },
+    {
+      "Text": "Page",
+      "X": 1070.5,
+      "Y": 680,
+      "Width": 31,
+      "Height": 14.5,
+      "CenterX": 1086,
+      "CenterY": 687.25
+    },
+    {
+      "Text": "Return",
+      "X": 1153.5,
+      "Y": 680,
+      "Width": 47,
+      "Height": 11.5,
+      "CenterX": 1177,
+      "CenterY": 685.75
+    }
+  ]
+}

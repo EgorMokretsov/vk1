@@ -1,0 +1,2 @@
+# Preserve the original bytes of benchmark evidence and settings backups.
+results/** -text

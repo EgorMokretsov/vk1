@@ -1,0 +1,281 @@
+{
+  "Text": "Benchmark Results Oct 8, 2026 Average FPS Rlaximum 2 FPS Minimum O FPS",
+  "Lines": [
+    {
+      "Text": "Benchmark Results",
+      "Words": [
+        {
+          "Text": "Benchmark",
+          "X": 48.25,
+          "Y": 164.5,
+          "Width": 90,
+          "Height": 13.5,
+          "CenterX": 93.25,
+          "CenterY": 171.25
+        },
+        {
+          "Text": "Results",
+          "X": 142.25,
+          "Y": 164.5,
+          "Width": 55.5,
+          "Height": 13.5,
+          "CenterX": 170,
+          "CenterY": 171.25
+        }
+      ]
+    },
+    {
+      "Text": "Oct 8, 2026",
+      "Words": [
+        {
+          "Text": "Oct",
+          "X": 48.25,
+          "Y": 188.5,
+          "Width": 17.75,
+          "Height": 7.25,
+          "CenterX": 57.125,
+          "CenterY": 192.125
+        },
+        {
+          "Text": "8,",
+          "X": 69.25,
+          "Y": 188.5,
+          "Width": 7.5,
+          "Height": 8.75,
+          "CenterX": 73,
+          "CenterY": 192.875
+        },
+        {
+          "Text": "2026",
+          "X": 80,
+          "Y": 188.5,
+          "Width": 23.75,
+          "Height": 7.25,
+          "CenterX": 91.875,
+          "CenterY": 192.125
+        }
+      ]
+    },
+    {
+      "Text": "Average",
+      "Words": [
+        {
+          "Text": "Average",
+          "X": 47.5,
+          "Y": 218.5,
+          "Width": 39.25,
+          "Height": 9,
+          "CenterX": 67.125,
+          "CenterY": 223
+        }
+      ]
+    },
+    {
+      "Text": "FPS",
+      "Words": [
+        {
+          "Text": "FPS",
+          "X": 73.5,
+          "Y": 257.25,
+          "Width": 17.5,
+          "Height": 7.75,
+          "CenterX": 82.25,
+          "CenterY": 261.125
+        }
+      ]
+    },
+    {
+      "Text": "Rlaximum",
+      "Words": [
+        {
+          "Text": "Rlaximum",
+          "X": 47.75,
+          "Y": 290.5,
+          "Width": 46.5,
+          "Height": 7.25,
+          "CenterX": 71,
+          "CenterY": 294.125
+        }
+      ]
+    },
+    {
+      "Text": "2 FPS",
+      "Words": [
+        {
+          "Text": "2",
+          "X": 56.25,
+          "Y": 311.25,
+          "Width": 7.75,
+          "Height": 11.75,
+          "CenterX": 60.125,
+          "CenterY": 317.125
+        },
+        {
+          "Text": "FPS",
+          "X": 67.75,
+          "Y": 315.25,
+          "Width": 16.25,
+          "Height": 7.75,
+          "CenterX": 75.875,
+          "CenterY": 319.125
+        }
+      ]
+    },
+    {
+      "Text": "Minimum",
+      "Words": [
+        {
+          "Text": "Minimum",
+          "X": 210.75,
+          "Y": 290.5,
+          "Width": 44.5,
+          "Height": 7.25,
+          "CenterX": 233,
+          "CenterY": 294.125
+        }
+      ]
+    },
+    {
+      "Text": "O FPS",
+      "Words": [
+        {
+          "Text": "O",
+          "X": 219.5,
+          "Y": 311.25,
+          "Width": 8.5,
+          "Height": 11.75,
+          "CenterX": 223.75,
+          "CenterY": 317.125
+        },
+        {
+          "Text": "FPS",
+          "X": 231.75,
+          "Y": 315.25,
+          "Width": 16.25,
+          "Height": 7.75,
+          "CenterX": 239.875,
+          "CenterY": 319.125
+        }
+      ]
+    }
+  ],
+  "Words": [
+    {
+      "Text": "Benchmark",
+      "X": 48.25,
+      "Y": 164.5,
+      "Width": 90,
+      "Height": 13.5,
+      "CenterX": 93.25,
+      "CenterY": 171.25
+    },
+    {
+      "Text": "Results",
+      "X": 142.25,
+      "Y": 164.5,
+      "Width": 55.5,
+      "Height": 13.5,
+      "CenterX": 170,
+      "CenterY": 171.25
+    },
+    {
+      "Text": "Oct",
+      "X": 48.25,
+      "Y": 188.5,
+      "Width": 17.75,
+      "Height": 7.25,
+      "CenterX": 57.125,
+      "CenterY": 192.125
+    },
+    {
+      "Text": "8,",
+      "X": 69.25,
+      "Y": 188.5,
+      "Width": 7.5,
+      "Height": 8.75,
+      "CenterX": 73,
+      "CenterY": 192.875
+    },
+    {
+      "Text": "2026",
+      "X": 80,
+      "Y": 188.5,
+      "Width": 23.75,
+      "Height": 7.25,
+      "CenterX": 91.875,
+      "CenterY": 192.125
+    },
+    {
+      "Text": "Average",
+      "X": 47.5,
+      "Y": 218.5,
+      "Width": 39.25,
+      "Height": 9,
+      "CenterX": 67.125,
+      "CenterY": 223
+    },
+    {
+      "Text": "FPS",
+      "X": 73.5,
+      "Y": 257.25,
+      "Width": 17.5,
+      "Height": 7.75,
+      "CenterX": 82.25,
+      "CenterY": 261.125
+    },
+    {
+      "Text": "Rlaximum",
+      "X": 47.75,
+      "Y": 290.5,
+      "Width": 46.5,
+      "Height": 7.25,
+      "CenterX": 71,
+      "CenterY": 294.125
+    },
+    {
+      "Text": "2",
+      "X": 56.25,
+      "Y": 311.25,
+      "Width": 7.75,
+      "Height": 11.75,
+      "CenterX": 60.125,
+      "CenterY": 317.125
+    },
+    {
+      "Text": "FPS",
+      "X": 67.75,
+      "Y": 315.25,
+      "Width": 16.25,
+      "Height": 7.75,
+      "CenterX": 75.875,
+      "CenterY": 319.125
+    },
+    {
+      "Text": "Minimum",
+      "X": 210.75,
+      "Y": 290.5,
+      "Width": 44.5,
+      "Height": 7.25,
+      "CenterX": 233,
+      "CenterY": 294.125
+    },
+    {
+      "Text": "O",
+      "X": 219.5,
+      "Y": 311.25,
+      "Width": 8.5,
+      "Height": 11.75,
+      "CenterX": 223.75,
+      "CenterY": 317.125
+    },
+    {
+      "Text": "FPS",
+      "X": 231.75,
+      "Y": 315.25,
+      "Width": 16.25,
+      "Height": 7.75,
+      "CenterX": 239.875,
+      "CenterY": 319.125
+    }
+  ]
+}

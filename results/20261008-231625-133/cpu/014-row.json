@@ -1,0 +1,396 @@
+{
+  "Text": "Display Frame Rate Information Loop Benchmark Q Benchmark Gameplay Language Display Graphics Sound On Off a Confirm Return",
+  "Lines": [
+    {
+      "Text": "Display Frame Rate Information",
+      "Words": [
+        {
+          "Text": "Display",
+          "X": 360.5,
+          "Y": 141.5,
+          "Width": 44.5,
+          "Height": 15.5,
+          "CenterX": 382.75,
+          "CenterY": 149.25
+        },
+        {
+          "Text": "Frame",
+          "X": 408.5,
+          "Y": 142.5,
+          "Width": 38.5,
+          "Height": 10.5,
+          "CenterX": 427.75,
+          "CenterY": 147.75
+        },
+        {
+          "Text": "Rate",
+          "X": 451,
+          "Y": 142.5,
+          "Width": 28,
+          "Height": 10.5,
+          "CenterX": 465,
+          "CenterY": 147.75
+        },
+        {
+          "Text": "Information",
+          "X": 483,
+          "Y": 141.5,
+          "Width": 76,
+          "Height": 11.5,
+          "CenterX": 521,
+          "CenterY": 147.25
+        }
+      ]
+    },
+    {
+      "Text": "Loop Benchmark",
+      "Words": [
+        {
+          "Text": "Loop",
+          "X": 360,
+          "Y": 184,
+          "Width": 31,
+          "Height": 14,
+          "CenterX": 375.5,
+          "CenterY": 191
+        },
+        {
+          "Text": "Benchmark",
+          "X": 395,
+          "Y": 183,
+          "Width": 72,
+          "Height": 12,
+          "CenterX": 431,
+          "CenterY": 189
+        }
+      ]
+    },
+    {
+      "Text": "Q",
+      "Words": [
+        {
+          "Text": "Q",
+          "X": 139.5,
+          "Y": 228.5,
+          "Width": 15.5,
+          "Height": 14,
+          "CenterX": 147.25,
+          "CenterY": 235.5
+        }
+      ]
+    },
+    {
+      "Text": "Benchmark",
+      "Words": [
+        {
+          "Text": "Benchmark",
+          "X": 165.5,
+          "Y": 142.5,
+          "Width": 71,
+          "Height": 11.5,
+          "CenterX": 201,
+          "CenterY": 148.25
+        }
+      ]
+    },
+    {
+      "Text": "Gameplay",
+      "Words": [
+        {
+          "Text": "Gameplay",
+          "X": 165,
+          "Y": 185,
+          "Width": 61.5,
+          "Height": 16,
+          "CenterX": 195.75,
+          "CenterY": 193
+        }
+      ]
+    },
+    {
+      "Text": "Language",
+      "Words": [
+        {
+          "Text": "Language",
+          "X": 165,
+          "Y": 229,
+          "Width": 60.5,
+          "Height": 14.5,
+          "CenterX": 195.25,
+          "CenterY": 236.25
+        }
+      ]
+    },
+    {
+      "Text": "Display",
+      "Words": [
+        {
+          "Text": "Display",
+          "X": 165,
+          "Y": 270.5,
+          "Width": 45.5,
+          "Height": 16,
+          "CenterX": 187.75,
+          "CenterY": 278.5
+        }
+      ]
+    },
+    {
+      "Text": "Graphics",
+      "Words": [
+        {
+          "Text": "Graphics",
+          "X": 165,
+          "Y": 313,
+          "Width": 53.5,
+          "Height": 15.5,
+          "CenterX": 191.75,
+          "CenterY": 320.75
+        }
+      ]
+    },
+    {
+      "Text": "Sound",
+      "Words": [
+        {
+          "Text": "Sound",
+          "X": 164.5,
+          "Y": 356,
+          "Width": 40,
+          "Height": 12.5,
+          "CenterX": 184.5,
+          "CenterY": 362.25
+        }
+      ]
+    },
+    {
+      "Text": "On",
+      "Words": [
+        {
+          "Text": "On",
+          "X": 718,
+          "Y": 141,
+          "Width": 18,
+          "Height": 11.5,
+          "CenterX": 727,
+          "CenterY": 146.75
+        }
+      ]
+    },
+    {
+      "Text": "Off",
+      "Words": [
+        {
+          "Text": "Off",
+          "X": 717,
+          "Y": 183,
+          "Width": 21,
+          "Height": 12.5,
+          "CenterX": 727.5,
+          "CenterY": 189.25
+        }
+      ]
+    },
+    {
+      "Text": "a Confirm",
+      "Words": [
+        {
+          "Text": "a",
+          "X": 1025,
+          "Y": 679,
+          "Width": 15.5,
+          "Height": 16,
+          "CenterX": 1032.75,
+          "CenterY": 687
+        },
+        {
+          "Text": "Confirm",
+          "X": 1047.5,
+          "Y": 679,
+          "Width": 54,
+          "Height": 12.5,
+          "CenterX": 1074.5,
+          "CenterY": 685.25
+        }
+      ]
+    },
+    {
+      "Text": "Return",
+      "Words": [
+        {
+          "Text": "Return",
+          "X": 1153.5,
+          "Y": 680,
+          "Width": 47,
+          "Height": 11.5,
+          "CenterX": 1177,
+          "CenterY": 685.75
+        }
+      ]
+    }
+  ],
+  "Words": [
+    {
+      "Text": "Display",
+      "X": 360.5,
+      "Y": 141.5,
+      "Width": 44.5,
+      "Height": 15.5,
+      "CenterX": 382.75,
+      "CenterY": 149.25
+    },
+    {
+      "Text": "Frame",
+      "X": 408.5,
+      "Y": 142.5,
+      "Width": 38.5,
+      "Height": 10.5,
+      "CenterX": 427.75,
+      "CenterY": 147.75
+    },
+    {
+      "Text": "Rate",
+      "X": 451,
+      "Y": 142.5,
+      "Width": 28,
+      "Height": 10.5,
+      "CenterX": 465,
+      "CenterY": 147.75
+    },
+    {
+      "Text": "Information",
+      "X": 483,
+      "Y": 141.5,
+      "Width": 76,
+      "Height": 11.5,
+      "CenterX": 521,
+      "CenterY": 147.25
+    },
+    {
+      "Text": "Loop",
+      "X": 360,
+      "Y": 184,
+      "Width": 31,
+      "Height": 14,
+      "CenterX": 375.5,
+      "CenterY": 191
+    },
+    {
+      "Text": "Benchmark",
+      "X": 395,
+      "Y": 183,
+      "Width": 72,
+      "Height": 12,
+      "CenterX": 431,
+      "CenterY": 189
+    },
+    {
+      "Text": "Q",
+      "X": 139.5,
+      "Y": 228.5,
+      "Width": 15.5,
+      "Height": 14,
+      "CenterX": 147.25,
+      "CenterY": 235.5
+    },
+    {
+      "Text": "Benchmark",
+      "X": 165.5,
+      "Y": 142.5,
+      "Width": 71,
+      "Height": 11.5,
+      "CenterX": 201,
+      "CenterY": 148.25
+    },
+    {
+      "Text": "Gameplay",
+      "X": 165,
+      "Y": 185,
+      "Width": 61.5,
+      "Height": 16,
+      "CenterX": 195.75,
+      "CenterY": 193
+    },
+    {
+      "Text": "Language",
+      "X": 165,
+      "Y": 229,
+      "Width": 60.5,
+      "Height": 14.5,
+      "CenterX": 195.25,
+      "CenterY": 236.25
+    },
+    {
+      "Text": "Display",
+      "X": 165,
+      "Y": 270.5,
+      "Width": 45.5,
+      "Height": 16,
+      "CenterX": 187.75,
+      "CenterY": 278.5
+    },
+    {
+      "Text": "Graphics",
+      "X": 165,
+      "Y": 313,
+      "Width": 53.5,
+      "Height": 15.5,
+      "CenterX": 191.75,
+      "CenterY": 320.75
+    },
+    {
+      "Text": "Sound",
+      "X": 164.5,
+      "Y": 356,
+      "Width": 40,
+      "Height": 12.5,
+      "CenterX": 184.5,
+      "CenterY": 362.25
+    },
+    {
+      "Text": "On",
+      "X": 718,
+      "Y": 141,
+      "Width": 18,
+      "Height": 11.5,
+      "CenterX": 727,
+      "CenterY": 146.75
+    },
+    {
+      "Text": "Off",
+      "X": 717,
+      "Y": 183,
+      "Width": 21,
+      "Height": 12.5,
+      "CenterX": 727.5,
+      "CenterY": 189.25
+    },
+    {
+      "Text": "a",
+      "X": 1025,
+      "Y": 679,
+      "Width": 15.5,
+      "Height": 16,
+      "CenterX": 1032.75,
+      "CenterY": 687
+    },
+    {
+      "Text": "Confirm",
+      "X": 1047.5,
+      "Y": 679,
+      "Width": 54,
+      "Height": 12.5,
+      "CenterX": 1074.5,
+      "CenterY": 685.25
+    },
+    {
+      "Text": "Return",
+      "X": 1153.5,
+      "Y": 680,
+      "Width": 47,
+      "Height": 11.5,
+      "CenterX": 1177,
+      "CenterY": 685.75
+    }
+  ]
+}

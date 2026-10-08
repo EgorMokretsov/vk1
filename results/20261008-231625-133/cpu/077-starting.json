@@ -1,0 +1,71 @@
+{
+  "Text": "CurratFPS 19 FPS",
+  "Lines": [
+    {
+      "Text": "CurratFPS",
+      "Words": [
+        {
+          "Text": "CurratFPS",
+          "X": 63,
+          "Y": 2,
+          "Width": 56.5,
+          "Height": 12,
+          "CenterX": 91.25,
+          "CenterY": 8
+        }
+      ]
+    },
+    {
+      "Text": "19 FPS",
+      "Words": [
+        {
+          "Text": "19",
+          "X": 62.5,
+          "Y": 17,
+          "Width": 16,
+          "Height": 12.5,
+          "CenterX": 70.5,
+          "CenterY": 23.25
+        },
+        {
+          "Text": "FPS",
+          "X": 82,
+          "Y": 20.5,
+          "Width": 22.5,
+          "Height": 12.5,
+          "CenterX": 93.25,
+          "CenterY": 26.75
+        }
+      ]
+    }
+  ],
+  "Words": [
+    {
+      "Text": "CurratFPS",
+      "X": 63,
+      "Y": 2,
+      "Width": 56.5,
+      "Height": 12,
+      "CenterX": 91.25,
+      "CenterY": 8
+    },
+    {
+      "Text": "19",
+      "X": 62.5,
+      "Y": 17,
+      "Width": 16,
+      "Height": 12.5,
+      "CenterX": 70.5,
+      "CenterY": 23.25
+    },
+    {
+      "Text": "FPS",
+      "X": 82,
+      "Y": 20.5,
+      "Width": 22.5,
+      "Height": 12.5,
+      "CenterX": 93.25,
+      "CenterY": 26.75
+    }
+  ]
+}

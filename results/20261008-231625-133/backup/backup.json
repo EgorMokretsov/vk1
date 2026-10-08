@@ -1,0 +1,109 @@
+{
+  "ConfigDirectory": "c:\\program files (x86)\\steam\\steamapps\\common\\Black Myth Wukong Benchmark Tool\\b1\\Saved\\Config\\Windows",
+  "Files": [
+    {
+      "RelativePath": "ApexDestruction.ini",
+      "Attributes": 32
+    },
+    {
+      "RelativePath": "Compat.ini",
+      "Attributes": 32
+    },
+    {
+      "RelativePath": "ConcertSyncCore.ini",
+      "Attributes": 32
+    },
+    {
+      "RelativePath": "ControlRig.ini",
+      "Attributes": 32
+    },
+    {
+      "RelativePath": "DataprepEditor.ini",
+      "Attributes": 32
+    },
+    {
+      "RelativePath": "DeviceProfiles.ini",
+      "Attributes": 32
+    },
+    {
+      "RelativePath": "EditorScriptingUtilities.ini",
+      "Attributes": 32
+    },
+    {
+      "RelativePath": "Engine.ini",
+      "Attributes": 32
+    },
+    {
+      "RelativePath": "FullBodyIK.ini",
+      "Attributes": 32
+    },
+    {
+      "RelativePath": "Game.ini",
+      "Attributes": 32
+    },
+    {
+      "RelativePath": "GameplayTags.ini",
+      "Attributes": 32
+    },
+    {
+      "RelativePath": "GameUserSettings.ini",
+      "Attributes": 32
+    },
+    {
+      "RelativePath": "HairStrands.ini",
+      "Attributes": 32
+    },
+    {
+      "RelativePath": "Hardware.ini",
+      "Attributes": 32
+    },
+    {
+      "RelativePath": "Input.ini",
+      "Attributes": 32
+    },
+    {
+      "RelativePath": "Niagara.ini",
+      "Attributes": 32
+    },
+    {
+      "RelativePath": "NiagaraFluids.ini",
+      "Attributes": 32
+    },
+    {
+      "RelativePath": "OSC.ini",
+      "Attributes": 32
+    },
+    {
+      "RelativePath": "Paper2D.ini",
+      "Attributes": 32
+    },
+    {
+      "RelativePath": "PCG.ini",
+      "Attributes": 32
+    },
+    {
+      "RelativePath": "RuntimeOptions.ini",
+      "Attributes": 32
+    },
+    {
+      "RelativePath": "Scalability.ini",
+      "Attributes": 32
+    },
+    {
+      "RelativePath": "StructUtils.ini",
+      "Attributes": 32
+    },
+    {
+      "RelativePath": "Synthesis.ini",
+      "Attributes": 32
+    },
+    {
+      "RelativePath": "VariantManagerContent.ini",
+      "Attributes": 32
+    },
+    {
+      "RelativePath": "Wwise.ini",
+      "Attributes": 32
+    }
+  ]
+}

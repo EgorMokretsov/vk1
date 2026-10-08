@@ -1,0 +1,71 @@
+{
+  "Text": "20 3 26",
+  "Lines": [
+    {
+      "Text": "20",
+      "Words": [
+        {
+          "Text": "20",
+          "X": 45,
+          "Y": 45,
+          "Width": 217,
+          "Height": 145,
+          "CenterX": 153.5,
+          "CenterY": 117.5
+        }
+      ]
+    },
+    {
+      "Text": "3 26",
+      "Words": [
+        {
+          "Text": "3",
+          "X": 331,
+          "Y": 50,
+          "Width": 45,
+          "Height": 69,
+          "CenterX": 353.5,
+          "CenterY": 84.5
+        },
+        {
+          "Text": "26",
+          "X": 445,
+          "Y": 50,
+          "Width": 104,
+          "Height": 69,
+          "CenterX": 497,
+          "CenterY": 84.5
+        }
+      ]
+    }
+  ],
+  "Words": [
+    {
+      "Text": "20",
+      "X": 45,
+      "Y": 45,
+      "Width": 217,
+      "Height": 145,
+      "CenterX": 153.5,
+      "CenterY": 117.5
+    },
+    {
+      "Text": "3",
+      "X": 331,
+      "Y": 50,
+      "Width": 45,
+      "Height": 69,
+      "CenterX": 353.5,
+      "CenterY": 84.5
+    },
+    {
+      "Text": "26",
+      "X": 445,
+      "Y": 50,
+      "Width": 104,
+      "Height": 69,
+      "CenterX": 497,
+      "CenterY": 84.5
+    }
+  ]
+}

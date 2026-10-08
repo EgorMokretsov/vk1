@@ -1,0 +1,600 @@
+{
+  "Text": "Benchmark Settings Purchase Now Exit Itis tool is used for prehrninary hardware performance and system compatibility testing. 1.0314649 Itte test results may not fully represent actual gameplay eperience and final performance.",
+  "Lines": [
+    {
+      "Text": "Benchmark",
+      "Words": [
+        {
+          "Text": "Benchmark",
+          "X": 59.5,
+          "Y": 317,
+          "Width": 82,
+          "Height": 12.5,
+          "CenterX": 100.5,
+          "CenterY": 323.25
+        }
+      ]
+    },
+    {
+      "Text": "Settings",
+      "Words": [
+        {
+          "Text": "Settings",
+          "X": 59.5,
+          "Y": 355,
+          "Width": 59,
+          "Height": 14.5,
+          "CenterX": 89,
+          "CenterY": 362.25
+        }
+      ]
+    },
+    {
+      "Text": "Purchase Now",
+      "Words": [
+        {
+          "Text": "Purchase",
+          "X": 59.5,
+          "Y": 391,
+          "Width": 65,
+          "Height": 12.5,
+          "CenterX": 92,
+          "CenterY": 397.25
+        },
+        {
+          "Text": "Now",
+          "X": 127.5,
+          "Y": 392,
+          "Width": 33.5,
+          "Height": 11.5,
+          "CenterX": 144.25,
+          "CenterY": 397.75
+        }
+      ]
+    },
+    {
+      "Text": "Exit",
+      "Words": [
+        {
+          "Text": "Exit",
+          "X": 59.5,
+          "Y": 430,
+          "Width": 27.5,
+          "Height": 11.5,
+          "CenterX": 73.25,
+          "CenterY": 435.75
+        }
+      ]
+    },
+    {
+      "Text": "Itis tool is used for prehrninary hardware performance and system compatibility testing.",
+      "Words": [
+        {
+          "Text": "Itis",
+          "X": 56.5,
+          "Y": 656,
+          "Width": 24,
+          "Height": 10.5,
+          "CenterX": 68.5,
+          "CenterY": 661.25
+        },
+        {
+          "Text": "tool",
+          "X": 83,
+          "Y": 656,
+          "Width": 24,
+          "Height": 10.5,
+          "CenterX": 95,
+          "CenterY": 661.25
+        },
+        {
+          "Text": "is",
+          "X": 109,
+          "Y": 657,
+          "Width": 9.5,
+          "Height": 9.5,
+          "CenterX": 113.75,
+          "CenterY": 661.75
+        },
+        {
+          "Text": "used",
+          "X": 121,
+          "Y": 655.5,
+          "Width": 28,
+          "Height": 11,
+          "CenterX": 135,
+          "CenterY": 661
+        },
+        {
+          "Text": "for",
+          "X": 152,
+          "Y": 656,
+          "Width": 19,
+          "Height": 10.5,
+          "CenterX": 161.5,
+          "CenterY": 661.25
+        },
+        {
+          "Text": "prehrninary",
+          "X": 173,
+          "Y": 656,
+          "Width": 69,
+          "Height": 14,
+          "CenterX": 207.5,
+          "CenterY": 663
+        },
+        {
+          "Text": "hardware",
+          "X": 244,
+          "Y": 655.5,
+          "Width": 55.5,
+          "Height": 11,
+          "CenterX": 271.75,
+          "CenterY": 661
+        },
+        {
+          "Text": "performance",
+          "X": 302,
+          "Y": 656,
+          "Width": 78.5,
+          "Height": 13.5,
+          "CenterX": 341.25,
+          "CenterY": 662.75
+        },
+        {
+          "Text": "and",
+          "X": 384,
+          "Y": 655.5,
+          "Width": 21,
+          "Height": 11,
+          "CenterX": 394.5,
+          "CenterY": 661
+        },
+        {
+          "Text": "system",
+          "X": 408,
+          "Y": 657.5,
+          "Width": 42,
+          "Height": 12.5,
+          "CenterX": 429,
+          "CenterY": 663.75
+        },
+        {
+          "Text": "compatibility",
+          "X": 453,
+          "Y": 656,
+          "Width": 72.5,
+          "Height": 14,
+          "CenterX": 489.25,
+          "CenterY": 663
+        },
+        {
+          "Text": "testing.",
+          "X": 528,
+          "Y": 657.5,
+          "Width": 43.5,
+          "Height": 11.5,
+          "CenterX": 549.75,
+          "CenterY": 663.25
+        }
+      ]
+    },
+    {
+      "Text": "1.0314649",
+      "Words": [
+        {
+          "Text": "1.0314649",
+          "X": 1208.5,
+          "Y": 665.5,
+          "Width": 44,
+          "Height": 9,
+          "CenterX": 1230.5,
+          "CenterY": 670
+        }
+      ]
+    },
+    {
+      "Text": "Itte test results may not fully represent actual gameplay eperience and final performance.",
+      "Words": [
+        {
+          "Text": "Itte",
+          "X": 56.5,
+          "Y": 678,
+          "Width": 22,
+          "Height": 10.5,
+          "CenterX": 67.5,
+          "CenterY": 683.25
+        },
+        {
+          "Text": "test",
+          "X": 81,
+          "Y": 679.5,
+          "Width": 22.5,
+          "Height": 9,
+          "CenterX": 92.25,
+          "CenterY": 684
+        },
+        {
+          "Text": "results",
+          "X": 106,
+          "Y": 678,
+          "Width": 38.5,
+          "Height": 10.5,
+          "CenterX": 125.25,
+          "CenterY": 683.25
+        },
+        {
+          "Text": "may",
+          "X": 148,
+          "Y": 681,
+          "Width": 25,
+          "Height": 11,
+          "CenterX": 160.5,
+          "CenterY": 686.5
+        },
+        {
+          "Text": "not",
+          "X": 176,
+          "Y": 679.5,
+          "Width": 20.5,
+          "Height": 9,
+          "CenterX": 186.25,
+          "CenterY": 684
+        },
+        {
+          "Text": "fully",
+          "X": 199,
+          "Y": 678,
+          "Width": 25,
+          "Height": 14,
+          "CenterX": 211.5,
+          "CenterY": 685
+        },
+        {
+          "Text": "represent",
+          "X": 227,
+          "Y": 679.5,
+          "Width": 58.5,
+          "Height": 12,
+          "CenterX": 256.25,
+          "CenterY": 685.5
+        },
+        {
+          "Text": "actual",
+          "X": 288,
+          "Y": 678,
+          "Width": 32,
+          "Height": 10.5,
+          "CenterX": 304,
+          "CenterY": 683.25
+        },
+        {
+          "Text": "gameplay",
+          "X": 323,
+          "Y": 678.5,
+          "Width": 56,
+          "Height": 13.5,
+          "CenterX": 351,
+          "CenterY": 685.25
+        },
+        {
+          "Text": "eperience",
+          "X": 382,
+          "Y": 679.5,
+          "Width": 63.5,
+          "Height": 12,
+          "CenterX": 413.75,
+          "CenterY": 685.5
+        },
+        {
+          "Text": "and",
+          "X": 449,
+          "Y": 677.5,
+          "Width": 21,
+          "Height": 11,
+          "CenterX": 459.5,
+          "CenterY": 683
+        },
+        {
+          "Text": "final",
+          "X": 473.5,
+          "Y": 678.5,
+          "Width": 24.5,
+          "Height": 10,
+          "CenterX": 485.75,
+          "CenterY": 683.5
+        },
+        {
+          "Text": "performance.",
+          "X": 500,
+          "Y": 678,
+          "Width": 81.5,
+          "Height": 13.5,
+          "CenterX": 540.75,
+          "CenterY": 684.75
+        }
+      ]
+    }
+  ],
+  "Words": [
+    {
+      "Text": "Benchmark",
+      "X": 59.5,
+      "Y": 317,
+      "Width": 82,
+      "Height": 12.5,
+      "CenterX": 100.5,
+      "CenterY": 323.25
+    },
+    {
+      "Text": "Settings",
+      "X": 59.5,
+      "Y": 355,
+      "Width": 59,
+      "Height": 14.5,
+      "CenterX": 89,
+      "CenterY": 362.25
+    },
+    {
+      "Text": "Purchase",
+      "X": 59.5,
+      "Y": 391,
+      "Width": 65,
+      "Height": 12.5,
+      "CenterX": 92,
+      "CenterY": 397.25
+    },
+    {
+      "Text": "Now",
+      "X": 127.5,
+      "Y": 392,
+      "Width": 33.5,
+      "Height": 11.5,
+      "CenterX": 144.25,
+      "CenterY": 397.75
+    },
+    {
+      "Text": "Exit",
+      "X": 59.5,
+      "Y": 430,
+      "Width": 27.5,
+      "Height": 11.5,
+      "CenterX": 73.25,
+      "CenterY": 435.75
+    },
+    {
+      "Text": "Itis",
+      "X": 56.5,
+      "Y": 656,
+      "Width": 24,
+      "Height": 10.5,
+      "CenterX": 68.5,
+      "CenterY": 661.25
+    },
+    {
+      "Text": "tool",
+      "X": 83,
+      "Y": 656,
+      "Width": 24,
+      "Height": 10.5,
+      "CenterX": 95,
+      "CenterY": 661.25
+    },
+    {
+      "Text": "is",
+      "X": 109,
+      "Y": 657,
+      "Width": 9.5,
+      "Height": 9.5,
+      "CenterX": 113.75,
+      "CenterY": 661.75
+    },
+    {
+      "Text": "used",
+      "X": 121,
+      "Y": 655.5,
+      "Width": 28,
+      "Height": 11,
+      "CenterX": 135,
+      "CenterY": 661
+    },
+    {
+      "Text": "for",
+      "X": 152,
+      "Y": 656,
+      "Width": 19,
+      "Height": 10.5,
+      "CenterX": 161.5,
+      "CenterY": 661.25
+    },
+    {
+      "Text": "prehrninary",
+      "X": 173,
+      "Y": 656,
+      "Width": 69,
+      "Height": 14,
+      "CenterX": 207.5,
+      "CenterY": 663
+    },
+    {
+      "Text": "hardware",
+      "X": 244,
+      "Y": 655.5,
+      "Width": 55.5,
+      "Height": 11,
+      "CenterX": 271.75,
+      "CenterY": 661
+    },
+    {
+      "Text": "performance",
+      "X": 302,
+      "Y": 656,
+      "Width": 78.5,
+      "Height": 13.5,
+      "CenterX": 341.25,
+      "CenterY": 662.75
+    },
+    {
+      "Text": "and",
+      "X": 384,
+      "Y": 655.5,
+      "Width": 21,
+      "Height": 11,
+      "CenterX": 394.5,
+      "CenterY": 661
+    },
+    {
+      "Text": "system",
+      "X": 408,
+      "Y": 657.5,
+      "Width": 42,
+      "Height": 12.5,
+      "CenterX": 429,
+      "CenterY": 663.75
+    },
+    {
+      "Text": "compatibility",
+      "X": 453,
+      "Y": 656,
+      "Width": 72.5,
+      "Height": 14,
+      "CenterX": 489.25,
+      "CenterY": 663
+    },
+    {
+      "Text": "testing.",
+      "X": 528,
+      "Y": 657.5,
+      "Width": 43.5,
+      "Height": 11.5,
+      "CenterX": 549.75,
+      "CenterY": 663.25
+    },
+    {
+      "Text": "1.0314649",
+      "X": 1208.5,
+      "Y": 665.5,
+      "Width": 44,
+      "Height": 9,
+      "CenterX": 1230.5,
+      "CenterY": 670
+    },
+    {
+      "Text": "Itte",
+      "X": 56.5,
+      "Y": 678,
+      "Width": 22,
+      "Height": 10.5,
+      "CenterX": 67.5,
+      "CenterY": 683.25
+    },
+    {
+      "Text": "test",
+      "X": 81,
+      "Y": 679.5,
+      "Width": 22.5,
+      "Height": 9,
+      "CenterX": 92.25,
+      "CenterY": 684
+    },
+    {
+      "Text": "results",
+      "X": 106,
+      "Y": 678,
+      "Width": 38.5,
+      "Height": 10.5,
+      "CenterX": 125.25,
+      "CenterY": 683.25
+    },
+    {
+      "Text": "may",
+      "X": 148,
+      "Y": 681,
+      "Width": 25,
+      "Height": 11,
+      "CenterX": 160.5,
+      "CenterY": 686.5
+    },
+    {
+      "Text": "not",
+      "X": 176,
+      "Y": 679.5,
+      "Width": 20.5,
+      "Height": 9,
+      "CenterX": 186.25,
+      "CenterY": 684
+    },
+    {
+      "Text": "fully",
+      "X": 199,
+      "Y": 678,
+      "Width": 25,
+      "Height": 14,
+      "CenterX": 211.5,
+      "CenterY": 685
+    },
+    {
+      "Text": "represent",
+      "X": 227,
+      "Y": 679.5,
+      "Width": 58.5,
+      "Height": 12,
+      "CenterX": 256.25,
+      "CenterY": 685.5
+    },
+    {
+      "Text": "actual",
+      "X": 288,
+      "Y": 678,
+      "Width": 32,
+      "Height": 10.5,
+      "CenterX": 304,
+      "CenterY": 683.25
+    },
+    {
+      "Text": "gameplay",
+      "X": 323,
+      "Y": 678.5,
+      "Width": 56,
+      "Height": 13.5,
+      "CenterX": 351,
+      "CenterY": 685.25
+    },
+    {
+      "Text": "eperience",
+      "X": 382,
+      "Y": 679.5,
+      "Width": 63.5,
+      "Height": 12,
+      "CenterX": 413.75,
+      "CenterY": 685.5
+    },
+    {
+      "Text": "and",
+      "X": 449,
+      "Y": 677.5,
+      "Width": 21,
+      "Height": 11,
+      "CenterX": 459.5,
+      "CenterY": 683
+    },
+    {
+      "Text": "final",
+      "X": 473.5,
+      "Y": 678.5,
+      "Width": 24.5,
+      "Height": 10,
+      "CenterX": 485.75,
+      "CenterY": 683.5
+    },
+    {
+      "Text": "performance.",
+      "X": 500,
+      "Y": 678,
+      "Width": 81.5,
+      "Height": 13.5,
+      "CenterX": 540.75,
+      "CenterY": 684.75
+    }
+  ]
+}

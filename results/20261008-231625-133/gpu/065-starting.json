@@ -1,0 +1,202 @@
+{
+  "Text": "Are you sure you want to run benchmark? Confirm Cancel",
+  "Lines": [
+    {
+      "Text": "Are you sure you want to run benchmark?",
+      "Words": [
+        {
+          "Text": "Are",
+          "X": 485,
+          "Y": 328.5,
+          "Width": 26,
+          "Height": 12,
+          "CenterX": 498,
+          "CenterY": 334.5
+        },
+        {
+          "Text": "you",
+          "X": 513.5,
+          "Y": 331,
+          "Width": 28.5,
+          "Height": 14,
+          "CenterX": 527.75,
+          "CenterY": 338
+        },
+        {
+          "Text": "sure",
+          "X": 545.5,
+          "Y": 331.5,
+          "Width": 31.5,
+          "Height": 8.5,
+          "CenterX": 561.25,
+          "CenterY": 335.75
+        },
+        {
+          "Text": "you",
+          "X": 579.5,
+          "Y": 331.5,
+          "Width": 28.5,
+          "Height": 13.5,
+          "CenterX": 593.75,
+          "CenterY": 338.25
+        },
+        {
+          "Text": "want",
+          "X": 610.5,
+          "Y": 329.5,
+          "Width": 39,
+          "Height": 10.5,
+          "CenterX": 630,
+          "CenterY": 334.75
+        },
+        {
+          "Text": "to",
+          "X": 653,
+          "Y": 329.5,
+          "Width": 16,
+          "Height": 11,
+          "CenterX": 661,
+          "CenterY": 335
+        },
+        {
+          "Text": "run",
+          "X": 672,
+          "Y": 331,
+          "Width": 27,
+          "Height": 9,
+          "CenterX": 685.5,
+          "CenterY": 335.5
+        },
+        {
+          "Text": "benchmark?",
+          "X": 701,
+          "Y": 326.5,
+          "Width": 93,
+          "Height": 14,
+          "CenterX": 747.5,
+          "CenterY": 333.5
+        }
+      ]
+    },
+    {
+      "Text": "Confirm",
+      "Words": [
+        {
+          "Text": "Confirm",
+          "X": 470.5,
+          "Y": 414.5,
+          "Width": 65.5,
+          "Height": 14.5,
+          "CenterX": 503.25,
+          "CenterY": 421.75
+        }
+      ]
+    },
+    {
+      "Text": "Cancel",
+      "Words": [
+        {
+          "Text": "Cancel",
+          "X": 749.5,
+          "Y": 414.5,
+          "Width": 54.5,
+          "Height": 14.5,
+          "CenterX": 776.75,
+          "CenterY": 421.75
+        }
+      ]
+    }
+  ],
+  "Words": [
+    {
+      "Text": "Are",
+      "X": 485,
+      "Y": 328.5,
+      "Width": 26,
+      "Height": 12,
+      "CenterX": 498,
+      "CenterY": 334.5
+    },
+    {
+      "Text": "you",
+      "X": 513.5,
+      "Y": 331,
+      "Width": 28.5,
+      "Height": 14,
+      "CenterX": 527.75,
+      "CenterY": 338
+    },
+    {
+      "Text": "sure",
+      "X": 545.5,
+      "Y": 331.5,
+      "Width": 31.5,
+      "Height": 8.5,
+      "CenterX": 561.25,
+      "CenterY": 335.75
+    },
+    {
+      "Text": "you",
+      "X": 579.5,
+      "Y": 331.5,
+      "Width": 28.5,
+      "Height": 13.5,
+      "CenterX": 593.75,
+      "CenterY": 338.25
+    },
+    {
+      "Text": "want",
+      "X": 610.5,
+      "Y": 329.5,
+      "Width": 39,
+      "Height": 10.5,
+      "CenterX": 630,
+      "CenterY": 334.75
+    },
+    {
+      "Text": "to",
+      "X": 653,
+      "Y": 329.5,
+      "Width": 16,
+      "Height": 11,
+      "CenterX": 661,
+      "CenterY": 335
+    },
+    {
+      "Text": "run",
+      "X": 672,
+      "Y": 331,
+      "Width": 27,
+      "Height": 9,
+      "CenterX": 685.5,
+      "CenterY": 335.5
+    },
+    {
+      "Text": "benchmark?",
+      "X": 701,
+      "Y": 326.5,
+      "Width": 93,
+      "Height": 14,
+      "CenterX": 747.5,
+      "CenterY": 333.5
+    },
+    {
+      "Text": "Confirm",
+      "X": 470.5,
+      "Y": 414.5,
+      "Width": 65.5,
+      "Height": 14.5,
+      "CenterX": 503.25,
+      "CenterY": 421.75
+    },
+    {
+      "Text": "Cancel",
+      "X": 749.5,
+      "Y": 414.5,
+      "Width": 54.5,
+      "Height": 14.5,
+      "CenterX": 776.75,
+      "CenterY": 421.75
+    }
+  ]
+}

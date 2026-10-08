@@ -1,0 +1,94 @@
+{
+  "Text": "CurratFPS \u2014FPS G Exit",
+  "Lines": [
+    {
+      "Text": "CurratFPS",
+      "Words": [
+        {
+          "Text": "CurratFPS",
+          "X": 40,
+          "Y": 43,
+          "Width": 56.5,
+          "Height": 8.5,
+          "CenterX": 68.25,
+          "CenterY": 47.25
+        }
+      ]
+    },
+    {
+      "Text": "\u2014FPS",
+      "Words": [
+        {
+          "Text": "\u2014FPS",
+          "X": 41,
+          "Y": 60,
+          "Width": 43.5,
+          "Height": 11.5,
+          "CenterX": 62.75,
+          "CenterY": 65.75
+        }
+      ]
+    },
+    {
+      "Text": "G Exit",
+      "Words": [
+        {
+          "Text": "G",
+          "X": 1154.5,
+          "Y": 677.5,
+          "Width": 13,
+          "Height": 19,
+          "CenterX": 1161,
+          "CenterY": 687
+        },
+        {
+          "Text": "Exit",
+          "X": 1176,
+          "Y": 680.5,
+          "Width": 24.5,
+          "Height": 10.5,
+          "CenterX": 1188.25,
+          "CenterY": 685.75
+        }
+      ]
+    }
+  ],
+  "Words": [
+    {
+      "Text": "CurratFPS",
+      "X": 40,
+      "Y": 43,
+      "Width": 56.5,
+      "Height": 8.5,
+      "CenterX": 68.25,
+      "CenterY": 47.25
+    },
+    {
+      "Text": "\u2014FPS",
+      "X": 41,
+      "Y": 60,
+      "Width": 43.5,
+      "Height": 11.5,
+      "CenterX": 62.75,
+      "CenterY": 65.75
+    },
+    {
+      "Text": "G",
+      "X": 1154.5,
+      "Y": 677.5,
+      "Width": 13,
+      "Height": 19,
+      "CenterX": 1161,
+      "CenterY": 687
+    },
+    {
+      "Text": "Exit",
+      "X": 1176,
+      "Y": 680.5,
+      "Width": 24.5,
+      "Height": 10.5,
+      "CenterX": 1188.25,
+      "CenterY": 685.75
+    }
+  ]
+}

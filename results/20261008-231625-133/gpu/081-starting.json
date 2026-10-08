@@ -1,0 +1,94 @@
+{
+  "Text": "CurratFPS FPS G Exit",
+  "Lines": [
+    {
+      "Text": "CurratFPS",
+      "Words": [
+        {
+          "Text": "CurratFPS",
+          "X": 55,
+          "Y": 16.5,
+          "Width": 56,
+          "Height": 10.5,
+          "CenterX": 83,
+          "CenterY": 21.75
+        }
+      ]
+    },
+    {
+      "Text": "FPS",
+      "Words": [
+        {
+          "Text": "FPS",
+          "X": 76,
+          "Y": 34,
+          "Width": 22.5,
+          "Height": 12.5,
+          "CenterX": 87.25,
+          "CenterY": 40.25
+        }
+      ]
+    },
+    {
+      "Text": "G Exit",
+      "Words": [
+        {
+          "Text": "G",
+          "X": 1139,
+          "Y": 701,
+          "Width": 13,
+          "Height": 18.5,
+          "CenterX": 1145.5,
+          "CenterY": 710.25
+        },
+        {
+          "Text": "Exit",
+          "X": 1160.5,
+          "Y": 704.5,
+          "Width": 25,
+          "Height": 11.5,
+          "CenterX": 1173,
+          "CenterY": 710.25
+        }
+      ]
+    }
+  ],
+  "Words": [
+    {
+      "Text": "CurratFPS",
+      "X": 55,
+      "Y": 16.5,
+      "Width": 56,
+      "Height": 10.5,
+      "CenterX": 83,
+      "CenterY": 21.75
+    },
+    {
+      "Text": "FPS",
+      "X": 76,
+      "Y": 34,
+      "Width": 22.5,
+      "Height": 12.5,
+      "CenterX": 87.25,
+      "CenterY": 40.25
+    },
+    {
+      "Text": "G",
+      "X": 1139,
+      "Y": 701,
+      "Width": 13,
+      "Height": 18.5,
+      "CenterX": 1145.5,
+      "CenterY": 710.25
+    },
+    {
+      "Text": "Exit",
+      "X": 1160.5,
+      "Y": 704.5,
+      "Width": 25,
+      "Height": 11.5,
+      "CenterX": 1173,
+      "CenterY": 710.25
+    }
+  ]
+}

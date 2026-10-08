@@ -1,0 +1,66 @@
+{
+  "Text": "Press Any Button",
+  "Lines": [
+    {
+      "Text": "Press Any Button",
+      "Words": [
+        {
+          "Text": "Press",
+          "X": 178.5,
+          "Y": 480.5,
+          "Width": 36.5,
+          "Height": 11,
+          "CenterX": 196.75,
+          "CenterY": 486
+        },
+        {
+          "Text": "Any",
+          "X": 218.5,
+          "Y": 478,
+          "Width": 28,
+          "Height": 14,
+          "CenterX": 232.5,
+          "CenterY": 485
+        },
+        {
+          "Text": "Button",
+          "X": 249,
+          "Y": 476,
+          "Width": 50,
+          "Height": 11,
+          "CenterX": 274,
+          "CenterY": 481.5
+        }
+      ]
+    }
+  ],
+  "Words": [
+    {
+      "Text": "Press",
+      "X": 178.5,
+      "Y": 480.5,
+      "Width": 36.5,
+      "Height": 11,
+      "CenterX": 196.75,
+      "CenterY": 486
+    },
+    {
+      "Text": "Any",
+      "X": 218.5,
+      "Y": 478,
+      "Width": 28,
+      "Height": 14,
+      "CenterX": 232.5,
+      "CenterY": 485
+    },
+    {
+      "Text": "Button",
+      "X": 249,
+      "Y": 476,
+      "Width": 50,
+      "Height": 11,
+      "CenterX": 274,
+      "CenterY": 481.5
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "Text": "B -YSHA W U ICQNG Press Any Button",
+  "Lines": [
+    {
+      "Text": "B -YSHA",
+      "Words": [
+        {
+          "Text": "B",
+          "X": 127,
+          "Y": 337.5,
+          "Width": 13,
+          "Height": 16,
+          "CenterX": 133.5,
+          "CenterY": 345.5
+        },
+        {
+          "Text": "-YSHA",
+          "X": 253,
+          "Y": 319,
+          "Width": 69,
+          "Height": 27.5,
+          "CenterX": 287.5,
+          "CenterY": 332.75
+        }
+      ]
+    },
+    {
+      "Text": "W U ICQNG",
+      "Words": [
+        {
+          "Text": "W",
+          "X": 84,
+          "Y": 365,
+          "Width": 43,
+          "Height": 39.5,
+          "CenterX": 105.5,
+          "CenterY": 384.75
+        },
+        {
+          "Text": "U",
+          "X": 138.5,
+          "Y": 363,
+          "Width": 35,
+          "Height": 37,
+          "CenterX": 156,
+          "CenterY": 381.5
+        },
+        {
+          "Text": "ICQNG",
+          "X": 189,
+          "Y": 331,
+          "Width": 170.5,
+          "Height": 79.5,
+          "CenterX": 274.25,
+          "CenterY": 370.75
+        }
+      ]
+    },
+    {
+      "Text": "Press Any Button",
+      "Words": [
+        {
+          "Text": "Press",
+          "X": 178.5,
+          "Y": 480.5,
+          "Width": 36.5,
+          "Height": 11,
+          "CenterX": 196.75,
+          "CenterY": 486
+        },
+        {
+          "Text": "Any",
+          "X": 218.5,
+          "Y": 478.5,
+          "Width": 28,
+          "Height": 13,
+          "CenterX": 232.5,
+          "CenterY": 485
+        },
+        {
+          "Text": "Button",
+          "X": 249.5,
+          "Y": 476,
+          "Width": 49.5,
+          "Height": 11,
+          "CenterX": 274.25,
+          "CenterY": 481.5
+        }
+      ]
+    }
+  ],
+  "Words": [
+    {
+      "Text": "B",
+      "X": 127,
+      "Y": 337.5,
+      "Width": 13,
+      "Height": 16,
+      "CenterX": 133.5,
+      "CenterY": 345.5
+    },
+    {
+      "Text": "-YSHA",
+      "X": 253,
+      "Y": 319,
+      "Width": 69,
+      "Height": 27.5,
+      "CenterX": 287.5,
+      "CenterY": 332.75
+    },
+    {
+      "Text": "W",
+      "X": 84,
+      "Y": 365,
+      "Width": 43,
+      "Height": 39.5,
+      "CenterX": 105.5,
+      "CenterY": 384.75
+    },
+    {
+      "Text": "U",
+      "X": 138.5,
+      "Y": 363,
+      "Width": 35,
+      "Height": 37,
+      "CenterX": 156,
+      "CenterY": 381.5
+    },
+    {
+      "Text": "ICQNG",
+      "X": 189,
+      "Y": 331,
+      "Width": 170.5,
+      "Height": 79.5,
+      "CenterX": 274.25,
+      "CenterY": 370.75
+    },
+    {
+      "Text": "Press",
+      "X": 178.5,
+      "Y": 480.5,
+      "Width": 36.5,
+      "Height": 11,
+      "CenterX": 196.75,
+      "CenterY": 486
+    },
+    {
+      "Text": "Any",
+      "X": 218.5,
+      "Y": 478.5,
+      "Width": 28,
+      "Height": 13,
+      "CenterX": 232.5,
+      "CenterY": 485
+    },
+    {
+      "Text": "Button",
+      "X": 249.5,
+      "Y": 476,
+      "Width": 49.5,
+      "Height": 11,
+      "CenterX": 274.25,
+      "CenterY": 481.5
+    }
+  ]
+}

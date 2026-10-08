@@ -1,0 +1,98 @@
+[
+  {
+    "Label": {
+      "Text": "Average",
+      "X": 47.5,
+      "Y": 218.5,
+      "Width": 39.25,
+      "Height": 9,
+      "CenterX": 67.125,
+      "CenterY": 223
+    },
+    "Area": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 55,
+        "Y": 239
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 42,
+        "Height": 30
+      },
+      "X": 55,
+      "Y": 239,
+      "Width": 42,
+      "Height": 30,
+      "Left": 55,
+      "Top": 239,
+      "Right": 97,
+      "Bottom": 269,
+      "IsEmpty": false
+    }
+  },
+  {
+    "Label": {
+      "Text": "Minimum",
+      "X": 210.75,
+      "Y": 290.5,
+      "Width": 44.5,
+      "Height": 7.25,
+      "CenterX": 233,
+      "CenterY": 294.125
+    },
+    "Area": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 216,
+        "Y": 308
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 14,
+        "Height": 18
+      },
+      "X": 216,
+      "Y": 308,
+      "Width": 14,
+      "Height": 18,
+      "Left": 216,
+      "Top": 308,
+      "Right": 230,
+      "Bottom": 326,
+      "IsEmpty": false
+    }
+  },
+  {
+    "Label": {
+      "Text": "Maximum",
+      "X": 47.5,
+      "Y": 290.5,
+      "Width": 47.5,
+      "Height": 7.5,
+      "CenterX": 71.25,
+      "CenterY": 294.25
+    },
+    "Area": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 53,
+        "Y": 308
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 24,
+        "Height": 18
+      },
+      "X": 53,
+      "Y": 308,
+      "Width": 24,
+      "Height": 18,
+      "Left": 53,
+      "Top": 308,
+      "Right": 77,
+      "Bottom": 326,
+      "IsEmpty": false
+    }
+  }
+]

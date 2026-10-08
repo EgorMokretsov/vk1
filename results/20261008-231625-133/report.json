@@ -1,0 +1,166 @@
+{
+  "Created": "2026-10-08T23:16:25.1981645+03:00",
+  "SteamBuildId": "15365379",
+  "Hardware": {
+    "Gpu": [
+      {
+        "Name": "Honor Virtual Display Device",
+        "DriverVersion": "1.0.0.4",
+        "VideoProcessor": null
+      },
+      {
+        "Name": "AMD Radeon(TM) Graphics",
+        "DriverVersion": "31.0.12046.15003",
+        "VideoProcessor": "AMD Radeon Graphics Processor (0x164C)"
+      }
+    ],
+    "Board": {
+      "Manufacturer": "HONOR",
+      "Product": "NMH-WCX9-PCB"
+    },
+    "Os": {
+      "Caption": "Microsoft Windows 11 Home Single Language",
+      "Version": "10.0.26200",
+      "BuildNumber": "26200"
+    },
+    "Memory": [
+      {
+        "Capacity": 4294967296,
+        "Speed": 3200,
+        "ConfiguredClockSpeed": 3200
+      },
+      {
+        "Capacity": 4294967296,
+        "Speed": 3200,
+        "ConfiguredClockSpeed": 3200
+      }
+    ],
+    "System": {
+      "Manufacturer": "HONOR",
+      "Model": "NMH-WCX9",
+      "TotalPhysicalMemory": 7879585792
+    },
+    "Cpu": [
+      {
+        "Name": "AMD Ryzen 5 5500U with Radeon Graphics         ",
+        "NumberOfCores": 6,
+        "NumberOfLogicalProcessors": 12,
+        "MaxClockSpeed": 2100
+      }
+    ]
+  },
+  "Passes": [
+    {
+      "Settings": {
+        "Name": "CPU",
+        "Width": 1280,
+        "Height": 720,
+        "RenderPercent": 50,
+        "RayTracing": false,
+        "Windowed": false,
+        "IsCpu": true,
+        "IsWindowed": true,
+        "Scalability": {
+          "sg.ResolutionQuality": "50",
+          "sg.ViewDistanceQuality": "4",
+          "sg.FoliageQuality": "4",
+          "sg.AntiAliasingQuality": "0",
+          "sg.ShadowQuality": "0",
+          "sg.GlobalIlluminationQuality": "0",
+          "sg.RayTracingQuality": "0",
+          "sg.ReflectionQuality": "0",
+          "sg.PostProcessQuality": "0",
+          "sg.TextureQuality": "0",
+          "sg.EffectsQuality": "0",
+          "sg.ShadingQuality": "0"
+        },
+        "UiValues": {
+          "ScreenMode": "2",
+          "LockFrameRate": "0",
+          "Vsync": "0",
+          "InsertFrame": "0",
+          "Rtx": "0",
+          "RtxLevel": "3",
+          "QualityLevel": "6",
+          "ViewDistance": "5",
+          "VegetationQuality": "5",
+          "AntiAliasing": "1",
+          "PostProcessing": "1",
+          "ShadowQuality": "1",
+          "TextureQuality": "1",
+          "FxQuality": "1",
+          "MaterialQuality": "1",
+          "GlobalIllumination": "1",
+          "ReflectionQuality": "1"
+        }
+      },
+      "Results": {
+        "AverageFps": 20,
+        "MinimumFps": 3,
+        "MaximumFps": 26
+      },
+      "Started": "2026-10-08T23:20:57.5702209+03:00",
+      "Finished": "2026-10-08T23:25:16.2081327+03:00",
+      "SettingsValidation": "verified",
+      "Screenshot": "cpu/081-results.png"
+    },
+    {
+      "Settings": {
+        "Name": "GPU",
+        "Width": 1280,
+        "Height": 720,
+        "RenderPercent": 100,
+        "RayTracing": false,
+        "Windowed": true,
+        "IsCpu": false,
+        "IsWindowed": true,
+        "Scalability": {
+          "sg.ResolutionQuality": "100",
+          "sg.ViewDistanceQuality": "4",
+          "sg.FoliageQuality": "4",
+          "sg.AntiAliasingQuality": "4",
+          "sg.ShadowQuality": "4",
+          "sg.GlobalIlluminationQuality": "4",
+          "sg.RayTracingQuality": "0",
+          "sg.ReflectionQuality": "4",
+          "sg.PostProcessQuality": "4",
+          "sg.TextureQuality": "4",
+          "sg.EffectsQuality": "4",
+          "sg.ShadingQuality": "4"
+        },
+        "UiValues": {
+          "ScreenMode": "2",
+          "LockFrameRate": "0",
+          "Vsync": "0",
+          "InsertFrame": "0",
+          "Rtx": "0",
+          "RtxLevel": "3",
+          "QualityLevel": "6",
+          "ViewDistance": "5",
+          "VegetationQuality": "5",
+          "AntiAliasing": "5",
+          "PostProcessing": "5",
+          "ShadowQuality": "5",
+          "TextureQuality": "5",
+          "FxQuality": "5",
+          "MaterialQuality": "5",
+          "GlobalIllumination": "5",
+          "ReflectionQuality": "5"
+        }
+      },
+      "Results": {
+        "AverageFps": 1,
+        "MinimumFps": 0,
+        "MaximumFps": 2
+      },
+      "Started": "2026-10-08T23:31:23.3382939+03:00",
+      "Finished": "2026-10-08T23:37:38.1516152+03:00",
+      "SettingsValidation": "verified",
+      "Screenshot": "gpu/096-results.png"
+    }
+  ],
+  "InitialStatus": "running",
+  "InitialError": null,
+  "Status": "completed",
+  "Error": null
+}
