@@ -74,7 +74,8 @@ internal static class Program
         if (gw > screen.Width || gh > screen.Height) throw new ArgumentException("GPU resolution must fit the primary monitor. Set its highest display mode in Windows before running.");
         bool rayTracing = !options.NoRayTracing && hardware.GetProperty("Gpu").EnumerateArray().Any(g =>
             Regex.IsMatch(g.GetProperty("Name").GetString() ?? "", @"\bRTX\b|\bRX\s*[679]\d{3}|\bArc\b", RegexOptions.IgnoreCase));
-        var profiles = new[] { new Profile("CPU", 1280, 720, 50, false), new Profile("GPU", gw, gh, 100, rayTracing) };
+        var profiles = new[] { new Profile("CPU", 1280, 720, 50, false),
+            new Profile("GPU", gw, gh, 100, rayTracing, Windowed: gw < screen.Width || gh < screen.Height) };
         // Validate format before modifying any user's settings.
         _ = profiles[0].Apply(original);
         var output = Path.GetFullPath(Path.Combine(options.Output, DateTimeOffset.Now.ToString("yyyyMMdd-HHmmss-fff", CultureInfo.InvariantCulture)));
@@ -83,6 +84,9 @@ internal static class Program
         var report = new BenchmarkReport(DateTimeOffset.Now, steam.BuildId, hardware, [], "running", null);
         Process? owned = null;
         var retiredProcessIds = new HashSet<int>();
+        string? currentPassDirectory = null;
+        DateTime launchRequestedUtc = default;
+        int? ownedId = null;
         Console.WriteLine("Отчёт и подтверждающие файлы: " + output);
         try
         {
@@ -92,11 +96,14 @@ internal static class Program
                 var profile = requested;
                 string passDirectory = Path.Combine(output, profile.Name.ToLowerInvariant());
                 Directory.CreateDirectory(passDirectory);
+                currentPassDirectory = passDirectory;
                 Console.WriteLine($"{profile.Name}: {profile.Width}×{profile.Height}, scale {profile.RenderPercent}%, RT {profile.RayTracing}");
                 File.SetAttributes(configFile, FileAttributes.Normal);
                 File.WriteAllText(configFile, profile.Apply(original), new UTF8Encoding(false));
                 File.Copy(configFile, Path.Combine(passDirectory, "requested.ini"), true);
+                launchRequestedUtc = DateTime.UtcNow;
                 owned = await Launch(steam, passDirectory, retiredProcessIds, ct);
+                ownedId = owned.Id;
                 var desktop = new Desktop(owned);
                 var ui = new UiAutomation(desktop, passDirectory, ct);
                 await ui.MainMenu();
@@ -104,7 +111,7 @@ internal static class Program
                 var start = DateTimeOffset.Now;
                 var (metrics, screenshot) = await ui.Run(TimeSpan.FromSeconds(options.TimeoutSeconds));
                 retiredProcessIds.Add(owned.Id);
-                await Stop(owned); owned.Dispose(); owned = null;
+                await Stop(owned); owned.Dispose(); owned = null; ownedId = null;
                 string effective = File.ReadAllText(configFile);
                 File.WriteAllText(Path.Combine(passDirectory, "effective.ini"), effective);
                 profile.Verify(effective);
@@ -118,7 +125,14 @@ internal static class Program
         {
             report.Status = e is OperationCanceledException ? "cancelled" : "failed";
             report.Error = e.Message;
-            File.WriteAllText(Path.Combine(output, "error.txt"), e.ToString());
+            var crash = ownedId is { } pid && currentPassDirectory is not null
+                ? ProcessExitDiagnostics.SaveCrash(steam.GameDirectory, currentPassDirectory, pid, launchRequestedUtc) : null;
+            if (crash is not null)
+            {
+                report.Error += $" {crash.CrashType}: {crash.ErrorMessage}. See {Path.GetFileName(currentPassDirectory)}/crash.json.";
+                Console.Error.WriteLine($"Причина из файла сбоя Benchmark Tool: {crash.CrashType}: {crash.ErrorMessage}.");
+            }
+            File.WriteAllText(Path.Combine(output, "error.txt"), e + (crash is null ? "" : "\n" + report.Error));
             throw;
         }
         finally
@@ -191,6 +205,7 @@ internal static class Program
                     // so later startup errors still stop it before INI restoration.
                     try
                     {
+                        ProcessExitDiagnostics.RetainHandle(process);
                         File.WriteAllText(diagnostic, JsonSerializer.Serialize(new { RequestUtc = requestUtc, ExcludedProcessIds = excludedIds,
                             Status = "attached", ProcessId = process.Id, StartedUtc = startedUtc }, Json));
                         Console.WriteLine($"Новый процесс Benchmark Tool: PID {process.Id}.");

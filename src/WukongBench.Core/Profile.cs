@@ -2,10 +2,11 @@ using System.Globalization;
 
 namespace WukongBench.Core;
 
-public sealed record Profile(string Name, int Width, int Height, int RenderPercent, bool RayTracing)
+public sealed record Profile(string Name, int Width, int Height, int RenderPercent, bool RayTracing, bool Windowed = false)
 {
     public const string Section = "/Script/GSGameSettings.GSGameUserSettings";
     public bool IsCpu => Name == "CPU";
+    public bool IsWindowed => IsCpu || Windowed;
     public Dictionary<string, string> Scalability => new()
     {
         ["sg.ResolutionQuality"] = RenderPercent.ToString(CultureInfo.InvariantCulture),
@@ -18,7 +19,7 @@ public sealed record Profile(string Name, int Width, int Height, int RenderPerce
     };
     public Dictionary<string, string> UiValues => new()
     {
-        ["ScreenMode"] = IsCpu ? "2" : "1", ["LockFrameRate"] = "0", ["Vsync"] = "0",
+        ["ScreenMode"] = IsWindowed ? "2" : "1", ["LockFrameRate"] = "0", ["Vsync"] = "0",
         ["InsertFrame"] = "0", ["Rtx"] = RayTracing ? "1" : "0", ["RtxLevel"] = "3",
         ["QualityLevel"] = "6", ["ViewDistance"] = "5", ["VegetationQuality"] = "5",
         ["AntiAliasing"] = IsCpu ? "1" : "5", ["PostProcessing"] = IsCpu ? "1" : "5",
@@ -36,7 +37,7 @@ public sealed record Profile(string Name, int Width, int Height, int RenderPerce
         foreach (string k in new[] { "ResolutionSizeY", "LastUserConfirmedResolutionSizeY", "DesiredScreenHeight", "LastUserConfirmedDesiredScreenHeight" })
             ini.Set(Section, k, Height.ToString(CultureInfo.InvariantCulture));
         foreach (string k in new[] { "FullscreenMode", "LastConfirmedFullscreenMode", "PreferredFullscreenMode" })
-            ini.Set(Section, k, IsCpu ? "2" : "1");
+            ini.Set(Section, k, IsWindowed ? "2" : "1");
         ini.Set(Section, "bUseVSync", "False"); ini.Set(Section, "bUseDynamicResolution", "False");
         ini.Set(Section, "FrameRateLimit", "0.000000");
         ini.UpdateMap(Section, "UISettingData", UiValues);
@@ -70,3 +71,4 @@ public sealed record Profile(string Name, int Width, int Height, int RenderPerce
             throw new InvalidDataException("Cannot verify disabled Full RT in the saved configuration.");
     }
 }
+

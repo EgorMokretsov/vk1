@@ -12,7 +12,7 @@ internal sealed class Desktop(Process process)
     {
         get
         {
-            if (process.HasExited) throw new InvalidOperationException($"Benchmark process {process.Id} exited unexpectedly (exit code {process.ExitCode}).");
+            if (process.HasExited) throw ProcessExitDiagnostics.Error(process.Id, () => process.ExitCode);
             process.Refresh();
             return process.MainWindowHandle != IntPtr.Zero && IsWindowVisible(process.MainWindowHandle);
         }
@@ -21,7 +21,7 @@ internal sealed class Desktop(Process process)
     {
         get
         {
-            if (process.HasExited) throw new InvalidOperationException($"Benchmark process {process.Id} exited unexpectedly (exit code {process.ExitCode}).");
+            if (process.HasExited) throw ProcessExitDiagnostics.Error(process.Id, () => process.ExitCode);
             process.Refresh();
             if (process.MainWindowHandle == IntPtr.Zero) throw new InvalidOperationException("Benchmark window is unavailable.");
             return process.MainWindowHandle;

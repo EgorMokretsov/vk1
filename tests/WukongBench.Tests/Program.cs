@@ -22,6 +22,12 @@ Check(patched.ReadMap(Profile.Section, "UISettingData")["UnknownFutureSetting"] 
 Check(patched.Get("ScalabilityGroups", "sg.ShadowQuality") == "0", "CPU GPU effects low");
 Check(patched.Get("ScalabilityGroups", "sg.ViewDistanceQuality") == "4", "CPU view distance retained");
 cpu.Verify(cpu.Apply(original)); gpu.Verify(gpu.Apply(original)); Check(true, "verify CPU/GPU profiles");
+var smallerGpu = new Profile("GPU", 1280, 720, 100, false, Windowed: true);
+var smallerGpuIni = new IniFile(smallerGpu.Apply(original));
+Check(smallerGpuIni.Get(Profile.Section, "FullscreenMode") == "2" && smallerGpuIni.ReadMap(Profile.Section, "UISettingData")["ScreenMode"] == "2",
+    "explicit smaller GPU resolution uses existing verified windowed mode");
+Check(smallerGpuIni.Get("ScalabilityGroups", "sg.ResolutionQuality") == "100" && smallerGpuIni.Get("ScalabilityGroups", "sg.EffectsQuality") == "4",
+    "smaller diagnostic GPU resolution retains native render scale and Cinematic quality");
 patched.Set("ScalabilityGroups", "sg.ShadowQuality", "4"); Reject(() => cpu.Verify(patched.ToString()), "reject silently overridden settings");
 Reject(() => cpu.Apply("[Unrelated]\nFoo=Bar"), "reject unknown config schema");
 var launchRequest = new DateTime(2026, 10, 6, 16, 49, 26, DateTimeKind.Utc);
@@ -35,6 +41,21 @@ Check(!processTracker.MayAttach(19408, launchRequest.AddMinutes(-8), false), "un
 excludedProcesses.Clear();
 Check(!processTracker.MayAttach(20816, launchRequest.AddSeconds(1), false), "launch snapshot remains stable when caller collection changes");
 Check(!processTracker.MayAttach(0, launchRequest.AddSeconds(1), false), "invalid PID cannot become benchmark process ownership");
+Check(ProcessExitDiagnostics.Error(15568, () => 3).Message.Contains("exit code 3"), "actual process exit code is preserved in error");
+Check(ProcessExitDiagnostics.Error(15568, () => throw new InvalidOperationException("Process was not started by this object")).Message.Contains("exit code unavailable"),
+    "unavailable ExitCode cannot mask the original benchmark process failure");
+const string crashXml = """
+    <FGenericCrashContext><RuntimeProperties><ProcessId>15568</ProcessId><CrashType>GPUCrash</CrashType>
+    <ErrorMessage>GPU Crash dump Triggered</ErrorMessage><MemoryStats.bIsOOM>0</MemoryStats.bIsOOM>
+    <MemoryStats.AvailablePhysical>197902336</MemoryStats.AvailablePhysical><UserName>Private account</UserName>
+    </RuntimeProperties><EngineData><RHI.AdapterName>AMD Radeon(TM) Graphics</RHI.AdapterName>
+    <RHI.InternalDriverVersion>31.0.12046.15003</RHI.InternalDriverVersion></EngineData></FGenericCrashContext>
+    """;
+var gpuCrash = CrashSummary.Parse(crashXml, 15568)!;
+Check(gpuCrash.CrashType == "GPUCrash" && gpuCrash.ErrorMessage == "GPU Crash dump Triggered" && gpuCrash.OutOfMemory == false,
+    "GPU crash evidence does not become an unsupported out-of-memory diagnosis");
+Check(CrashSummary.Parse(crashXml, 14652) is null, "another pass PID cannot supply GPU crash evidence");
+Check(!JsonSerializer.Serialize(gpuCrash).Contains("Private account"), "sanitized crash summary excludes account data");
 OcrWord W(string text, double x, double y, double w = 100, double h = 20) => new(text, x, y, w, h);
 OcrPage Page(bool separate, string avg = "60.5", string min = "40", string max = "90")
 {
@@ -289,6 +310,28 @@ if (!testRoot.StartsWith(Path.GetFullPath(Path.GetTempPath()).TrimEnd(Path.Direc
 Directory.CreateDirectory(testRoot);
 try
 {
+    var harmlessStart = new System.Diagnostics.ProcessStartInfo(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.System), "WindowsPowerShell", "v1.0", "powershell.exe"))
+        { UseShellExecute = false, CreateNoWindow = true };
+    foreach (string argument in new[] { "-NoProfile", "-NonInteractive", "-Command", "Start-Sleep -Milliseconds 800; exit 3" }) harmlessStart.ArgumentList.Add(argument);
+    using (var child = System.Diagnostics.Process.Start(harmlessStart)!)
+    {
+        try
+        {
+            using var attached = System.Diagnostics.Process.GetProcessById(child.Id);
+            ProcessExitDiagnostics.RetainHandle(attached);
+            await child.WaitForExitAsync();
+            attached.Refresh();
+            Check(attached.HasExited && attached.ExitCode == 3, "held handle recovers exit code from process attached by PID after termination");
+        }
+        finally { if (!child.HasExited) { child.Kill(); await child.WaitForExitAsync(); } }
+    }
+    string fakeGame = Path.Combine(testRoot, "game");
+    string fakeCrash = Path.Combine(fakeGame, "b1", "Saved", "Crashes", "session");
+    Directory.CreateDirectory(fakeCrash);
+    File.WriteAllText(Path.Combine(fakeCrash, "CrashContext.runtime-xml"), crashXml);
+    Check(ProcessExitDiagnostics.SaveCrash(fakeGame, testRoot, 15568, DateTime.UtcNow.AddMinutes(-1)) == gpuCrash
+        && File.Exists(Path.Combine(testRoot, "crash.json")), "matching fresh crash context is saved as selected diagnostic fields");
+    Check(ProcessExitDiagnostics.SaveCrash(fakeGame, testRoot, 15568, DateTime.UtcNow.AddDays(1)) is null, "old crash cannot be attributed to a new launch");
     string appearanceFile = Path.Combine(testRoot, "appearance.png");
     using (var appearance = new System.Drawing.Bitmap(80, 30))
     {
