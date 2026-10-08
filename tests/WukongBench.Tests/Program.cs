@@ -213,6 +213,24 @@ var sliderRow = MenuParser.FindRow(sliderMenu, "super resolution", 1280)!;
 Check(sliderRow.Text == "Super Resolution", "actual Samphng heading cannot be selected as scale slider");
 Check(MenuParser.FindRow(sliderMenu with { Lines = sliderMenu.Lines.Where(l => l != sliderRow).ToArray() }, "super resolution", 1280) is null, "reject headings and help when slider label is missing");
 var numericReading = JsonSerializer.Deserialize<OcrPage>(File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "Fixtures", "slider-value.json")), WukongBench.Program.Json)!;
+var focusedSlider = Fixture("graphics-slider-focused.json");
+var focusedRow = MenuParser.FindRow(focusedSlider, "super resolution", 1920)!;
+Check(MenuParser.Value(focusedSlider, focusedRow, 1920) == "", "actual focused slider endpoint captions 33/100 cannot represent current value");
+Reject(() => MenuParser.Control(focusedSlider, focusedRow, 1920), "missing moving slider value cannot click the left endpoint caption");
+var focusedRegion = MenuParser.ValueRegion(focusedSlider, focusedRow, 1920, 1080);
+Check(focusedRegion.X > 770.25 && focusedRegion.X + focusedRegion.Width < 993
+    && 953 > focusedRegion.X && 953 < focusedRegion.X + focusedRegion.Width,
+    "focused slider OCR region contains moving 100 box and excludes both endpoints");
+var largeNumeric = OcrImage.OriginalCoordinates(numericReading, 1d / 1.5);
+var focusedWithValue = focusedSlider with { Lines = focusedSlider.Lines.Concat(largeNumeric.Lines).ToArray() };
+Check(MenuParser.Value(focusedWithValue, focusedRow, 1920) == "100", "actual enlarged moving 100 reading is distinct from static 100 endpoint");
+var sliderAt50 = focusedSlider with { Lines = focusedSlider.Lines.Append(new OcrLine("50", [W("50", 862, 406, 20, 14)])).ToArray() };
+Check(MenuParser.Value(sliderAt50, focusedRow, 1920) == "50", "static 100 endpoint cannot confirm a moving value of 50");
+var sliderAt33 = focusedSlider with { Lines = focusedSlider.Lines.Append(new OcrLine("33", [W("33", 790, 406, 20, 14)])).ToArray() };
+Check(MenuParser.Value(sliderAt33, focusedRow, 1920) == "33", "moving minimum 33 remains readable separately from left endpoint");
+var smallerFocused = OcrImage.OriginalCoordinates(focusedWithValue, 1.5);
+Check(MenuParser.Value(smallerFocused, MenuParser.FindRow(smallerFocused, "super resolution", 1280)!, 1280) == "100",
+    "focused slider endpoint filtering also works at CPU viewport size");
 var number = numericReading.Words.Single();
 var mergedSlider = sliderRow with { Text = "Super Resolution 100", Words = sliderRow.Words.Append(number).ToArray() };
 Check(MenuParser.FindRow(new OcrPage("", [mergedSlider]), "super resolution", 1280) == mergedSlider, "accept slider value merged with exact label");

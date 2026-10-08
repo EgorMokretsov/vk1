@@ -1,0 +1,1572 @@
+{
+  "Text": "Recommended Settings Apply Recommended Graphics Settings Super Resolution Sampling Super Resolution ! Super Resolution Sampling Frame Generation NVIDIA Full Ray Tracing Full Ray Tracing Full Ray Tracing Level Detailed Graphics Graphics Preset 33 100 Super Resolution Increasing super resolution can improve image clarity in certain situations but will significantly reduce performance. Adjust with caution. The current settings exceed the recommended settings and may lead to performance issues. TSR Off Cinematic Apply Graphics Changes O Reset Settings for This Page Return",
+  "Lines": [
+    {
+      "Text": "Recommended Settings",
+      "Words": [
+        {
+          "Text": "Recommended",
+          "X": 321,
+          "Y": 211.5,
+          "Width": 135.75,
+          "Height": 17.25,
+          "CenterX": 388.875,
+          "CenterY": 220.125
+        },
+        {
+          "Text": "Settings",
+          "X": 461.25,
+          "Y": 213,
+          "Width": 75,
+          "Height": 19.5,
+          "CenterX": 498.75,
+          "CenterY": 222.75
+        }
+      ]
+    },
+    {
+      "Text": "Apply Recommended Graphics Settings",
+      "Words": [
+        {
+          "Text": "Apply",
+          "X": 339,
+          "Y": 276.75,
+          "Width": 55.5,
+          "Height": 22.5,
+          "CenterX": 366.75,
+          "CenterY": 288
+        },
+        {
+          "Text": "Recommended",
+          "X": 399,
+          "Y": 276.75,
+          "Width": 135.75,
+          "Height": 16.5,
+          "CenterX": 466.875,
+          "CenterY": 285
+        },
+        {
+          "Text": "Graphics",
+          "X": 539.25,
+          "Y": 276,
+          "Width": 81,
+          "Height": 22.5,
+          "CenterX": 579.75,
+          "CenterY": 287.25
+        },
+        {
+          "Text": "Settings",
+          "X": 625.5,
+          "Y": 278.25,
+          "Width": 75,
+          "Height": 20.25,
+          "CenterX": 663,
+          "CenterY": 288.375
+        }
+      ]
+    },
+    {
+      "Text": "Super Resolution Sampling",
+      "Words": [
+        {
+          "Text": "Super",
+          "X": 320.25,
+          "Y": 341.25,
+          "Width": 53.25,
+          "Height": 19.5,
+          "CenterX": 346.875,
+          "CenterY": 351
+        },
+        {
+          "Text": "Resolution",
+          "X": 378,
+          "Y": 339.75,
+          "Width": 99,
+          "Height": 16.5,
+          "CenterX": 427.5,
+          "CenterY": 348
+        },
+        {
+          "Text": "Sampling",
+          "X": 481.5,
+          "Y": 339,
+          "Width": 85.5,
+          "Height": 21.75,
+          "CenterX": 524.25,
+          "CenterY": 349.875
+        }
+      ]
+    },
+    {
+      "Text": "Super Resolution !",
+      "Words": [
+        {
+          "Text": "Super",
+          "X": 340.5,
+          "Y": 406.5,
+          "Width": 52.5,
+          "Height": 19.5,
+          "CenterX": 366.75,
+          "CenterY": 416.25
+        },
+        {
+          "Text": "Resolution",
+          "X": 398.25,
+          "Y": 405,
+          "Width": 98.25,
+          "Height": 15.75,
+          "CenterX": 447.375,
+          "CenterY": 412.875
+        },
+        {
+          "Text": "!",
+          "X": 501.75,
+          "Y": 405,
+          "Width": 2.25,
+          "Height": 16.5,
+          "CenterX": 502.875,
+          "CenterY": 413.25
+        }
+      ]
+    },
+    {
+      "Text": "Super Resolution Sampling",
+      "Words": [
+        {
+          "Text": "Super",
+          "X": 340.5,
+          "Y": 470.25,
+          "Width": 53.25,
+          "Height": 20.25,
+          "CenterX": 367.125,
+          "CenterY": 480.375
+        },
+        {
+          "Text": "Resolution",
+          "X": 397.5,
+          "Y": 468.75,
+          "Width": 99.75,
+          "Height": 16.5,
+          "CenterX": 447.375,
+          "CenterY": 477
+        },
+        {
+          "Text": "Sampling",
+          "X": 501,
+          "Y": 468,
+          "Width": 86.25,
+          "Height": 22.5,
+          "CenterX": 544.125,
+          "CenterY": 479.25
+        }
+      ]
+    },
+    {
+      "Text": "Frame Generation",
+      "Words": [
+        {
+          "Text": "Frame",
+          "X": 340.5,
+          "Y": 534,
+          "Width": 57,
+          "Height": 15.75,
+          "CenterX": 369,
+          "CenterY": 541.875
+        },
+        {
+          "Text": "Generation",
+          "X": 402,
+          "Y": 534,
+          "Width": 103.5,
+          "Height": 15.75,
+          "CenterX": 453.75,
+          "CenterY": 541.875
+        }
+      ]
+    },
+    {
+      "Text": "NVIDIA Full Ray Tracing",
+      "Words": [
+        {
+          "Text": "NVIDIA",
+          "X": 320.25,
+          "Y": 597,
+          "Width": 75,
+          "Height": 15.75,
+          "CenterX": 357.75,
+          "CenterY": 604.875
+        },
+        {
+          "Text": "Full",
+          "X": 399.75,
+          "Y": 595.5,
+          "Width": 35.25,
+          "Height": 17.25,
+          "CenterX": 417.375,
+          "CenterY": 604.125
+        },
+        {
+          "Text": "Ray",
+          "X": 439.5,
+          "Y": 597,
+          "Width": 33.75,
+          "Height": 19.5,
+          "CenterX": 456.375,
+          "CenterY": 606.75
+        },
+        {
+          "Text": "Tracing",
+          "X": 476.25,
+          "Y": 597,
+          "Width": 70.5,
+          "Height": 19.5,
+          "CenterX": 511.5,
+          "CenterY": 606.75
+        }
+      ]
+    },
+    {
+      "Text": "Full Ray Tracing",
+      "Words": [
+        {
+          "Text": "Full",
+          "X": 341.25,
+          "Y": 660.75,
+          "Width": 34.5,
+          "Height": 16.5,
+          "CenterX": 358.5,
+          "CenterY": 669
+        },
+        {
+          "Text": "Ray",
+          "X": 381,
+          "Y": 662.25,
+          "Width": 33,
+          "Height": 20.25,
+          "CenterX": 397.5,
+          "CenterY": 672.375
+        },
+        {
+          "Text": "Tracing",
+          "X": 417.75,
+          "Y": 662.25,
+          "Width": 69.75,
+          "Height": 20.25,
+          "CenterX": 452.625,
+          "CenterY": 672.375
+        }
+      ]
+    },
+    {
+      "Text": "Full Ray Tracing Level",
+      "Words": [
+        {
+          "Text": "Full",
+          "X": 341.25,
+          "Y": 724.5,
+          "Width": 34.5,
+          "Height": 16.5,
+          "CenterX": 358.5,
+          "CenterY": 732.75
+        },
+        {
+          "Text": "Ray",
+          "X": 381,
+          "Y": 726.75,
+          "Width": 33,
+          "Height": 20.25,
+          "CenterX": 397.5,
+          "CenterY": 736.875
+        },
+        {
+          "Text": "Tracing",
+          "X": 417.75,
+          "Y": 726.75,
+          "Width": 69.75,
+          "Height": 19.5,
+          "CenterX": 452.625,
+          "CenterY": 736.5
+        },
+        {
+          "Text": "Level",
+          "X": 492.75,
+          "Y": 724.5,
+          "Width": 48.75,
+          "Height": 16.5,
+          "CenterX": 517.125,
+          "CenterY": 732.75
+        }
+      ]
+    },
+    {
+      "Text": "Detailed Graphics",
+      "Words": [
+        {
+          "Text": "Detailed",
+          "X": 320.25,
+          "Y": 787.5,
+          "Width": 78,
+          "Height": 17.25,
+          "CenterX": 359.25,
+          "CenterY": 796.125
+        },
+        {
+          "Text": "Graphics",
+          "X": 402.75,
+          "Y": 787.5,
+          "Width": 81,
+          "Height": 21,
+          "CenterX": 443.25,
+          "CenterY": 798
+        }
+      ]
+    },
+    {
+      "Text": "Graphics Preset",
+      "Words": [
+        {
+          "Text": "Graphics",
+          "X": 340.5,
+          "Y": 852,
+          "Width": 81,
+          "Height": 22.5,
+          "CenterX": 381,
+          "CenterY": 863.25
+        },
+        {
+          "Text": "Preset",
+          "X": 426.75,
+          "Y": 854.25,
+          "Width": 56.25,
+          "Height": 15,
+          "CenterX": 454.875,
+          "CenterY": 861.75
+        }
+      ]
+    },
+    {
+      "Text": "33",
+      "Words": [
+        {
+          "Text": "33",
+          "X": 753,
+          "Y": 405.75,
+          "Width": 17.25,
+          "Height": 13.5,
+          "CenterX": 761.625,
+          "CenterY": 412.5
+        }
+      ]
+    },
+    {
+      "Text": "100",
+      "Words": [
+        {
+          "Text": "100",
+          "X": 993,
+          "Y": 405.75,
+          "Width": 27,
+          "Height": 13.5,
+          "CenterX": 1006.5,
+          "CenterY": 412.5
+        }
+      ]
+    },
+    {
+      "Text": "Super Resolution",
+      "Words": [
+        {
+          "Text": "Super",
+          "X": 1200,
+          "Y": 213,
+          "Width": 53.25,
+          "Height": 20.25,
+          "CenterX": 1226.625,
+          "CenterY": 223.125
+        },
+        {
+          "Text": "Resolution",
+          "X": 1257.75,
+          "Y": 211.5,
+          "Width": 99.75,
+          "Height": 17.25,
+          "CenterX": 1307.625,
+          "CenterY": 220.125
+        }
+      ]
+    },
+    {
+      "Text": "Increasing super resolution can improve image",
+      "Words": [
+        {
+          "Text": "Increasing",
+          "X": 1200,
+          "Y": 281.25,
+          "Width": 102,
+          "Height": 22.5,
+          "CenterX": 1251,
+          "CenterY": 292.5
+        },
+        {
+          "Text": "super",
+          "X": 1307.25,
+          "Y": 285.75,
+          "Width": 53.25,
+          "Height": 18,
+          "CenterX": 1333.875,
+          "CenterY": 294.75
+        },
+        {
+          "Text": "resolution",
+          "X": 1365,
+          "Y": 280.5,
+          "Width": 100.5,
+          "Height": 18,
+          "CenterX": 1415.25,
+          "CenterY": 289.5
+        },
+        {
+          "Text": "can",
+          "X": 1470,
+          "Y": 285.75,
+          "Width": 32.25,
+          "Height": 12.75,
+          "CenterX": 1486.125,
+          "CenterY": 292.125
+        },
+        {
+          "Text": "improve",
+          "X": 1508.25,
+          "Y": 281.25,
+          "Width": 79.5,
+          "Height": 22.5,
+          "CenterX": 1548,
+          "CenterY": 292.5
+        },
+        {
+          "Text": "image",
+          "X": 1592.25,
+          "Y": 281.25,
+          "Width": 58.5,
+          "Height": 22.5,
+          "CenterX": 1621.5,
+          "CenterY": 292.5
+        }
+      ]
+    },
+    {
+      "Text": "clarity in certain situations but will significantly",
+      "Words": [
+        {
+          "Text": "clarity",
+          "X": 1200,
+          "Y": 314.25,
+          "Width": 62.25,
+          "Height": 24,
+          "CenterX": 1231.125,
+          "CenterY": 326.25
+        },
+        {
+          "Text": "in",
+          "X": 1265.25,
+          "Y": 315,
+          "Width": 20.25,
+          "Height": 17.25,
+          "CenterX": 1275.375,
+          "CenterY": 323.625
+        },
+        {
+          "Text": "certain",
+          "X": 1290,
+          "Y": 315,
+          "Width": 68.25,
+          "Height": 17.25,
+          "CenterX": 1324.125,
+          "CenterY": 323.625
+        },
+        {
+          "Text": "situations",
+          "X": 1363.5,
+          "Y": 315,
+          "Width": 93.75,
+          "Height": 17.25,
+          "CenterX": 1410.375,
+          "CenterY": 323.625
+        },
+        {
+          "Text": "but",
+          "X": 1462.5,
+          "Y": 314.25,
+          "Width": 35.25,
+          "Height": 18,
+          "CenterX": 1480.125,
+          "CenterY": 323.25
+        },
+        {
+          "Text": "will",
+          "X": 1501.5,
+          "Y": 314.25,
+          "Width": 36.75,
+          "Height": 18,
+          "CenterX": 1519.875,
+          "CenterY": 323.25
+        },
+        {
+          "Text": "significantly",
+          "X": 1543.5,
+          "Y": 314.25,
+          "Width": 120,
+          "Height": 24,
+          "CenterX": 1603.5,
+          "CenterY": 326.25
+        }
+      ]
+    },
+    {
+      "Text": "reduce performance. Adjust with caution.",
+      "Words": [
+        {
+          "Text": "reduce",
+          "X": 1199.25,
+          "Y": 348.75,
+          "Width": 67.5,
+          "Height": 18.75,
+          "CenterX": 1233,
+          "CenterY": 358.125
+        },
+        {
+          "Text": "performance.",
+          "X": 1271.25,
+          "Y": 349.5,
+          "Width": 129,
+          "Height": 23.25,
+          "CenterX": 1335.75,
+          "CenterY": 361.125
+        },
+        {
+          "Text": "Adjust",
+          "X": 1405.5,
+          "Y": 348.75,
+          "Width": 63.75,
+          "Height": 24.75,
+          "CenterX": 1437.375,
+          "CenterY": 361.125
+        },
+        {
+          "Text": "with",
+          "X": 1473,
+          "Y": 349.5,
+          "Width": 46.5,
+          "Height": 18,
+          "CenterX": 1496.25,
+          "CenterY": 358.5
+        },
+        {
+          "Text": "caution.",
+          "X": 1524,
+          "Y": 350.25,
+          "Width": 77.25,
+          "Height": 17.25,
+          "CenterX": 1562.625,
+          "CenterY": 358.875
+        }
+      ]
+    },
+    {
+      "Text": "The current settings exceed the recommended",
+      "Words": [
+        {
+          "Text": "The",
+          "X": 1200,
+          "Y": 419.25,
+          "Width": 37.5,
+          "Height": 18,
+          "CenterX": 1218.75,
+          "CenterY": 428.25
+        },
+        {
+          "Text": "current",
+          "X": 1243.5,
+          "Y": 422.25,
+          "Width": 72.75,
+          "Height": 15,
+          "CenterX": 1279.875,
+          "CenterY": 429.75
+        },
+        {
+          "Text": "settings",
+          "X": 1321.5,
+          "Y": 420,
+          "Width": 75,
+          "Height": 22.5,
+          "CenterX": 1359,
+          "CenterY": 431.25
+        },
+        {
+          "Text": "exceed",
+          "X": 1402.5,
+          "Y": 418.5,
+          "Width": 66,
+          "Height": 18.75,
+          "CenterX": 1435.5,
+          "CenterY": 427.875
+        },
+        {
+          "Text": "the",
+          "X": 1472.25,
+          "Y": 419.25,
+          "Width": 32.25,
+          "Height": 18,
+          "CenterX": 1488.375,
+          "CenterY": 428.25
+        },
+        {
+          "Text": "recommended",
+          "X": 1509,
+          "Y": 418.5,
+          "Width": 140.25,
+          "Height": 18.75,
+          "CenterX": 1579.125,
+          "CenterY": 427.875
+        }
+      ]
+    },
+    {
+      "Text": "settings and may lead to performance issues.",
+      "Words": [
+        {
+          "Text": "settings",
+          "X": 1200,
+          "Y": 455.25,
+          "Width": 75.75,
+          "Height": 22.5,
+          "CenterX": 1237.875,
+          "CenterY": 466.5
+        },
+        {
+          "Text": "and",
+          "X": 1281,
+          "Y": 453.75,
+          "Width": 37.5,
+          "Height": 18.75,
+          "CenterX": 1299.75,
+          "CenterY": 463.125
+        },
+        {
+          "Text": "may",
+          "X": 1322.25,
+          "Y": 459.75,
+          "Width": 42,
+          "Height": 18.75,
+          "CenterX": 1343.25,
+          "CenterY": 469.125
+        },
+        {
+          "Text": "lead",
+          "X": 1367.25,
+          "Y": 453.75,
+          "Width": 42,
+          "Height": 18.75,
+          "CenterX": 1388.25,
+          "CenterY": 463.125
+        },
+        {
+          "Text": "to",
+          "X": 1413.75,
+          "Y": 457.5,
+          "Width": 19.5,
+          "Height": 15,
+          "CenterX": 1423.5,
+          "CenterY": 465
+        },
+        {
+          "Text": "performance",
+          "X": 1438.5,
+          "Y": 454.5,
+          "Width": 123.75,
+          "Height": 23.25,
+          "CenterX": 1500.375,
+          "CenterY": 466.125
+        },
+        {
+          "Text": "issues.",
+          "X": 1567.5,
+          "Y": 455.25,
+          "Width": 62.25,
+          "Height": 17.25,
+          "CenterX": 1598.625,
+          "CenterY": 463.875
+        }
+      ]
+    },
+    {
+      "Text": "TSR",
+      "Words": [
+        {
+          "Text": "TSR",
+          "X": 863.25,
+          "Y": 469.5,
+          "Width": 38.25,
+          "Height": 15,
+          "CenterX": 882.375,
+          "CenterY": 477
+        }
+      ]
+    },
+    {
+      "Text": "Off",
+      "Words": [
+        {
+          "Text": "Off",
+          "X": 867,
+          "Y": 531,
+          "Width": 30.75,
+          "Height": 17.25,
+          "CenterX": 882.375,
+          "CenterY": 539.625
+        }
+      ]
+    },
+    {
+      "Text": "Cinematic",
+      "Words": [
+        {
+          "Text": "Cinematic",
+          "X": 835.5,
+          "Y": 853.5,
+          "Width": 93,
+          "Height": 15,
+          "CenterX": 882,
+          "CenterY": 861
+        }
+      ]
+    },
+    {
+      "Text": "Apply Graphics Changes",
+      "Words": [
+        {
+          "Text": "Apply",
+          "X": 1074,
+          "Y": 1019.25,
+          "Width": 57,
+          "Height": 24,
+          "CenterX": 1102.5,
+          "CenterY": 1031.25
+        },
+        {
+          "Text": "Graphics",
+          "X": 1135.5,
+          "Y": 1019.25,
+          "Width": 84.75,
+          "Height": 23.25,
+          "CenterX": 1177.875,
+          "CenterY": 1030.875
+        },
+        {
+          "Text": "Changes",
+          "X": 1226.25,
+          "Y": 1019.25,
+          "Width": 82.5,
+          "Height": 23.25,
+          "CenterX": 1267.5,
+          "CenterY": 1030.875
+        }
+      ]
+    },
+    {
+      "Text": "O Reset Settings for This Page",
+      "Words": [
+        {
+          "Text": "O",
+          "X": 1353,
+          "Y": 1019.25,
+          "Width": 22.5,
+          "Height": 23.25,
+          "CenterX": 1364.25,
+          "CenterY": 1030.875
+        },
+        {
+          "Text": "Reset",
+          "X": 1387.5,
+          "Y": 1021.5,
+          "Width": 53.25,
+          "Height": 15.75,
+          "CenterX": 1414.125,
+          "CenterY": 1029.375
+        },
+        {
+          "Text": "Settings",
+          "X": 1445.25,
+          "Y": 1020,
+          "Width": 77.25,
+          "Height": 22.5,
+          "CenterX": 1483.875,
+          "CenterY": 1031.25
+        },
+        {
+          "Text": "for",
+          "X": 1528.5,
+          "Y": 1019.25,
+          "Width": 27.75,
+          "Height": 18,
+          "CenterX": 1542.375,
+          "CenterY": 1028.25
+        },
+        {
+          "Text": "This",
+          "X": 1562.25,
+          "Y": 1019.25,
+          "Width": 41.25,
+          "Height": 18,
+          "CenterX": 1582.875,
+          "CenterY": 1028.25
+        },
+        {
+          "Text": "Page",
+          "X": 1609.5,
+          "Y": 1021.5,
+          "Width": 45,
+          "Height": 21,
+          "CenterX": 1632,
+          "CenterY": 1032
+        }
+      ]
+    },
+    {
+      "Text": "Return",
+      "Words": [
+        {
+          "Text": "Return",
+          "X": 1734.75,
+          "Y": 1021.5,
+          "Width": 67.5,
+          "Height": 15.75,
+          "CenterX": 1768.5,
+          "CenterY": 1029.375
+        }
+      ]
+    }
+  ],
+  "Words": [
+    {
+      "Text": "Recommended",
+      "X": 321,
+      "Y": 211.5,
+      "Width": 135.75,
+      "Height": 17.25,
+      "CenterX": 388.875,
+      "CenterY": 220.125
+    },
+    {
+      "Text": "Settings",
+      "X": 461.25,
+      "Y": 213,
+      "Width": 75,
+      "Height": 19.5,
+      "CenterX": 498.75,
+      "CenterY": 222.75
+    },
+    {
+      "Text": "Apply",
+      "X": 339,
+      "Y": 276.75,
+      "Width": 55.5,
+      "Height": 22.5,
+      "CenterX": 366.75,
+      "CenterY": 288
+    },
+    {
+      "Text": "Recommended",
+      "X": 399,
+      "Y": 276.75,
+      "Width": 135.75,
+      "Height": 16.5,
+      "CenterX": 466.875,
+      "CenterY": 285
+    },
+    {
+      "Text": "Graphics",
+      "X": 539.25,
+      "Y": 276,
+      "Width": 81,
+      "Height": 22.5,
+      "CenterX": 579.75,
+      "CenterY": 287.25
+    },
+    {
+      "Text": "Settings",
+      "X": 625.5,
+      "Y": 278.25,
+      "Width": 75,
+      "Height": 20.25,
+      "CenterX": 663,
+      "CenterY": 288.375
+    },
+    {
+      "Text": "Super",
+      "X": 320.25,
+      "Y": 341.25,
+      "Width": 53.25,
+      "Height": 19.5,
+      "CenterX": 346.875,
+      "CenterY": 351
+    },
+    {
+      "Text": "Resolution",
+      "X": 378,
+      "Y": 339.75,
+      "Width": 99,
+      "Height": 16.5,
+      "CenterX": 427.5,
+      "CenterY": 348
+    },
+    {
+      "Text": "Sampling",
+      "X": 481.5,
+      "Y": 339,
+      "Width": 85.5,
+      "Height": 21.75,
+      "CenterX": 524.25,
+      "CenterY": 349.875
+    },
+    {
+      "Text": "Super",
+      "X": 340.5,
+      "Y": 406.5,
+      "Width": 52.5,
+      "Height": 19.5,
+      "CenterX": 366.75,
+      "CenterY": 416.25
+    },
+    {
+      "Text": "Resolution",
+      "X": 398.25,
+      "Y": 405,
+      "Width": 98.25,
+      "Height": 15.75,
+      "CenterX": 447.375,
+      "CenterY": 412.875
+    },
+    {
+      "Text": "!",
+      "X": 501.75,
+      "Y": 405,
+      "Width": 2.25,
+      "Height": 16.5,
+      "CenterX": 502.875,
+      "CenterY": 413.25
+    },
+    {
+      "Text": "Super",
+      "X": 340.5,
+      "Y": 470.25,
+      "Width": 53.25,
+      "Height": 20.25,
+      "CenterX": 367.125,
+      "CenterY": 480.375
+    },
+    {
+      "Text": "Resolution",
+      "X": 397.5,
+      "Y": 468.75,
+      "Width": 99.75,
+      "Height": 16.5,
+      "CenterX": 447.375,
+      "CenterY": 477
+    },
+    {
+      "Text": "Sampling",
+      "X": 501,
+      "Y": 468,
+      "Width": 86.25,
+      "Height": 22.5,
+      "CenterX": 544.125,
+      "CenterY": 479.25
+    },
+    {
+      "Text": "Frame",
+      "X": 340.5,
+      "Y": 534,
+      "Width": 57,
+      "Height": 15.75,
+      "CenterX": 369,
+      "CenterY": 541.875
+    },
+    {
+      "Text": "Generation",
+      "X": 402,
+      "Y": 534,
+      "Width": 103.5,
+      "Height": 15.75,
+      "CenterX": 453.75,
+      "CenterY": 541.875
+    },
+    {
+      "Text": "NVIDIA",
+      "X": 320.25,
+      "Y": 597,
+      "Width": 75,
+      "Height": 15.75,
+      "CenterX": 357.75,
+      "CenterY": 604.875
+    },
+    {
+      "Text": "Full",
+      "X": 399.75,
+      "Y": 595.5,
+      "Width": 35.25,
+      "Height": 17.25,
+      "CenterX": 417.375,
+      "CenterY": 604.125
+    },
+    {
+      "Text": "Ray",
+      "X": 439.5,
+      "Y": 597,
+      "Width": 33.75,
+      "Height": 19.5,
+      "CenterX": 456.375,
+      "CenterY": 606.75
+    },
+    {
+      "Text": "Tracing",
+      "X": 476.25,
+      "Y": 597,
+      "Width": 70.5,
+      "Height": 19.5,
+      "CenterX": 511.5,
+      "CenterY": 606.75
+    },
+    {
+      "Text": "Full",
+      "X": 341.25,
+      "Y": 660.75,
+      "Width": 34.5,
+      "Height": 16.5,
+      "CenterX": 358.5,
+      "CenterY": 669
+    },
+    {
+      "Text": "Ray",
+      "X": 381,
+      "Y": 662.25,
+      "Width": 33,
+      "Height": 20.25,
+      "CenterX": 397.5,
+      "CenterY": 672.375
+    },
+    {
+      "Text": "Tracing",
+      "X": 417.75,
+      "Y": 662.25,
+      "Width": 69.75,
+      "Height": 20.25,
+      "CenterX": 452.625,
+      "CenterY": 672.375
+    },
+    {
+      "Text": "Full",
+      "X": 341.25,
+      "Y": 724.5,
+      "Width": 34.5,
+      "Height": 16.5,
+      "CenterX": 358.5,
+      "CenterY": 732.75
+    },
+    {
+      "Text": "Ray",
+      "X": 381,
+      "Y": 726.75,
+      "Width": 33,
+      "Height": 20.25,
+      "CenterX": 397.5,
+      "CenterY": 736.875
+    },
+    {
+      "Text": "Tracing",
+      "X": 417.75,
+      "Y": 726.75,
+      "Width": 69.75,
+      "Height": 19.5,
+      "CenterX": 452.625,
+      "CenterY": 736.5
+    },
+    {
+      "Text": "Level",
+      "X": 492.75,
+      "Y": 724.5,
+      "Width": 48.75,
+      "Height": 16.5,
+      "CenterX": 517.125,
+      "CenterY": 732.75
+    },
+    {
+      "Text": "Detailed",
+      "X": 320.25,
+      "Y": 787.5,
+      "Width": 78,
+      "Height": 17.25,
+      "CenterX": 359.25,
+      "CenterY": 796.125
+    },
+    {
+      "Text": "Graphics",
+      "X": 402.75,
+      "Y": 787.5,
+      "Width": 81,
+      "Height": 21,
+      "CenterX": 443.25,
+      "CenterY": 798
+    },
+    {
+      "Text": "Graphics",
+      "X": 340.5,
+      "Y": 852,
+      "Width": 81,
+      "Height": 22.5,
+      "CenterX": 381,
+      "CenterY": 863.25
+    },
+    {
+      "Text": "Preset",
+      "X": 426.75,
+      "Y": 854.25,
+      "Width": 56.25,
+      "Height": 15,
+      "CenterX": 454.875,
+      "CenterY": 861.75
+    },
+    {
+      "Text": "33",
+      "X": 753,
+      "Y": 405.75,
+      "Width": 17.25,
+      "Height": 13.5,
+      "CenterX": 761.625,
+      "CenterY": 412.5
+    },
+    {
+      "Text": "100",
+      "X": 993,
+      "Y": 405.75,
+      "Width": 27,
+      "Height": 13.5,
+      "CenterX": 1006.5,
+      "CenterY": 412.5
+    },
+    {
+      "Text": "Super",
+      "X": 1200,
+      "Y": 213,
+      "Width": 53.25,
+      "Height": 20.25,
+      "CenterX": 1226.625,
+      "CenterY": 223.125
+    },
+    {
+      "Text": "Resolution",
+      "X": 1257.75,
+      "Y": 211.5,
+      "Width": 99.75,
+      "Height": 17.25,
+      "CenterX": 1307.625,
+      "CenterY": 220.125
+    },
+    {
+      "Text": "Increasing",
+      "X": 1200,
+      "Y": 281.25,
+      "Width": 102,
+      "Height": 22.5,
+      "CenterX": 1251,
+      "CenterY": 292.5
+    },
+    {
+      "Text": "super",
+      "X": 1307.25,
+      "Y": 285.75,
+      "Width": 53.25,
+      "Height": 18,
+      "CenterX": 1333.875,
+      "CenterY": 294.75
+    },
+    {
+      "Text": "resolution",
+      "X": 1365,
+      "Y": 280.5,
+      "Width": 100.5,
+      "Height": 18,
+      "CenterX": 1415.25,
+      "CenterY": 289.5
+    },
+    {
+      "Text": "can",
+      "X": 1470,
+      "Y": 285.75,
+      "Width": 32.25,
+      "Height": 12.75,
+      "CenterX": 1486.125,
+      "CenterY": 292.125
+    },
+    {
+      "Text": "improve",
+      "X": 1508.25,
+      "Y": 281.25,
+      "Width": 79.5,
+      "Height": 22.5,
+      "CenterX": 1548,
+      "CenterY": 292.5
+    },
+    {
+      "Text": "image",
+      "X": 1592.25,
+      "Y": 281.25,
+      "Width": 58.5,
+      "Height": 22.5,
+      "CenterX": 1621.5,
+      "CenterY": 292.5
+    },
+    {
+      "Text": "clarity",
+      "X": 1200,
+      "Y": 314.25,
+      "Width": 62.25,
+      "Height": 24,
+      "CenterX": 1231.125,
+      "CenterY": 326.25
+    },
+    {
+      "Text": "in",
+      "X": 1265.25,
+      "Y": 315,
+      "Width": 20.25,
+      "Height": 17.25,
+      "CenterX": 1275.375,
+      "CenterY": 323.625
+    },
+    {
+      "Text": "certain",
+      "X": 1290,
+      "Y": 315,
+      "Width": 68.25,
+      "Height": 17.25,
+      "CenterX": 1324.125,
+      "CenterY": 323.625
+    },
+    {
+      "Text": "situations",
+      "X": 1363.5,
+      "Y": 315,
+      "Width": 93.75,
+      "Height": 17.25,
+      "CenterX": 1410.375,
+      "CenterY": 323.625
+    },
+    {
+      "Text": "but",
+      "X": 1462.5,
+      "Y": 314.25,
+      "Width": 35.25,
+      "Height": 18,
+      "CenterX": 1480.125,
+      "CenterY": 323.25
+    },
+    {
+      "Text": "will",
+      "X": 1501.5,
+      "Y": 314.25,
+      "Width": 36.75,
+      "Height": 18,
+      "CenterX": 1519.875,
+      "CenterY": 323.25
+    },
+    {
+      "Text": "significantly",
+      "X": 1543.5,
+      "Y": 314.25,
+      "Width": 120,
+      "Height": 24,
+      "CenterX": 1603.5,
+      "CenterY": 326.25
+    },
+    {
+      "Text": "reduce",
+      "X": 1199.25,
+      "Y": 348.75,
+      "Width": 67.5,
+      "Height": 18.75,
+      "CenterX": 1233,
+      "CenterY": 358.125
+    },
+    {
+      "Text": "performance.",
+      "X": 1271.25,
+      "Y": 349.5,
+      "Width": 129,
+      "Height": 23.25,
+      "CenterX": 1335.75,
+      "CenterY": 361.125
+    },
+    {
+      "Text": "Adjust",
+      "X": 1405.5,
+      "Y": 348.75,
+      "Width": 63.75,
+      "Height": 24.75,
+      "CenterX": 1437.375,
+      "CenterY": 361.125
+    },
+    {
+      "Text": "with",
+      "X": 1473,
+      "Y": 349.5,
+      "Width": 46.5,
+      "Height": 18,
+      "CenterX": 1496.25,
+      "CenterY": 358.5
+    },
+    {
+      "Text": "caution.",
+      "X": 1524,
+      "Y": 350.25,
+      "Width": 77.25,
+      "Height": 17.25,
+      "CenterX": 1562.625,
+      "CenterY": 358.875
+    },
+    {
+      "Text": "The",
+      "X": 1200,
+      "Y": 419.25,
+      "Width": 37.5,
+      "Height": 18,
+      "CenterX": 1218.75,
+      "CenterY": 428.25
+    },
+    {
+      "Text": "current",
+      "X": 1243.5,
+      "Y": 422.25,
+      "Width": 72.75,
+      "Height": 15,
+      "CenterX": 1279.875,
+      "CenterY": 429.75
+    },
+    {
+      "Text": "settings",
+      "X": 1321.5,
+      "Y": 420,
+      "Width": 75,
+      "Height": 22.5,
+      "CenterX": 1359,
+      "CenterY": 431.25
+    },
+    {
+      "Text": "exceed",
+      "X": 1402.5,
+      "Y": 418.5,
+      "Width": 66,
+      "Height": 18.75,
+      "CenterX": 1435.5,
+      "CenterY": 427.875
+    },
+    {
+      "Text": "the",
+      "X": 1472.25,
+      "Y": 419.25,
+      "Width": 32.25,
+      "Height": 18,
+      "CenterX": 1488.375,
+      "CenterY": 428.25
+    },
+    {
+      "Text": "recommended",
+      "X": 1509,
+      "Y": 418.5,
+      "Width": 140.25,
+      "Height": 18.75,
+      "CenterX": 1579.125,
+      "CenterY": 427.875
+    },
+    {
+      "Text": "settings",
+      "X": 1200,
+      "Y": 455.25,
+      "Width": 75.75,
+      "Height": 22.5,
+      "CenterX": 1237.875,
+      "CenterY": 466.5
+    },
+    {
+      "Text": "and",
+      "X": 1281,
+      "Y": 453.75,
+      "Width": 37.5,
+      "Height": 18.75,
+      "CenterX": 1299.75,
+      "CenterY": 463.125
+    },
+    {
+      "Text": "may",
+      "X": 1322.25,
+      "Y": 459.75,
+      "Width": 42,
+      "Height": 18.75,
+      "CenterX": 1343.25,
+      "CenterY": 469.125
+    },
+    {
+      "Text": "lead",
+      "X": 1367.25,
+      "Y": 453.75,
+      "Width": 42,
+      "Height": 18.75,
+      "CenterX": 1388.25,
+      "CenterY": 463.125
+    },
+    {
+      "Text": "to",
+      "X": 1413.75,
+      "Y": 457.5,
+      "Width": 19.5,
+      "Height": 15,
+      "CenterX": 1423.5,
+      "CenterY": 465
+    },
+    {
+      "Text": "performance",
+      "X": 1438.5,
+      "Y": 454.5,
+      "Width": 123.75,
+      "Height": 23.25,
+      "CenterX": 1500.375,
+      "CenterY": 466.125
+    },
+    {
+      "Text": "issues.",
+      "X": 1567.5,
+      "Y": 455.25,
+      "Width": 62.25,
+      "Height": 17.25,
+      "CenterX": 1598.625,
+      "CenterY": 463.875
+    },
+    {
+      "Text": "TSR",
+      "X": 863.25,
+      "Y": 469.5,
+      "Width": 38.25,
+      "Height": 15,
+      "CenterX": 882.375,
+      "CenterY": 477
+    },
+    {
+      "Text": "Off",
+      "X": 867,
+      "Y": 531,
+      "Width": 30.75,
+      "Height": 17.25,
+      "CenterX": 882.375,
+      "CenterY": 539.625
+    },
+    {
+      "Text": "Cinematic",
+      "X": 835.5,
+      "Y": 853.5,
+      "Width": 93,
+      "Height": 15,
+      "CenterX": 882,
+      "CenterY": 861
+    },
+    {
+      "Text": "Apply",
+      "X": 1074,
+      "Y": 1019.25,
+      "Width": 57,
+      "Height": 24,
+      "CenterX": 1102.5,
+      "CenterY": 1031.25
+    },
+    {
+      "Text": "Graphics",
+      "X": 1135.5,
+      "Y": 1019.25,
+      "Width": 84.75,
+      "Height": 23.25,
+      "CenterX": 1177.875,
+      "CenterY": 1030.875
+    },
+    {
+      "Text": "Changes",
+      "X": 1226.25,
+      "Y": 1019.25,
+      "Width": 82.5,
+      "Height": 23.25,
+      "CenterX": 1267.5,
+      "CenterY": 1030.875
+    },
+    {
+      "Text": "O",
+      "X": 1353,
+      "Y": 1019.25,
+      "Width": 22.5,
+      "Height": 23.25,
+      "CenterX": 1364.25,
+      "CenterY": 1030.875
+    },
+    {
+      "Text": "Reset",
+      "X": 1387.5,
+      "Y": 1021.5,
+      "Width": 53.25,
+      "Height": 15.75,
+      "CenterX": 1414.125,
+      "CenterY": 1029.375
+    },
+    {
+      "Text": "Settings",
+      "X": 1445.25,
+      "Y": 1020,
+      "Width": 77.25,
+      "Height": 22.5,
+      "CenterX": 1483.875,
+      "CenterY": 1031.25
+    },
+    {
+      "Text": "for",
+      "X": 1528.5,
+      "Y": 1019.25,
+      "Width": 27.75,
+      "Height": 18,
+      "CenterX": 1542.375,
+      "CenterY": 1028.25
+    },
+    {
+      "Text": "This",
+      "X": 1562.25,
+      "Y": 1019.25,
+      "Width": 41.25,
+      "Height": 18,
+      "CenterX": 1582.875,
+      "CenterY": 1028.25
+    },
+    {
+      "Text": "Page",
+      "X": 1609.5,
+      "Y": 1021.5,
+      "Width": 45,
+      "Height": 21,
+      "CenterX": 1632,
+      "CenterY": 1032
+    },
+    {
+      "Text": "Return",
+      "X": 1734.75,
+      "Y": 1021.5,
+      "Width": 67.5,
+      "Height": 15.75,
+      "CenterX": 1768.5,
+      "CenterY": 1029.375
+    }
+  ]
+}
