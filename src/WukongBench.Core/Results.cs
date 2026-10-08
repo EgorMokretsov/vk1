@@ -38,7 +38,9 @@ public static class ResultParser
             return candidates[0].Value!.Value;
         }
         var m = new Metrics(Get(@"^aver(age)?$|^avg\.?$"), Get(@"^min(imum)?\.?$"), Get(@"^max(imum)?\.?$"));
-        if (m.MinimumFps <= 0 || m.MinimumFps > m.AverageFps || m.AverageFps > m.MaximumFps || m.MaximumFps > 5000)
+        // Benchmark Tool rounds very slow frames to 0 FPS. A zero minimum is
+        // legitimate; the average must still be positive and ordering preserved.
+        if (m.MinimumFps < 0 || m.AverageFps <= 0 || m.MinimumFps > m.AverageFps || m.AverageFps > m.MaximumFps || m.MaximumFps > 5000)
             throw new InvalidDataException("Invalid FPS ordering/range; preserve screenshot for inspection.");
         return m;
     }
@@ -48,4 +50,3 @@ public static class ResultParser
         return match.Success ? double.Parse(match.Groups[1].Value.Replace(',', '.'), CultureInfo.InvariantCulture) : null;
     }
 }
-

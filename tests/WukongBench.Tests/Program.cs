@@ -134,6 +134,9 @@ OcrPage Page(bool separate, string avg = "60.5", string min = "40", string max =
 Check(ResultParser.Parse(Page(false)) == new Metrics(60.5, 40, 90), "FPS on same row");
 Check(ResultParser.Parse(Page(true)) == new Metrics(60.5, 40, 90), "FPS above labels");
 Check(ResultParser.Parse(Page(true, "60,5")) == new Metrics(60.5, 40, 90), "decimal comma");
+Check(ResultParser.Parse(Page(true, "1", "0", "3")) == new Metrics(1, 0, 3), "actual GPU 1/0/3 result permits rounded zero minimum FPS");
+Check(ResultParser.Parse(Page(true, "0.5", "0", "1")) == new Metrics(0.5, 0, 1), "zero minimum preserves positive fractional average and valid ordering");
+Reject(() => ResultParser.Parse(Page(true, "0", "0", "0")), "zero average cannot be accepted as complete positive benchmark result");
 Reject(() => ResultParser.Parse(Page(false, "30", "40", "90")), "reject invalid FPS ordering");
 Reject(() => ResultParser.Parse(Page(false) with { Text = "Current FPS 60" }), "reject running screen");
 OcrPage Fixture(string name) => JsonSerializer.Deserialize<OcrPage>(File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "Fixtures", name)), WukongBench.Program.Json)!;
@@ -159,6 +162,19 @@ var letterStrip = numeralReading with { Lines = numeralReading.Lines.Select(l =>
 Reject(() => ResultImageReader.MapNumbers(letterStrip, actualCrops, actualTiles, 6), "numeric-strip letter remains an error rather than a replacement digit");
 var crossedTile = numeralReading with { Lines = numeralReading.Lines.Select(l => l with { Words = l.Words.Select(w => w.Text == "1" ? w with { X = 280 } : w).ToArray() }).ToArray() };
 Reject(() => ResultImageReader.MapNumbers(crossedTile, actualCrops, actualTiles, 6), "strip value outside its source tile is rejected");
+var individualCrop = new ResultImageReader.NumberCrop(numberAreas[0].Label, new(55, 239, 15, 30));
+var individualTile = new System.Drawing.Rectangle(40, 40, 60, 120);
+OcrPage Individual(string text, double x = 45) => new(text + " FPS", [new(text + " FPS", [W(text, x, 50, 25, 90), W("FPS", 110, 50, 150, 90)])]);
+Check(ResultImageReader.ReadIndividualValue(Individual("1"), individualTile, individualCrop).Text == "1",
+    "individual OCR reads real numeral in source tile with FPS text context");
+Check(ResultImageReader.ReadIndividualValue(Individual("0"), individualTile, individualCrop).Text == "0",
+    "individual OCR preserves exact zero instead of rejecting valid minimum");
+Reject(() => ResultImageReader.ReadIndividualValue(Individual("I"), individualTile, individualCrop), "individual letter I cannot be converted to digit 1");
+Reject(() => ResultImageReader.ReadIndividualValue(Individual("O"), individualTile, individualCrop), "individual letter O cannot be converted to digit 0");
+Reject(() => ResultImageReader.ReadIndividualValue(Individual("1", 130), individualTile, individualCrop),
+    "numeric OCR outside screenshot tile cannot supply a metric from generated context");
+Reject(() => ResultImageReader.ReadIndividualValue(Individual("1") with { Text = "1 FPS 3" }, individualTile, individualCrop),
+    "individual crop with extra numeric token remains ambiguous");
 var duplicateAverage = columnResult with { Lines = columnResult.Lines.Append(columnResult.Lines.Single(l => l.Text == "Average")).ToArray() };
 Reject(() => ResultImageReader.NumberAreas(fullResult, duplicateAverage, resultBounds), "ambiguous result captions cannot select numeric regions");
 var missingAverage = Fixture("results-missing-average.json");
@@ -433,7 +449,7 @@ try
         if (File.Exists(resultError)) throw new InvalidDataException(File.ReadAllText(resultError));
         var values = (args.Length == 3 ? args[2] : "19,1,25").Split(',').Select(v => double.Parse(v, System.Globalization.CultureInfo.InvariantCulture)).ToArray();
         var expected = new Metrics(values[0], values[1], values[2]);
-        Check(ResultParser.Parse(actualResult) == expected, "Windows OCR and full reader recover actual saved CPU result " + string.Join('/', values));
+        Check(ResultParser.Parse(actualResult) == expected, "Windows OCR and full reader recover actual saved result " + string.Join('/', values));
     }
     string config = Path.Combine(testRoot, "config"); Directory.CreateDirectory(config);
     string iniPath = Path.Combine(config, "GameUserSettings.ini");

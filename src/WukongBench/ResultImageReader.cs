@@ -140,19 +140,117 @@ internal static class ResultImageReader
             try { _ = ResultParser.Parse(column); return column; }
             catch (InvalidDataException) { }
             var crops = NumberAreas(page, column, area, bitmap);
+            File.WriteAllText(stem + "-results-crops.json", JsonSerializer.Serialize(crops, Program.Json));
             InvalidDataException? lastError = null;
             foreach (int padding in new[] { 30, 90 })
             {
                 try { return await ReadStrip(bitmap, stem, crops, padding, recognize); }
                 catch (InvalidDataException error) { lastError = error; }
             }
-            throw lastError!;
+            try { return await ReadIndividual(bitmap, source, stem, column, area, crops, recognize); }
+            catch (InvalidDataException error) { throw new InvalidDataException(error.Message + " Previous strip error: " + lastError!.Message, error); }
         }
         catch (Exception error) when (error is InvalidDataException or InvalidOperationException)
         {
             File.WriteAllText(stem + "-results-error.txt", error.Message);
             return page; // Preserve evidence and retry another capture without guessing.
         }
+    }
+
+    internal static OcrWord ReadIndividualValue(OcrPage page, Rectangle numericTile, NumberCrop crop)
+    {
+        if (!Regex.IsMatch(page.Text.Trim(), @"^\d{1,4}(?:[.,]\d{1,3})?\s+FPS$", RegexOptions.IgnoreCase))
+            throw new InvalidDataException("Individual FPS crop did not yield an exact number and FPS suffix: " + page.Text);
+        var values = page.Words.Where(w => Regex.IsMatch(w.Text, @"^\d{1,4}(?:[.,]\d{1,3})?$")).ToArray();
+        if (values.Length != 1 || !numericTile.Contains((int)values[0].CenterX, (int)values[0].CenterY))
+            throw new InvalidDataException("Individual FPS reading is outside its numeric pixels.");
+        return values[0] with { X = crop.Area.X, Y = crop.Area.Y, Width = crop.Area.Width, Height = crop.Area.Height };
+    }
+
+    private static async Task<OcrPage> ReadIndividual(Bitmap bitmap, string source, string stem, OcrPage column,
+        Rectangle bounds, NumberCrop[] crops, Func<string, double, int, int, Task<OcrPage>> recognize)
+    {
+        var lines = new List<OcrLine> { new("Benchmark Results", [new("Results", 0, 0, 1, 1)]) };
+        string[] names = ["avg", "min", "max"];
+        for (int i = 0; i < crops.Length; i++)
+        {
+            var crop = crops[i];
+            OcrWord? value = null;
+            // First enlarge the actual number and its actual FPS suffix together.
+            var suffixes = column.Words.Where(w => string.Equals(w.Text, "FPS", StringComparison.OrdinalIgnoreCase)
+                && w.X >= crop.Area.Right - 3 && w.X < crop.Area.Right + Math.Max(crop.Area.Width * 2, crop.Label.Height * 4)
+                && Math.Abs(w.CenterY - (crop.Area.Top + crop.Area.Height / 2d)) < crop.Area.Height).ToArray();
+            if (suffixes.Length == 1)
+            {
+                var suffix = suffixes[0];
+                var row = Rectangle.Union(crop.Area, Rectangle.FromLTRB((int)Math.Floor(suffix.X - 3), (int)Math.Floor(suffix.Y - 3),
+                    (int)Math.Ceiling(suffix.X + suffix.Width + 3), (int)Math.Ceiling(suffix.Y + suffix.Height + 3)));
+                if (!bounds.Contains(row)) throw new InvalidDataException("Individual FPS crop leaves result column.");
+                string image = stem + "-results-" + names[i] + "-native-ocr.png";
+                double scale = OcrImage.Prepare(source, image, row, maximumScale: 8, gamma: 1);
+                var reading = await recognize(image, 1, 0, 0);
+                File.WriteAllText(stem + "-results-" + names[i] + "-native.json", JsonSerializer.Serialize(reading, Program.Json));
+                var tile = new Rectangle((int)((crop.Area.X - row.X) * scale), (int)((crop.Area.Y - row.Y) * scale),
+                    (int)(crop.Area.Width * scale), (int)(crop.Area.Height * scale));
+                try { value = ReadIndividualValue(reading, tile, crop); }
+                catch (InvalidDataException) { }
+            }
+            // A standalone serif 1 can be omitted even in a native crop. Add only
+            // the letters FPS at the numeral's height to give OCR text context.
+            // Every numeric pixel still comes from the screenshot. No numeral,
+            // expected result or substitution of I/O is supplied to the engine.
+            if (value is null)
+            {
+                foreach (int height in new[] { 80, 100, 120 })
+                {
+                    string contextStem = stem + "-results-" + names[i] + "-context-" + height;
+                    var tile = PrepareContext(bitmap, crop, contextStem + "-ocr.png", height);
+                    var reading = await recognize(contextStem + "-ocr.png", 1, 0, 0);
+                    File.WriteAllText(contextStem + ".json", JsonSerializer.Serialize(reading, Program.Json));
+                    OcrWord candidate;
+                    try { candidate = ReadIndividualValue(reading, tile, crop); }
+                    catch (InvalidDataException) { continue; }
+                    if (value is not null && candidate.Text != value.Text)
+                        throw new InvalidDataException("Conflicting individual FPS readings for " + crop.Label.Text);
+                    value = candidate;
+                }
+            }
+            if (value is null) throw new InvalidDataException("Cannot read individual FPS pixels for " + crop.Label.Text);
+            lines.Add(new(crop.Label.Text, [crop.Label]));
+            lines.Add(new(value.Text, [value]));
+        }
+        var result = new OcrPage(string.Join("\n", lines.Select(l => l.Text)), lines.ToArray());
+        _ = ResultParser.Parse(result);
+        return result;
+    }
+
+    internal static Rectangle PrepareContext(Bitmap source, NumberCrop crop, string destination, int height)
+    {
+        double scale = (double)height / crop.Area.Height;
+        var tile = new Rectangle(40, 40, (int)(crop.Area.Width * scale), height);
+        using var image = new Bitmap(tile.Width + height * 4 + 100, height + 80, PixelFormat.Format24bppRgb);
+        using (var graphics = Graphics.FromImage(image))
+        {
+            graphics.Clear(Color.Black);
+            graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+            graphics.DrawImage(source, tile, crop.Area, GraphicsUnit.Pixel);
+            graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
+            float fontSize = (float)((crop.Area.Height - 6) * scale * 1.4);
+            using var font = new Font("Arial", fontSize, FontStyle.Regular, GraphicsUnit.Pixel);
+            graphics.DrawString("FPS", font, Brushes.White, tile.Right - 5, (float)(40 + 3 * scale - fontSize * .18));
+        }
+        // Invert contrast only; the original numeral shape is preserved.
+        using (var attributes = new ImageAttributes())
+        {
+            attributes.SetColorMatrix(new ColorMatrix(new[] {
+                new float[] {-1, 0, 0, 0, 0}, new float[] {0, -1, 0, 0, 0}, new float[] {0, 0, -1, 0, 0},
+                new float[] {0, 0, 0, 1, 0}, new float[] {1, 1, 1, 0, 1} }));
+            using var inverted = new Bitmap(image.Width, image.Height, PixelFormat.Format24bppRgb);
+            using (var graphics = Graphics.FromImage(inverted))
+                graphics.DrawImage(image, new Rectangle(0, 0, image.Width, image.Height), 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, attributes);
+            inverted.Save(destination, ImageFormat.Png);
+        }
+        return tile;
     }
 
     private static async Task<OcrPage> ReadStrip(Bitmap bitmap, string stem, NumberCrop[] crops, int padding,
@@ -184,4 +282,3 @@ internal static class ResultImageReader
         return MapNumbers(digits, crops, tiles, digitScale);
     }
 }
-

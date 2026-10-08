@@ -37,6 +37,14 @@ internal static class Program
             {
                 foreach (string suffix in new[] { "-ocr.png", "-values-ocr.png", "-values.json", "-rt-values-ocr.png", "-rt-values.json", "-results-ocr.png", "-results.json", "-results-column-ocr.png", "-results-column.json", "-results-digits-ocr.png", "-results-digits.json", "-results-digits-spaced-ocr.png", "-results-digits-spaced.json", "-results-error.txt" })
                     if (File.Exists(temporary + suffix)) File.Delete(temporary + suffix);
+                if (File.Exists(temporary + "-results-crops.json")) File.Delete(temporary + "-results-crops.json");
+                foreach (string metric in new[] { "avg", "min", "max" })
+                    foreach (string variant in new[] { "native", "context-80", "context-100", "context-120" })
+                        foreach (string suffix in new[] { "-ocr.png", ".json" })
+                        {
+                            string file = temporary + "-results-" + metric + "-" + variant + suffix;
+                            if (File.Exists(file)) File.Delete(file);
+                        }
             }
             return 0;
         }
