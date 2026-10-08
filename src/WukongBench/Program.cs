@@ -65,7 +65,7 @@ internal static class Program
     private static async Task<int> Benchmark(Options options, JsonElement hardware, CancellationToken ct)
     {
         var steam = SteamInstallation.Discover(options.GameDirectory);
-        if (FindGameProcesses(steam).Any()) throw new InvalidOperationException("Close the already running Benchmark Tool before starting this runner.");
+        EnsureGameClosed(steam);
         var configFile = Path.GetFullPath(options.Config ?? Path.Combine(steam.GameDirectory, "b1", "Saved", "Config", "Windows", "GameUserSettings.ini"));
         if (!File.Exists(configFile)) throw new FileNotFoundException("Initialize Benchmark Tool once (first-launch agreement and language), close it, then run again. Use --config for a non-standard settings location.", configFile);
         string original = File.ReadAllText(configFile);
@@ -98,6 +98,7 @@ internal static class Program
                 Directory.CreateDirectory(passDirectory);
                 currentPassDirectory = passDirectory;
                 Console.WriteLine($"{profile.Name}: {profile.Width}×{profile.Height}, scale {profile.RenderPercent}%, RT {profile.RayTracing}");
+                if (retiredProcessIds.Count > 0) await SteamSession.WaitForRelease(steam, passDirectory, ct);
                 File.SetAttributes(configFile, FileAttributes.Normal);
                 File.WriteAllText(configFile, profile.Apply(original), new UTF8Encoding(false));
                 File.Copy(configFile, Path.Combine(passDirectory, "requested.ini"), true);
@@ -155,20 +156,16 @@ internal static class Program
         if (options.OpenReport) Process.Start(new ProcessStartInfo(Path.Combine(output, "report.html")) { UseShellExecute = true });
         return 0;
     }
-    private static IEnumerable<Process> FindGameProcesses(SteamInstallation steam)
+    private static void EnsureGameClosed(SteamInstallation steam)
     {
-        foreach (var p in Process.GetProcessesByName("b1-Win64-Shipping"))
+        var processes = Process.GetProcessesByName("b1-Win64-Shipping");
+        try
         {
-            bool matches;
-            try
-            {
-                if (p.HasExited) { p.Dispose(); continue; }
-                matches = string.Equals(p.MainModule?.FileName, steam.GameExe, StringComparison.OrdinalIgnoreCase);
-            }
-            catch (InvalidOperationException) when (p.HasExited) { p.Dispose(); continue; }
-            catch { p.Dispose(); throw new InvalidOperationException("Cannot inspect an existing Wukong process; close it before starting."); }
-            if (matches) yield return p; else p.Dispose();
+            foreach (var p in processes)
+                if (BenchmarkProcessProbe.Read(p.Id, steam.GameExe, () => BenchmarkProcessProbe.Inspect(p)) is not null)
+                    throw new InvalidOperationException("Close the already running Benchmark Tool before starting this runner.");
         }
+        finally { foreach (var p in processes) p.Dispose(); }
     }
     private static async Task<Process> Launch(SteamInstallation steam, string output, HashSet<int> retiredIds, CancellationToken ct)
     {
@@ -180,6 +177,12 @@ internal static class Program
         DateTime requestUtc = DateTime.UtcNow;
         var tracker = new ProcessLaunchTracker(requestUtc, excludedIds);
         string diagnostic = Path.Combine(output, "launch.json");
+        var inspectionFailures = new Dictionary<int, ProcessProbeFailure>();
+        void InspectionFailed(ProcessProbeFailure failure)
+        {
+            inspectionFailures[failure.ProcessId] = failure;
+            File.WriteAllText(Path.Combine(output, "launch-inspection-errors.json"), JsonSerializer.Serialize(inspectionFailures.Values, Json));
+        }
         File.WriteAllText(diagnostic, JsonSerializer.Serialize(new { RequestUtc = requestUtc, ExcludedProcessIds = excludedIds, Status = "waiting" }, Json));
         Console.WriteLine("Ожидаю новый процесс Benchmark Tool от Steam.");
         var start = new ProcessStartInfo(steam.SteamExe) { UseShellExecute = false, WorkingDirectory = Path.GetDirectoryName(steam.SteamExe)! };
@@ -189,34 +192,35 @@ internal static class Program
         while (timer.Elapsed < TimeSpan.FromMinutes(3))
         {
             ct.ThrowIfCancellationRequested();
-            foreach (var process in FindGameProcesses(steam))
+            var processes = Process.GetProcessesByName("b1-Win64-Shipping");
+            Process? attached = null;
+            try
             {
-                bool attach;
-                DateTime startedUtc;
-                try
+                foreach (var process in processes)
                 {
-                    startedUtc = process.StartTime.ToUniversalTime();
-                    attach = tracker.MayAttach(process.Id, startedUtc, process.HasExited);
-                }
-                catch (InvalidOperationException) { process.Dispose(); continue; }
-                if (attach)
-                {
+                    var candidate = BenchmarkProcessProbe.Read(process.Id, steam.GameExe,
+                        () => BenchmarkProcessProbe.Inspect(process), tracker, InspectionFailed);
+                    if (candidate is null) continue;
                     // Own the new process immediately, even before it has a window,
                     // so later startup errors still stop it before INI restoration.
                     try
                     {
                         ProcessExitDiagnostics.RetainHandle(process);
                         File.WriteAllText(diagnostic, JsonSerializer.Serialize(new { RequestUtc = requestUtc, ExcludedProcessIds = excludedIds,
-                            Status = "attached", ProcessId = process.Id, StartedUtc = startedUtc }, Json));
+                            Status = "attached", ProcessId = process.Id, StartedUtc = candidate.StartedUtc }, Json));
                         Console.WriteLine($"Новый процесс Benchmark Tool: PID {process.Id}.");
+                        attached = process;
                         return process;
                     }
                     catch { await Stop(process); process.Dispose(); throw; }
                 }
-                process.Dispose();
             }
+            finally { foreach (var process in processes) if (process != attached) process.Dispose(); }
             await Task.Delay(1000, ct);
         }
+        File.WriteAllText(diagnostic, JsonSerializer.Serialize(new { RequestUtc = requestUtc, ExcludedProcessIds = excludedIds, Status = "timeout" }, Json));
+        if (inspectionFailures.Count > 0)
+            throw new TimeoutException("Could not inspect a new Benchmark Tool process within three minutes. See launch-inspection-errors.json for PID and Windows error.");
         throw new TimeoutException("Steam did not launch Benchmark Tool. Check login/download/launch dialogs.");
     }
     private static async Task Stop(Process p)
@@ -283,4 +287,3 @@ internal sealed class Options
           --help                   Эта справка
         """;
 }
-

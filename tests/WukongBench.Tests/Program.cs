@@ -41,6 +41,67 @@ Check(!processTracker.MayAttach(19408, launchRequest.AddMinutes(-8), false), "un
 excludedProcesses.Clear();
 Check(!processTracker.MayAttach(20816, launchRequest.AddSeconds(1), false), "launch snapshot remains stable when caller collection changes");
 Check(!processTracker.MayAttach(0, launchRequest.AddSeconds(1), false), "invalid PID cannot become benchmark process ownership");
+const string expectedExe = @"C:\Benchmark\b1-Win64-Shipping.exe";
+int processReads = 0;
+var probeFailures = new List<ProcessProbeFailure>();
+GameProcessSnapshot InaccessibleRetiredProcess()
+{
+    processReads++;
+    throw new System.ComponentModel.Win32Exception(5, "Access denied while process is exiting");
+}
+Check(BenchmarkProcessProbe.Read(20816, expectedExe, InaccessibleRetiredProcess, processTracker, probeFailures.Add) is null
+    && processReads == 0 && probeFailures.Count == 0,
+    "retired CPU PID is excluded before inaccessible MainModule or StartTime getter is called");
+Check(BenchmarkProcessProbe.Read(13348, expectedExe, InaccessibleRetiredProcess,
+    new ProcessLaunchTracker(launchRequest, [13348]), probeFailures.Add) is null && processReads == 0,
+    "regression from 20261008-222238: excluded CPU PID 13348 never reaches process inspection");
+Check(BenchmarkProcessProbe.Read(10836, expectedExe, InaccessibleRetiredProcess, processTracker, probeFailures.Add) is null
+    && probeFailures.Count == 1 && probeFailures[0].ProcessId == 10836 && probeFailures[0].NativeErrorCode == 5,
+    "temporary new-process inspection failure is recorded with PID and native Windows error");
+Check(BenchmarkProcessProbe.Read(10836, expectedExe, () => new(expectedExe, launchRequest.AddSeconds(8), false), processTracker, probeFailures.Add) is not null,
+    "new process can be attached on later poll after transient inspection failure");
+Check(BenchmarkProcessProbe.Read(10836, expectedExe, () => new(@"C:\OtherGame\b1-Win64-Shipping.exe", launchRequest.AddSeconds(8), false), processTracker, probeFailures.Add) is null,
+    "retry cannot bypass exact installation executable check");
+Check(BenchmarkProcessProbe.Read(10836, expectedExe, () => new(expectedExe, launchRequest.AddSeconds(-1), false), processTracker, probeFailures.Add) is null,
+    "retry cannot adopt process created before Steam request");
+bool strictProbeRejected = false;
+try { BenchmarkProcessProbe.Read(10836, expectedExe, InaccessibleRetiredProcess); }
+catch (InvalidOperationException error) { strictProbeRejected = error.InnerException is System.ComponentModel.Win32Exception && error.Message.Contains("10836"); }
+Check(strictProbeRejected, "initial already-running guard preserves inspection error and does not grant process ownership");
+const string steamCpuRunning = """
+    [2026-10-08 22:22:40] AppID 3132990 adding PID 7852 as a tracked process "benchmark launcher"
+    [2026-10-08 22:22:45] AppID 3132990 adding PID 13348 as a tracked process "benchmark game"
+    [2026-10-08 22:32:08] AppID 8930 no longer tracking PID 1972, exit code 0
+    [2026-10-08 22:32:08] Remove 8930 from running list
+    """;
+const string steamCpuReleased = """
+    [2026-10-08 22:32:29] AppID 3132990 no longer tracking PID 2432, exit code 0
+    [2026-10-08 22:32:29] AppID 3132990 no longer tracking PID 13348, exit code -1073740791
+    [2026-10-08 22:32:29] AppID 3132990 no longer tracking PID 7852, exit code -1073740791
+    [2026-10-08 22:32:29] Remove 3132990 from running list
+    """;
+Check(SteamRunState.IsRunning(steamCpuRunning) == true, "Steam CPU running state survives unrelated app events");
+Check(SteamRunState.IsRunning(steamCpuRunning + "\n" + steamCpuReleased) == false, "actual Steam release event permits GPU relaunch");
+Check(SteamRunState.IsRunning(steamCpuRunning + "\n[2026-10-08 22:32:29] AppID 3132990 no longer tracking PID 13348, exit code 0") == true,
+    "game PID exit alone does not release Steam launcher and helper session");
+Check(SteamRunState.IsRunning(steamCpuReleased + "\n" + steamCpuRunning) == true, "latest Steam launch overrides previous release event");
+Check(SteamRunState.IsRunning("[2026-10-08 22:33:15] Client version: 1788652215") is null, "unknown Steam state is not invented as ready");
+int releasePolls = 0, releaseDelays = 0;
+await SteamSession.WaitForRelease(() => ++releasePolls < 3,
+    _ => { releaseDelays++; return Task.CompletedTask; }, CancellationToken.None, attempts: 4);
+Check(releasePolls == 3 && releaseDelays == 2, "GPU transition waits for observed release instead of guessing a fixed pause");
+bool releaseTimedOut = false;
+try { await SteamSession.WaitForRelease(() => null, _ => Task.CompletedTask, CancellationToken.None, attempts: 2); }
+catch (TimeoutException) { releaseTimedOut = true; }
+Check(releaseTimedOut, "missing Steam state has bounded wait and cannot dispatch another launch");
+using (var cancelledRelease = new CancellationTokenSource())
+{
+    cancelledRelease.Cancel();
+    bool releaseCancelled = false;
+    try { await SteamSession.WaitForRelease(() => true, _ => Task.CompletedTask, cancelledRelease.Token); }
+    catch (OperationCanceledException) { releaseCancelled = true; }
+    Check(releaseCancelled, "waiting for Steam release responds to cancellation");
+}
 Check(ProcessExitDiagnostics.Error(15568, () => 3).Message.Contains("exit code 3"), "actual process exit code is preserved in error");
 Check(ProcessExitDiagnostics.Error(15568, () => throw new InvalidOperationException("Process was not started by this object")).Message.Contains("exit code unavailable"),
     "unavailable ExitCode cannot mask the original benchmark process failure");
@@ -310,6 +371,11 @@ if (!testRoot.StartsWith(Path.GetFullPath(Path.GetTempPath()).TrimEnd(Path.Direc
 Directory.CreateDirectory(testRoot);
 try
 {
+    string steamTestLog = Path.Combine(testRoot, "gameprocess_log.txt");
+    File.WriteAllText(steamTestLog, new string('x', 140 * 1024) + "\n" + steamCpuRunning + "\n" + steamCpuReleased);
+    Check(SteamSession.ReadRunningState(steamTestLog) == false, "shared log tail reader finds Steam release beyond first 128 KB");
+    Check(SteamSession.ReadRunningState(Path.Combine(testRoot, "missing-steam-log.txt")) is null,
+        "missing Steam log returns unknown state without pretending session is closed");
     var harmlessStart = new System.Diagnostics.ProcessStartInfo(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.System), "WindowsPowerShell", "v1.0", "powershell.exe"))
         { UseShellExecute = false, CreateNoWindow = true };
     foreach (string argument in new[] { "-NoProfile", "-NonInteractive", "-Command", "Start-Sleep -Milliseconds 800; exit 3" }) harmlessStart.ArgumentList.Add(argument);
@@ -403,4 +469,3 @@ finally
     Directory.Delete(testRoot, true);
 }
 Console.WriteLine($"{count} checks passed.");
-
